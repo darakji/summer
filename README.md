@@ -1,28 +1,28 @@
-# LLZO–Li Interface Dataset Generation (Summer 2025)
+# LLZO–Li Interface Dataset Generation
 
 This repository contains a complete workflow for constructing high-quality interface slabs between **LLZO (Li₇La₃Zr₂O₁₂)** and **Li metal**. These are intended for use in **machine-learned interatomic potentials (MLIPs)** and **DFT-based interface studies**.
 
 ---
 
-## 📁 Folder Overview
+## Folder Overview
 
 ```bash
 summer/
-├── letitbeforsometime/              # 💤 Temporarily parked code/data (ignore for now)
+├── letitbeforsometime/             # Temporarily parked code/data (ignore for now)
 ├── li_slabs_fixed_heavy/           # Finalized Li slabs (cleaned, stoichiometric, no vacuum)
-├── llzo_li_balanced_sliced/        # ✅ Final LLZO‖Li interface structures (.cif)
+├── llzo_li_balanced_sliced/        # Final LLZO‖Li interface structures (.cif)
 ├── llzo_li_slabs/                  # Relaxed LLZO surface slabs used for interfacing
 ├── MS_LLZO_surface_data-master/    # Raw LLZO surface data generation repo (external)
 ├── summer_llzo_cifs/               # Raw/unprocessed LLZO structures from MP or earlier steps
 ├── generate_li_slabs.py            # Script to generate and preprocess Li slabs
-├── li_llzo_stack.py                # 🧠 Main script to construct stacked LLZO‖Li interfaces
+├── li_llzo_stack.py                # Main script to construct stacked LLZO‖Li interfaces
 ├── rough.py                        # Utility testing and scratch code
 └── README.md                       # ← This documentation
 ```
 
 ---
 
-## ✅ Final Interface Structures: `llzo_li_balanced_sliced/`
+## Final Interface Structures: `llzo_li_balanced_sliced/`
 
 - All structures are stored in `.cif` format.
 - Naming convention:  
@@ -40,7 +40,7 @@ summer/
 
 ---
 
-## 🛠 Workflow Summary
+## Workflow Summary
 
 ### 1. `generate_li_slabs.py`
 
@@ -70,7 +70,7 @@ For each LLZO–Li slab pair:
 
 ---
 
-## 🔍 Design Considerations
+## Design Considerations
 
 - Interfaces are physically realistic and balanced
 - All slabs are neutral and dipole-free
@@ -79,7 +79,7 @@ For each LLZO–Li slab pair:
 
 ---
 
-## 🧪 Utility Scripts
+## Utility Scripts
 
 | Script               | Purpose                                      |
 |----------------------|----------------------------------------------|
@@ -96,7 +96,7 @@ This contains temporary or archived scripts/data not currently active.
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 - `ase`
 - `pymatgen`

@@ -38,32 +38,32 @@ This phase constructs LLZO‖Li stacks using **XY tiling and Z-slicing**, option
 2. **XY Tiling**:
    - Li slab is **tiled in X and Y** to cover LLZO in-plane dimensions.
    - Li is **stretched isotropically** in-plane to match LLZO cell:
-     \[
+     $$
      \mathbf{a}_{\text{Li}}' = \frac{L_{\text{LLZO}}^x}{L_{\text{Li}}^x} \cdot \mathbf{a}_{\text{Li}}, \quad
      \mathbf{b}_{\text{Li}}' = \frac{L_{\text{LLZO}}^y}{L_{\text{Li}}^y} \cdot \mathbf{b}_{\text{Li}}
-     \]
+     $$
 
 3. **Z-stacking and Slicing**:
-   - For each Z-repeat factor \(k \in [1, 8]\), Li block is sliced at height \( t_{\text{LLZO}} \).
+   - For each Z-repeat factor $k \in [1, 8]$, Li block is sliced at height t_{\text{LLZO}}.
    - Candidate slab is accepted if:
-     - Atom count \( \in [800, 1200] \)
-     - Relative thickness mismatch \( \delta_t < 20\% \):
-       \[
+     - Atom count $\in [800, 1200]$
+     - Relative thickness mismatch $\delta_t < 20\%$:
+       $$
        \delta_t = \left|\frac{t_{\text{Li}} - t_{\text{LLZO}}}{t_{\text{LLZO}}}\right|
-       \]
+       $$
 
 4. **Scoring (if no exact match)**:
-   \[
+   $$
    \text{score} = \delta_t + \left| \frac{N_{\text{Li}} - 1000}{1000} \right|
-   \]
+   $$
 
 5. **Stacking & Output**:
    - LLZO is shifted to start at 15 Å (bottom vacuum).
    - Li block stacked above LLZO + 4 Å interface gap.
    - Top vacuum: 15 Å → total Z height:
-     \[
+     $$
      L_z = 15 + t_{\text{LLZO}} + 4 + t_{\text{Li}} + 15
-     \]
+     $$
 
 - 📁 All resulting `.cif` structures are saved in `llzo_li_balanced_sliced/`.
 
@@ -79,13 +79,13 @@ This phase constructs **strain-free, coherently matched interfaces** using **com
 
 2. **Lattice Matching (Zur–McGill algorithm)**:
    - Uses `SubstrateAnalyzer.get_matching_transforms()` from `pymatgen`
-   - Finds transformation matrices \( M_{\text{LLZO}}, M_{\text{Li}} \) such that:
-     \[
+   - Finds transformation matrices $ M_{\text{LLZO}}, M_{\text{Li}} $ such that:
+     $$
      M_{\text{LLZO}} \cdot \mathbf{L}_{\text{LLZO}} \approx M_{\text{Li}} \cdot \mathbf{L}_{\text{Li}}
-     \]
+     $$
    - Supercell pairs accepted if:
-     - Area \( < 400 \, \text{Å}^2 \)
-     - Lattice mismatch \( \leq 5\% \) in both in-plane directions
+     - Area $ < 400 \, \text{Å}^2 $
+     - Lattice mismatch $ \leq 5\% $ in both in-plane directions
 
 3. **Metadata Generation**:
    - Saves `.json` per pair with:
@@ -110,8 +110,6 @@ This phase constructs **strain-free, coherently matched interfaces** using **com
 | Output format          | `.cif`, `.json`               |
 
 ---
-
-## 📚 References
 
 ## 📚 References
 

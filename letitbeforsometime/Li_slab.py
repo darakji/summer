@@ -3,7 +3,7 @@ from pymatgen.ext.matproj import MPRester
 from pymatgen.io.cif import CifWriter
 import os
 
-API_KEY = "Yoa1b2uiwwxd5fpoSFS9aaTg7qSuvnF1"  # <-- Replace with your Materials Project API key
+API_KEY = " "  # <-- Replace with your Materials Project API key
 material_id = "mp-135"  # Li metal (BCC)
 
 miller = (1, 1, 1)         # Choose (100), (110), or (111)

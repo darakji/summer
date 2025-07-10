@@ -4,7 +4,7 @@ from pymatgen.io.cif import CifWriter
 import os
 
 # Initialize MP API
-mpr = MPRester("Yoa1b2uiwwxd5fpoSFS9aaTg7qSuvnF1")  # Replace with your Materials Project API key
+mpr = MPRester(" ")  # Replace with your Materials Project API key
 
 # Get R-3m LiCoO2 structure
 entries = mpr.summary.search(formula="LiCoO2", fields=["structure", "material_id"])

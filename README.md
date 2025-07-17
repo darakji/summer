@@ -71,35 +71,6 @@ This phase constructs LLZO‖Li stacks using **XY tiling and Z-slicing**, option
 
 - 📁 All resulting `.cif` structures are saved in `llzo_li_balanced_sliced/`.
 
----
-
-## 🚧 Phase 2 — Coherent LLZO‖Li Interface Matching
-
-This phase constructs **strain-free, coherently matched interfaces** using **commensurate supercells**.
-
-### Steps:
-1. **Orthogonalization**:
-   - All input slabs are orthogonalized in XY (especially Li(111)).
-
-2. **Lattice Matching (Zur–McGill algorithm)**:
-   - Uses `SubstrateAnalyzer.get_matching_transforms()` from `pymatgen`
-   - Finds transformation matrices \( M_{\text{LLZO}}, M_{\text{Li}} \) such that:
-     \[
-     M_{\text{LLZO}} \cdot \mathbf{L}_{\text{LLZO}} \approx M_{\text{Li}} \cdot \mathbf{L}_{\text{Li}}
-     \]
-   - Supercell pairs accepted if:
-     - Area \( < 400 \, \text{Å}^2 \)
-     - Lattice mismatch \( \leq 5\% \) in both in-plane directions
-
-3. **Metadata Generation**:
-   - Saves `.json` per pair with:
-     - Mismatch %
-     - Area
-     - Atom counts
-     - Supercell matrices
-     - Initial CIFs of matched LLZO and Li supercells
-
----
 
 ## 📂 Final Output Characteristics
 
@@ -108,71 +79,55 @@ This phase constructs **strain-free, coherently matched interfaces** using **com
 | Vacuum (top + bottom)  | 15 Å                           |
 | Interface gap (LLZO–Li)| 4 Å                            |
 | Thickness mismatch     | ≤ 20% (Phase 1)               |
-| Lattice mismatch       | ≤ 5% (Phase 2)                |
 | Atom count             | 800–1200                      |
 | Termination            | Tasker type I (stoichiometric)|
 | Output format          | `.cif`, `.json`               |
 
 ---
 
-## 🚧 Phase 2 — Relaxing Structures with CHGNet
-# 📂 relax_demo
+## 🚧 Phase 2 — CHGNet Relaxation of Strain-Matched LLZO‖Li Interfaces
 
-This folder contains the full CHGNet-based relaxation workflow and results for a **single LLZO‖Li interface** structure.
+This phase relaxes the heterostructures generated in **Phase 1** using the CHGNet machine-learned potential.
 
----
-
-## 📘 LLZO‖Li Interface Relaxation Notebook
-
-Each notebook in this series handles **only one structure**.  
-This one corresponds to:
-
-- **Structure**: `LLZO_001_Zr_code93_sto__Li_110_slab_heavy`
-- **Initial lattice height**: 74.46 Å
-- **Number of atoms**: 900
+The input structures from `llzo_li_balanced_sliced/` — which are strain-matched, stacked LLZO‖Li slabs — are passed through a multi-stage atomic relaxation workflow using CHGNet and ASE.
 
 ---
 
-### 1. Purpose
-- Relax the LLZO‖Li heterostructure using CHGNet
-- Perform multi-stage optimization (CG → FIRE)
-- Freeze bulk-like regions (15 Å at both ends)
-- Relax the lattice vectors to relieve interfacial strain
+### 🧘 Relaxation Protocol
+
+- CHGNet v0.4.0 via the ASE interface
+- Two-stage relaxation:
+  1. `SciPyFminCG` (atomic positions only)
+  2. `FIRE` with `relax_cell=True` (to be enabled in the next step of Phase 2)
+- Constraints:
+  - **Bottom 15 Å** of LLZO and **top 15 Å** of Li are **frozen**
+  - **Middle interfacial region** is fully relaxed
+
+Outputs for each structure:
+- `relaxed_<structure>.traj`
+- `relaxed_<structure>.cif`
 
 ---
 
-### 2. Method
-- **CHGNet v0.4.0** with ASE interface
-- Stage 1: `SciPyFminCG` (no cell relaxation) → fₘₐₓ ≈ 0.15 eV/Å
-- Stage 2: `FIRE` with `relax_cell=True` → fₘₐₓ < 0.05 eV/Å
+### ⚙️ Relaxation Notebook Automation
+
+To scale this process, we implemented an automated notebook generator:
+
+- Script: `automate_relaxed.py`
+- Scans all `.cif` files in `llzo_li_balanced_sliced/`
+- For each:
+  - Creates a folder under `relax_final/<structure_name>/`
+  - Copies a base Jupyter notebook template
+  - Injects a dynamic code cell: `structure_name = "<structure_name>"`
+
+This ensures reproducibility while enabling batch preparation across dozens of structures.
+
+Each notebook is self-contained and directly executable.
 
 ---
 
-### 3. Constraints
-- **LLZO base**: bottom 15 Å frozen
-- **Li top**: top 15 Å frozen
-- **Interfacial region** relaxed in all directions
-
----
-
-### 4. Outputs
-- `relaxed_LLZO_Li_interface_15A_frozen.cif`
-- `relaxed_LLZO_Li_interface_15A_frozen.traj`
-- `relaxation.traj` (intermediate trajectory)
-- `relaxation_log.pkl` (optional log with energy, force data)
-
----
-
-### 5. Visual + Structural Checks
-- Pre/post relaxation visualizations (To be updated soon)
-- Z-analysis to confirm no Li diffusion into LLZO
-- Final force convergence: **fₘₐₓ ≈ 0.043 eV/Å**
-
----
-
-### 🧭 What's Next?
-
-We will be **extending this workflow to other LLZO terminations and Li slab orientations**, following the same methodology and documentation format — one structure per notebook.
+> 📌 The `relax_demo/` folder contains the prototype notebook that was used as the base template.
+> Future updates to this phase will include **cell relaxation and energy-based convergence diagnostics**.
 
 ---
 

@@ -73,6 +73,34 @@ This phase constructs LLZO‖Li stacks using **XY tiling and Z-slicing**, option
 
 ---
 
+## 🚧 Phase 2 — Coherent LLZO‖Li Interface Matching
+
+This phase constructs **strain-free, coherently matched interfaces** using **commensurate supercells**.
+
+### Steps:
+1. **Orthogonalization**:
+   - All input slabs are orthogonalized in XY (especially Li(111)).
+
+2. **Lattice Matching (Zur–McGill algorithm)**:
+   - Uses `SubstrateAnalyzer.get_matching_transforms()` from `pymatgen`
+   - Finds transformation matrices \( M_{\text{LLZO}}, M_{\text{Li}} \) such that:
+     \[
+     M_{\text{LLZO}} \cdot \mathbf{L}_{\text{LLZO}} \approx M_{\text{Li}} \cdot \mathbf{L}_{\text{Li}}
+     \]
+   - Supercell pairs accepted if:
+     - Area \( < 400 \, \text{Å}^2 \)
+     - Lattice mismatch \( \leq 5\% \) in both in-plane directions
+
+3. **Metadata Generation**:
+   - Saves `.json` per pair with:
+     - Mismatch %
+     - Area
+     - Atom counts
+     - Supercell matrices
+     - Initial CIFs of matched LLZO and Li supercells
+
+---
+
 ## 📂 Final Output Characteristics
 
 | Property               | Value                         |

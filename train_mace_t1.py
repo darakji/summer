@@ -1,4 +1,13 @@
 import torch
+import functools
+
+# Patch torch.load to disable "safe" mode for now
+_original_load = torch.load
+def patched_load(*args, **kwargs):
+    kwargs["weights_only"] = False
+    return _original_load(*args, **kwargs)
+torch.load = patched_load
+
 from mace.tools import torch_geometric
 from mace.train import train
 from mace.calculators import MACECalculator
@@ -6,7 +15,7 @@ from mace.data.utils import load_atomic_dataset
 from mace.modules import MACE
 
 import os
-
+print("Imports done\n")
 # ====== Configs (equivalent to CLI args) ======
 init_model_path = "/home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model"
 train_file = "/home/phanim/harshitrawat/summer/mace_train_T1.db"

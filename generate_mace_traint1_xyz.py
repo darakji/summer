@@ -1,3 +1,7 @@
+import torch
+# permanently allow `slice` in the safe unpickler
+torch.serialization.add_safe_globals([slice])
+
 import os
 import json
 import pandas as pd

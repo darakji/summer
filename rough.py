@@ -1,18 +1,15 @@
-from ase.io import Trajectory
-from chgnet.model.dynamics import CHGNetCalculator
+from ase.io import read
+import pandas as pd
+import json
 
-# Load one of your traj files
-traj = Trajectory("md/mdtraj/cellrelaxed_LLZO_010_Li_order0_off__Li_111_slab_heavy_T300.traj")
-atoms = traj[0]
+# Load Excel
+df = pd.read_excel("/home/phanim/harshitrawat/summer/T1_chgnet_labeled.xlsx")
+group = df[df["file"] == "cellrelaxed_LLZO_001_Zr_code93_sto__Li_100_slab_heavy_T300_0002.cif"]
 
-# Attach CHGNet calculator
-atoms.calc = CHGNetCalculator()
+# Load CIF
+atoms = read("/home/phanim/harshitrawat/summer/md/mdcifs/cellrelaxed_LLZO_001_Zr_code93_sto__Li_100_slab_heavy_T300_0002.cif")
 
-# Force CHGNet to evaluate everything
-energy = atoms.get_potential_energy()
-forces = atoms.get_forces()
-stress = atoms.get_stress()
-
-print(f"Energy: {energy:.4f} eV")
-print(f"fmax: {max((forces**2).sum(axis=1)**0.5):.4f} eV/Å")
-print(f"Stress: {stress}")
+# Inject energy, forces, stress
+atoms.info["energy"] = float(group["energy_eV"].iloc[0])
+atoms.arrays["forces"] = json.loads(group["forces_per_atom_eV_per_A"].iloc[0])
+atoms.info["stress"] = json.loads(group["stress_tensor"].iloc[0])

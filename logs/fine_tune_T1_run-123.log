@@ -1,0 +1,20 @@
+2025-07-22 20:07:44.615 INFO: ===========VERIFYING SETTINGS===========
+2025-07-22 20:07:44.616 INFO: MACE version: 0.3.13
+2025-07-22 20:07:44.616 INFO: Using CPU
+2025-07-22 20:07:48.104 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-07-22 20:07:48.104 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-07-22 20:07:48.104 INFO: ===========LOADING INPUT DATA===========
+2025-07-22 20:07:48.104 INFO: Using heads: ['Default']
+2025-07-22 20:07:48.104 INFO: Using the key specifications to parse data:
+2025-07-22 20:07:48.105 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-07-22 20:07:48.105 INFO: =============    Processing head Default     ===========
+2025-07-22 20:09:56.838 INFO: ===========VERIFYING SETTINGS===========
+2025-07-22 20:09:56.838 INFO: MACE version: 0.3.13
+2025-07-22 20:09:57.206 INFO: CUDA version: 12.6, CUDA device: 0
+2025-07-22 20:09:57.749 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-07-22 20:09:57.750 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-07-22 20:09:57.750 INFO: ===========LOADING INPUT DATA===========
+2025-07-22 20:09:57.750 INFO: Using heads: ['Default']
+2025-07-22 20:09:57.750 INFO: Using the key specifications to parse data:
+2025-07-22 20:09:57.750 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'none', 'virials': 'none', 'dipole': 'none', 'head': 'head'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-07-22 20:09:57.750 INFO: =============    Processing head Default     ===========

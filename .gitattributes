@@ -14,3 +14,4 @@ checkpoints/*.model filter=lfs diff=lfs merge=lfs -text
 mace_models/**/*.model filter=lfs diff=lfs merge=lfs -text
 md/*.json filter=lfs diff=lfs merge=lfs -text
 results/*.txt filter=lfs diff=lfs merge=lfs -text
+mace_train_*.db filter=lfs diff=lfs merge=lfs -text

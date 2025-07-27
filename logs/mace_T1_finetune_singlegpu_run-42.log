@@ -1,0 +1,68 @@
+2025-07-24 13:58:53.608 INFO: ===========VERIFYING SETTINGS===========
+2025-07-24 13:58:53.608 INFO: MACE version: 0.3.13
+2025-07-24 13:58:54.011 INFO: CUDA version: 12.6, CUDA device: 0
+2025-07-24 13:58:55.043 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-07-24 13:58:55.044 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-07-24 13:58:55.044 INFO: ===========LOADING INPUT DATA===========
+2025-07-24 13:58:55.044 INFO: Using heads: ['Default']
+2025-07-24 13:58:55.044 INFO: Using the key specifications to parse data:
+2025-07-24 13:58:55.044 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-07-24 13:58:55.044 INFO: =============    Processing head Default     ===========
+2025-07-24 13:59:16.444 INFO: Training set 1/1 [energy: 6337, stress: 0, virials: 0, dipole components: 0, head: 6337, forces: 6337, charges: 0]
+2025-07-24 13:59:16.463 INFO: Total Training set [energy: 6337, stress: 0, virials: 0, dipole components: 0, head: 6337, forces: 6337, charges: 0]
+2025-07-24 13:59:19.096 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, forces: 705, charges: 0]
+2025-07-24 13:59:19.098 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, forces: 705, charges: 0]
+2025-07-24 13:59:19.098 INFO: Total number of configurations: train=6337, valid=705, tests=[],
+2025-07-24 13:59:19.405 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-07-24 13:59:19.406 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-07-24 13:59:19.406 INFO: Atomic Energies used (z: eV) for head Default: {3: -201.7093, 8: -431.6112, 40: -1275.9529, 57: -857.6754}
+2025-07-24 13:59:19.406 INFO: Processing datasets for head 'Default'
+2025-07-24 14:01:33.251 INFO: ===========VERIFYING SETTINGS===========
+2025-07-24 14:01:33.251 INFO: MACE version: 0.3.13
+2025-07-24 14:01:33.745 INFO: CUDA version: 12.6, CUDA device: 0
+2025-07-24 14:01:34.208 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-07-24 14:01:34.209 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-07-24 14:01:34.209 INFO: ===========LOADING INPUT DATA===========
+2025-07-24 14:01:34.209 INFO: Using heads: ['Default']
+2025-07-24 14:01:34.209 INFO: Using the key specifications to parse data:
+2025-07-24 14:01:34.209 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-07-24 14:01:34.209 INFO: =============    Processing head Default     ===========
+2025-07-24 14:01:55.744 INFO: Training set 1/1 [energy: 6337, stress: 0, virials: 0, dipole components: 0, head: 6337, forces: 6337, charges: 0]
+2025-07-24 14:01:55.762 INFO: Total Training set [energy: 6337, stress: 0, virials: 0, dipole components: 0, head: 6337, forces: 6337, charges: 0]
+2025-07-24 14:01:58.405 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, forces: 705, charges: 0]
+2025-07-24 14:01:58.407 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, forces: 705, charges: 0]
+2025-07-24 14:01:58.407 INFO: Total number of configurations: train=6337, valid=705, tests=[],
+2025-07-24 14:01:58.714 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-07-24 14:01:58.714 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-07-24 14:01:58.714 INFO: Atomic Energies used (z: eV) for head Default: {3: -201.7093, 8: -431.6112, 40: -1275.9529, 57: -857.6754}
+2025-07-24 14:01:58.715 INFO: Processing datasets for head 'Default'
+2025-07-24 14:05:12.895 INFO: Combining 1 list datasets for head 'Default'
+2025-07-24 14:05:34.371 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-07-24 14:05:34.371 INFO: Combined validation datasets for Default
+2025-07-24 14:05:34.371 INFO: Head 'Default' training dataset size: 6337
+2025-07-24 14:05:34.372 INFO: Computing average number of neighbors
+2025-07-24 14:06:31.312 INFO: Average number of neighbors: 68.51557639403025
+2025-07-24 14:06:31.313 INFO: During training the following quantities will be reported: energy, forces
+2025-07-24 14:06:31.313 INFO: ===========MODEL DETAILS===========
+2025-07-24 14:08:20.918 INFO: Loading FOUNDATION model
+2025-07-24 14:08:20.921 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-07-24 14:08:20.921 INFO: Model configuration extracted from foundation model
+2025-07-24 14:08:20.921 INFO: Using universal loss function for fine-tuning
+2025-07-24 14:08:20.922 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-07-24 14:08:20.922 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-07-24 14:08:20.922 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-07-24 14:08:20.922 INFO: Distance transform for radial basis functions: None
+2025-07-24 14:08:32.762 INFO: Total number of parameters: 894362
+2025-07-24 14:08:32.762 INFO: 
+2025-07-24 14:08:32.762 INFO: ===========OPTIMIZER INFORMATION===========
+2025-07-24 14:08:32.762 INFO: Using ADAM as parameter optimizer
+2025-07-24 14:08:32.762 INFO: Batch size: 2
+2025-07-24 14:08:32.762 INFO: Number of gradient updates: 63370
+2025-07-24 14:08:32.762 INFO: Learning rate: 0.01, weight decay: 5e-07
+2025-07-24 14:08:32.763 INFO: WeightedEnergyForcesLoss(energy_weight=1.000, forces_weight=30.000)
+2025-07-24 14:08:32.763 INFO: Using gradient clipping with tolerance=10.000
+2025-07-24 14:08:32.763 INFO: 
+2025-07-24 14:08:32.763 INFO: ===========TRAINING===========
+2025-07-24 14:08:32.763 INFO: Started training, reporting errors on validation set
+2025-07-24 14:08:32.763 INFO: Loss metrics on validation set
+2025-07-24 14:11:14.387 INFO: Initial: head: Default, loss=88992.45910932, RMSE_E_per_atom=298278.68 meV, RMSE_F=  959.54 meV / A

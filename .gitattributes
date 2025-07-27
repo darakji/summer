@@ -6,3 +6,11 @@
 *.txt filter=lfs diff=lfs merge=lfs -text
 *.extxyz filter=lfs diff=lfs merge=lfs -text
 *.traj filter=lfs diff=lfs merge=lfs -text
+final_work/*.extxyz filter=lfs diff=lfs merge=lfs -text
+final_work/*.json filter=lfs diff=lfs merge=lfs -text
+final_work/*.xlsx filter=lfs diff=lfs merge=lfs -text
+checkpoints/*.pt filter=lfs diff=lfs merge=lfs -text
+checkpoints/*.model filter=lfs diff=lfs merge=lfs -text
+mace_models/**/*.model filter=lfs diff=lfs merge=lfs -text
+md/*.json filter=lfs diff=lfs merge=lfs -text
+results/*.txt filter=lfs diff=lfs merge=lfs -text

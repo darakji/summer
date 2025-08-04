@@ -1,3 +1,7 @@
+# This script runs molecular dynamics (MD) simulations on structures
+# for adding into T1 and T2 dataset. Uses CHGNet and user configurations are defined
+# in the script. It saves trajectories and snapshots in specified directories. 
+
 import os, sys, time
 import pandas as pd
 from multiprocessing import Pool, set_start_method

@@ -1,3 +1,7 @@
+"""
+This script gives you LLZO slabs with Li slabs on top, balanced in thickness and atom count.
+Specifications of the slabs are defined in the user settings section.
+"""
 import os, numpy as np
 from glob import glob
 from ase.io import read, write

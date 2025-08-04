@@ -1,3 +1,7 @@
+# This script automates the generation of Jupyter notebooks for relaxing structures
+# based on CIF files found in a specified folder. It creates a new notebook for each CIF
+# file, copying a base notebook and modifying it to include the structure name.
+# It also organizes the notebooks into subfolders named after the structures.
 import os
 import shutil
 import nbformat

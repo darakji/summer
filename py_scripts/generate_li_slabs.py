@@ -1,3 +1,7 @@
+"""
+This script generates Li slabs with 3 different Miller indices (100, 110, 111)
+and saves them in directory 'li_slabs_fixed_heavy'.
+"""
 from ase.build import bulk, surface
 from ase.io import write
 import os

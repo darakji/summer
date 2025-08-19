@@ -1,0 +1,33 @@
+data_image0
+_chemical_formula_structural       Zr6O2
+_chemical_formula_sum              "Zr6 O2"
+_cell_length_a       6.134914507501862
+_cell_length_b       6.1349153257016615
+_cell_length_c       6.134914356239584
+_cell_angle_alpha    54.88477413085703
+_cell_angle_beta     54.884762997898356
+_cell_angle_gamma    54.88476707413904
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Zr  Zr1       1.0  0.8806854731535894  0.6123692818661128  0.3762910309139451  1.0000
+  Zr  Zr2       1.0  0.8936216597949596  0.3952793659080527  0.7766492198794506  1.0000
+  Zr  Zr3       1.0  0.5746725175377918  0.08054727069007583  0.36715900332053764  1.0000
+  Zr  Zr4       1.0  0.22454237309890956  0.7732444014139723  0.7446946979257048  1.0000
+  Zr  Zr5       1.0  0.432499902932022  0.6492667741462832  0.39129135219820554  1.0000
+  Zr  Zr6       1.0  0.8271718517163675  0.2539782134534221  0.13291060739654714  1.0000
+  O   O1        1.0  0.8105113816724661  0.115472829885789  0.36802499711980374  1.0000
+  O   O2        1.0  0.7436173236044059  0.5407753695838409  0.6596562592577939  1.0000

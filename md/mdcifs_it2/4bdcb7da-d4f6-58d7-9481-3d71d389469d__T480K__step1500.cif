@@ -1,0 +1,33 @@
+data_image0
+_chemical_formula_structural       O8
+_chemical_formula_sum              "O8"
+_cell_length_a       5.369789702272613
+_cell_length_b       5.369789702272613
+_cell_length_c       4.389828171850124
+_cell_angle_alpha    69.24482967881451
+_cell_angle_beta     69.24482967881451
+_cell_angle_gamma    70.78662063844564
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  O   O1        1.0  0.7550207339086192  0.43006964406368553  0.28163699120879926  1.0000
+  O   O2        1.0  0.015407300581244954  0.850095800201565  0.39217026705156854  1.0000
+  O   O3        1.0  0.5352776957649228  0.278598463824153  0.8103865037534277  1.0000
+  O   O4        1.0  0.16985783663124465  0.8121137272543466  0.09524372225500599  1.0000
+  O   O5        1.0  0.5723107347410519  0.9508444941744578  0.5150403263323682  1.0000
+  O   O6        1.0  0.9061044723886624  0.9849566197753994  0.025262424951463913  1.0000
+  O   O7        1.0  0.9322946685341478  0.6795132972848563  0.8233583098599269  1.0000
+  O   O8        1.0  0.1137282356485727  0.013808179460106373  0.05690019741590646  1.0000

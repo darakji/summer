@@ -1,0 +1,10 @@
+2025-08-12 11:08:08.988 INFO: ===========VERIFYING SETTINGS===========
+2025-08-12 11:08:08.988 INFO: MACE version: 0.3.14
+2025-08-12 11:08:09.529 INFO: CUDA version: 12.6, CUDA device: 0
+2025-08-12 11:08:10.103 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-12 11:08:10.104 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-08-12 11:08:10.104 INFO: ===========LOADING INPUT DATA===========
+2025-08-12 11:08:10.104 INFO: Using heads: ['Default']
+2025-08-12 11:08:10.104 INFO: Using the key specifications to parse data:
+2025-08-12 11:08:10.104 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-12 11:08:10.104 INFO: =============    Processing head Default     ===========

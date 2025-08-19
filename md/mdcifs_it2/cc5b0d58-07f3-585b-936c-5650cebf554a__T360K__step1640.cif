@@ -1,0 +1,29 @@
+data_image0
+_chemical_formula_structural       La4
+_chemical_formula_sum              "La4"
+_cell_length_a       3.79631058
+_cell_length_b       3.7963124114957743
+_cell_length_c       12.04125753
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000329189716
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  La  La1       1.0  0.18544573239732998  0.766577448312507  0.44095541776306924  1.0000
+  La  La2       1.0  0.08177314055292584  0.7804227544602771  0.6205506480430643  1.0000
+  La  La3       1.0  0.9907974386244085  0.04221195661025101  0.8647720041391408  1.0000
+  La  La4       1.0  0.741983698559622  0.41078798880794887  0.5737220117010029  1.0000

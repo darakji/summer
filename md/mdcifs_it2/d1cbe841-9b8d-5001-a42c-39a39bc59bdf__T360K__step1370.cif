@@ -1,0 +1,33 @@
+data_image0
+_chemical_formula_structural       Li4O4
+_chemical_formula_sum              "Li4 O4"
+_cell_length_a       3.10263483
+_cell_length_b       3.1026338289526874
+_cell_length_c       7.56992946
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    119.99998945596172
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Li  Li1       1.0  0.06960246881281051  0.9416904371178418  0.9274316300697762  1.0000
+  Li  Li2       1.0  0.6409946862014806  0.16467433867624948  0.30093909397694674  1.0000
+  Li  Li3       1.0  0.35573277440962414  0.5524112750716483  0.15009462288894682  1.0000
+  Li  Li4       1.0  0.6668441143599395  0.9593064276569194  0.3333742255136727  1.0000
+  O   O1        1.0  0.8527581090838652  0.8818275342685311  0.07438846366553165  1.0000
+  O   O2        1.0  0.20412141271410178  0.7079615474635546  0.9283025493080146  1.0000
+  O   O3        1.0  0.06153176334917987  0.35867307073739596  0.19114706745213894  1.0000
+  O   O4        1.0  0.420510603287525  0.18374137665949064  0.8277676175056286  1.0000

@@ -1,0 +1,608 @@
+2025-08-18 00:22:54.449 INFO: ===========VERIFYING SETTINGS===========
+2025-08-18 00:22:54.449 INFO: MACE version: 0.3.14
+2025-08-18 00:22:54.449 DEBUG: Configuration: Namespace(config=None, name='mace_iteration_2_T2', seed=42, work_dir='.', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float64', distributed=False, launcher='slurm', log_level='INFO', plot=True, plot_frequency=0, error_table='PerAtomRMSE', model='MACE', r_max=5.0, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', apply_cutoff=True, interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, use_reduced_cg=True, use_so3=False, use_agnostic_product=False, num_interactions=2, MLP_irreps='16x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o', edge_irreps=None, num_channels=128, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, train_file='/home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz', valid_file='/home/phanim/harshitrawat/summer/T1_T2_T3_data/val_it2.extxyz', valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s='average', foundation_filter_elements=True, heads=None, multiheads_finetuning=True, foundation_head=None, weight_pt_head=1.0, num_samples_pt=10000, force_mh_ft_lr=False, subselect_pt='random', filter_type_pt='none', pt_train_file=None, pt_valid_file=None, foundation_model_elements=False, keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipole_key='dipole', head_key='head', charges_key='REF_charges', elec_temp_key='elec_temp', total_spin_key='total_spin', total_charge_key='total_charge', embedding_specs=None, skip_evaluate_heads='pt_head', loss='weighted', forces_weight=40.0, swa_forces_weight=100.0, energy_weight=100.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipole_weight=1.0, swa_dipole_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=2, valid_batch_size=1, lr=0.0005, swa_lr=0.001, weight_decay=1e-08, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=4, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, lbfgs=False, ema=False, ema_decay=0.999, max_num_epochs=130, patience=8, foundation_model='/home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model', foundation_model_readout=False, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=True, save_cpu=False, clip_grad=3.0, dry_run=False, enable_cueq=False, only_cueq=False, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'], key_specification=KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'}))
+2025-08-18 00:22:55.030 INFO: CUDA version: 12.6, CUDA device: 0
+2025-08-18 00:22:55.150 DEBUG: Popen(['git', 'version'], cwd=/home/phanim/harshitrawat/summer/Iteration 2, stdin=None, shell=False, universal_newlines=False)
+2025-08-18 00:22:55.154 DEBUG: Popen(['git', 'version'], cwd=/home/phanim/harshitrawat/summer/Iteration 2, stdin=None, shell=False, universal_newlines=False)
+2025-08-18 00:22:55.162 DEBUG: Popen(['git', 'cat-file', '--batch-check'], cwd=/home/phanim/harshitrawat/summer, stdin=<valid stream>, shell=False, universal_newlines=False)
+2025-08-18 00:22:55.169 DEBUG: Current Git commit: 1d90e32d2a2ab1a0f37f8f552c105b53a5efa803
+2025-08-18 00:22:55.547 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-18 00:22:55.548 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-08-18 00:22:55.548 INFO: ===========LOADING INPUT DATA===========
+2025-08-18 00:22:55.549 INFO: Using heads: ['Default']
+2025-08-18 00:22:55.549 INFO: Using the key specifications to parse data:
+2025-08-18 00:22:55.549 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-18 00:22:55.549 INFO: =============    Processing head Default     ===========
+2025-08-18 00:22:55.551 DEBUG: Loading training file: /home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz
+2025-08-18 00:23:01.116 INFO: Training set 1/1 [energy: 2812, stress: 0, virials: 0, dipole components: 0, head: 2812, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2812, charges: 0]
+2025-08-18 00:23:01.123 INFO: Total Training set [energy: 2812, stress: 0, virials: 0, dipole components: 0, head: 2812, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2812, charges: 0]
+2025-08-18 00:23:03.755 INFO: Validation set 1/1 [energy: 2505, stress: 0, virials: 0, dipole components: 0, head: 2505, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2505, charges: 0]
+2025-08-18 00:23:03.761 INFO: Total Validation set [energy: 2505, stress: 0, virials: 0, dipole components: 0, head: 2505, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2505, charges: 0]
+2025-08-18 00:23:03.762 INFO: Total number of configurations: train=2812, valid=2505, tests=[],
+2025-08-18 00:23:03.859 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-08-18 00:23:03.859 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-08-18 00:23:03.859 INFO: Computing average Atomic Energies using least squares regression
+2025-08-18 00:23:03.874 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.2795325543974942, 8: -11.037578373588586, 40: 5.191448526830094, 57: -19.9359375070913}
+2025-08-18 00:23:03.874 INFO: Processing datasets for head 'Default'
+2025-08-18 00:23:23.864 DEBUG: Successfully loaded dataset from ASE files: ['/home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz']
+2025-08-18 00:23:23.864 INFO: Combining 1 list datasets for head 'Default'
+2025-08-18 00:23:33.103 DEBUG: Successfully loaded validation dataset from ASE files: ['/home/phanim/harshitrawat/summer/T1_T2_T3_data/val_it2.extxyz']
+2025-08-18 00:23:33.103 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-08-18 00:23:33.103 INFO: Combined validation datasets for Default
+2025-08-18 00:23:33.103 INFO: Head 'Default' training dataset size: 2812
+2025-08-18 00:23:33.104 INFO: Computing average number of neighbors
+2025-08-18 00:23:35.911 INFO: Average number of neighbors: 67.31953374096544
+2025-08-18 00:23:35.912 INFO: During training the following quantities will be reported: energy, forces
+2025-08-18 00:23:35.912 INFO: ===========MODEL DETAILS===========
+2025-08-18 00:23:38.091 INFO: Loading FOUNDATION model
+2025-08-18 00:23:38.091 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-08-18 00:23:38.091 INFO: Model configuration extracted from foundation model
+2025-08-18 00:23:38.091 INFO: Using weighted loss function for fine-tuning
+2025-08-18 00:23:38.092 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-08-18 00:23:38.092 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-08-18 00:23:38.092 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-08-18 00:23:38.092 INFO: Distance transform for radial basis functions: None
+2025-08-18 00:23:39.360 DEBUG: ScaleShiftMACE(
+  (node_embedding): LinearNodeEmbeddingBlock(
+    (linear): Linear(4x0e -> 128x0e | 512 weights)
+  )
+  (radial_embedding): RadialEmbeddingBlock(
+    (bessel_fn): BesselBasis(r_max=6.0, num_basis=10, trainable=True)
+    (cutoff_fn): PolynomialCutoff(p=5, r_max=6.0)
+  )
+  (spherical_harmonics): SphericalHarmonics()
+  (atomic_energies_fn): AtomicEnergiesBlock(energies=[[-1.2795, -11.0376, 5.1914, -19.9359]])
+  (interactions): ModuleList(
+    (0): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e -> 128x0e | 16384 weights)
+      (conv_tp): TensorProduct(128x0e x 1x0e+1x1o+1x2e+1x3o -> 128x0e+128x1o+128x2e+128x3o | 512 paths | 512 weights)
+      (conv_tp_weights): FullyConnectedNet[10, 64, 64, 64, 512]
+      (linear): Linear(128x0e+128x1o+128x2e+128x3o -> 128x0e+128x1o+128x2e+128x3o | 65536 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e x 4x0e -> 128x0e+128x1o+128x2e | 65536 paths | 65536 weights)
+      (reshape): reshape_irreps()
+    )
+    (1): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e+128x1o+128x2e -> 128x0e+128x1o+128x2e | 49152 weights)
+      (conv_tp): TensorProduct(128x0e+128x1o+128x2e x 1x0e+1x1o+1x2e+1x3o -> 384x0e+640x1o+640x2e+512x3o | 2176 paths | 2176 weights)
+      (conv_tp_weights): FullyConnectedNet[10, 64, 64, 64, 2176]
+      (linear): Linear(128x0e+128x0e+128x0e+128x1o+128x1o+128x1o+128x1o+128x1o+128x2e+128x2e+128x2e+128x2e+128x2e+128x3o+128x3o+128x3o+128x3o -> 128x0e+128x1o+128x2e+128x3o | 278528 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e+128x1o+128x2e x 4x0e -> 128x0e | 65536 paths | 65536 weights)
+      (reshape): reshape_irreps()
+    )
+  )
+  (products): ModuleList(
+    (0): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (1): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x6x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (2): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x7x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e+128x1o+128x2e -> 128x0e+128x1o+128x2e | 49152 weights)
+    )
+    (1): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e -> 128x0e | 16384 weights)
+    )
+  )
+  (readouts): ModuleList(
+    (0): LinearReadoutBlock(
+      (linear): Linear(128x0e+128x1o+128x2e -> 1x0e | 128 weights)
+    )
+    (1): NonLinearReadoutBlock(
+      (linear_1): Linear(128x0e -> 16x0e | 2048 weights)
+      (non_linearity): Activation [x] (16x0e -> 16x0e)
+      (linear_2): Linear(16x0e -> 1x0e | 16 weights)
+    )
+  )
+  (scale_shift): ScaleShiftBlock(scale=0.8042, shift=0.1641)
+)
+2025-08-18 00:23:39.361 INFO: Total number of parameters: 894362
+2025-08-18 00:23:39.361 INFO: 
+2025-08-18 00:23:39.361 INFO: ===========OPTIMIZER INFORMATION===========
+2025-08-18 00:23:39.361 INFO: Using ADAM as parameter optimizer
+2025-08-18 00:23:39.361 INFO: Batch size: 2
+2025-08-18 00:23:39.361 INFO: Number of gradient updates: 182780
+2025-08-18 00:23:39.361 INFO: Learning rate: 0.0005, weight decay: 1e-08
+2025-08-18 00:23:39.361 INFO: WeightedEnergyForcesLoss(energy_weight=100.000, forces_weight=40.000)
+2025-08-18 00:23:39.369 WARNING: No SWA checkpoint found, while SWA is enabled. Compare the swa_start parameter and the latest checkpoint.
+2025-08-18 00:23:39.370 INFO: Loading checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-45.pt
+2025-08-18 00:23:39.404 INFO: Using gradient clipping with tolerance=3.000
+2025-08-18 00:23:39.404 INFO: 
+2025-08-18 00:23:39.404 INFO: ===========TRAINING===========
+2025-08-18 00:23:39.404 INFO: Started training, reporting errors on validation set
+2025-08-18 00:23:39.404 INFO: Loss metrics on validation set
+2025-08-18 00:26:46.305 INFO: Initial: head: Default, loss=4016.45833043, RMSE_E_per_atom=  332.43 meV, RMSE_F= 2027.26 meV / A
+2025-08-18 00:37:52.814 INFO: Epoch 45: head: Default, loss=4014.21241337, RMSE_E_per_atom=  333.59 meV, RMSE_F= 2030.62 meV / A
+2025-08-18 00:37:52.816 DEBUG: Saving checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-45.pt
+2025-08-18 00:48:57.037 INFO: Epoch 46: head: Default, loss=4068.66345288, RMSE_E_per_atom=  339.46 meV, RMSE_F= 2055.60 meV / A
+2025-08-18 01:00:00.193 INFO: Epoch 47: head: Default, loss=4474.76137522, RMSE_E_per_atom=  339.64 meV, RMSE_F= 2213.44 meV / A
+2025-08-18 01:11:02.730 INFO: Epoch 48: head: Default, loss=4485.11225674, RMSE_E_per_atom=  341.19 meV, RMSE_F= 2219.26 meV / A
+2025-08-18 01:22:05.826 INFO: Epoch 49: head: Default, loss=4586.55000460, RMSE_E_per_atom=  341.81 meV, RMSE_F= 2253.70 meV / A
+2025-08-18 01:33:07.786 INFO: Epoch 50: head: Default, loss=4694.86736639, RMSE_E_per_atom=  345.32 meV, RMSE_F= 2292.65 meV / A
+2025-08-18 01:44:09.971 INFO: Epoch 51: head: Default, loss=4580.33851724, RMSE_E_per_atom=  340.32 meV, RMSE_F= 2254.98 meV / A
+2025-08-18 01:55:11.961 INFO: Epoch 52: head: Default, loss=4649.91263889, RMSE_E_per_atom=  345.65 meV, RMSE_F= 2278.73 meV / A
+2025-08-18 02:06:13.682 INFO: Epoch 53: head: Default, loss=4715.64378162, RMSE_E_per_atom=  347.00 meV, RMSE_F= 2301.58 meV / A
+2025-08-18 02:06:13.683 INFO: Stopping optimization after 8 epochs without improvement
+2025-08-18 02:06:13.683 INFO: Training complete
+2025-08-18 02:06:13.683 INFO: 
+2025-08-18 02:06:13.684 INFO: ===========RESULTS===========
+2025-08-18 02:06:13.697 INFO: Loading checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-45.pt
+2025-08-18 02:06:13.729 INFO: Loaded Stage one model from epoch 45 for evaluation
+2025-08-18 02:06:13.729 INFO: Saving model to checkpoints/mace_iteration_2_T2_run-42.model
+2025-08-18 02:06:14.047 INFO: Compiling model, saving metadata to mace_iteration_2_T2_compiled.model
+2025-08-18 02:06:14.635 INFO: Computing metrics for training, validation, and test sets
+2025-08-18 02:06:14.636 INFO: Skipping evaluation for heads: ['pt_head']
+2025-08-18 02:06:14.636 INFO: Evaluating train_Default ...
+2025-08-18 02:09:12.942 INFO: Evaluating valid_Default ...
+2025-08-18 02:12:18.494 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_Default |          103.7      |        205.0     |          8.93     |
+| valid_Default |          333.6      |       2030.6     |         49.69     |
++---------------+---------------------+------------------+-------------------+
+2025-08-18 02:12:18.495 DEBUG: Running inference on train_Default dataset
+2025-08-18 02:15:29.017 DEBUG: Running inference on valid_Default dataset
+2025-08-18 02:20:07.258 INFO: Done
+2025-08-18 03:53:02.825 INFO: ===========VERIFYING SETTINGS===========
+2025-08-18 03:53:02.825 INFO: MACE version: 0.3.14
+2025-08-18 03:53:02.825 DEBUG: Configuration: Namespace(config=None, name='mace_iteration_2_T2', seed=42, work_dir='.', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float64', distributed=False, launcher='slurm', log_level='INFO', plot=True, plot_frequency=0, error_table='PerAtomRMSE', model='MACE', r_max=5.0, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', apply_cutoff=True, interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, use_reduced_cg=True, use_so3=False, use_agnostic_product=False, num_interactions=2, MLP_irreps='16x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o', edge_irreps=None, num_channels=128, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, train_file='/home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz', valid_file='/home/phanim/harshitrawat/summer/T1_T2_T3_data/val_it2.extxyz', valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s='average', foundation_filter_elements=True, heads=None, multiheads_finetuning=True, foundation_head=None, weight_pt_head=1.0, num_samples_pt=10000, force_mh_ft_lr=False, subselect_pt='random', filter_type_pt='none', pt_train_file=None, pt_valid_file=None, foundation_model_elements=False, keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipole_key='dipole', head_key='head', charges_key='REF_charges', elec_temp_key='elec_temp', total_spin_key='total_spin', total_charge_key='total_charge', embedding_specs=None, skip_evaluate_heads='pt_head', loss='weighted', forces_weight=40.0, swa_forces_weight=100.0, energy_weight=100.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipole_weight=1.0, swa_dipole_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=2, valid_batch_size=1, lr=0.0001, swa_lr=0.001, weight_decay=1e-08, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=4, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, lbfgs=False, ema=False, ema_decay=0.999, max_num_epochs=130, patience=8, foundation_model='/home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model', foundation_model_readout=False, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=True, save_cpu=False, clip_grad=1.0, dry_run=False, enable_cueq=False, only_cueq=False, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'], key_specification=KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'}))
+2025-08-18 03:53:03.441 INFO: CUDA version: 12.6, CUDA device: 0
+2025-08-18 03:53:03.717 DEBUG: Popen(['git', 'version'], cwd=/home/phanim/harshitrawat/summer/Iteration 2, stdin=None, shell=False, universal_newlines=False)
+2025-08-18 03:53:03.724 DEBUG: Popen(['git', 'version'], cwd=/home/phanim/harshitrawat/summer/Iteration 2, stdin=None, shell=False, universal_newlines=False)
+2025-08-18 03:53:03.855 DEBUG: Popen(['git', 'cat-file', '--batch-check'], cwd=/home/phanim/harshitrawat/summer, stdin=<valid stream>, shell=False, universal_newlines=False)
+2025-08-18 03:53:03.914 DEBUG: Current Git commit: 1d90e32d2a2ab1a0f37f8f552c105b53a5efa803
+2025-08-18 03:53:04.305 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-18 03:53:04.306 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-08-18 03:53:04.306 INFO: ===========LOADING INPUT DATA===========
+2025-08-18 03:53:04.307 INFO: Using heads: ['Default']
+2025-08-18 03:53:04.307 INFO: Using the key specifications to parse data:
+2025-08-18 03:53:04.307 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-18 03:53:04.307 INFO: =============    Processing head Default     ===========
+2025-08-18 03:53:04.317 DEBUG: Loading training file: /home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz
+2025-08-18 03:53:09.958 INFO: Training set 1/1 [energy: 2812, stress: 0, virials: 0, dipole components: 0, head: 2812, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2812, charges: 0]
+2025-08-18 03:53:09.966 INFO: Total Training set [energy: 2812, stress: 0, virials: 0, dipole components: 0, head: 2812, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2812, charges: 0]
+2025-08-18 03:53:12.653 INFO: Validation set 1/1 [energy: 2505, stress: 0, virials: 0, dipole components: 0, head: 2505, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2505, charges: 0]
+2025-08-18 03:53:12.660 INFO: Total Validation set [energy: 2505, stress: 0, virials: 0, dipole components: 0, head: 2505, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2505, charges: 0]
+2025-08-18 03:53:12.660 INFO: Total number of configurations: train=2812, valid=2505, tests=[],
+2025-08-18 03:53:12.760 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-08-18 03:53:12.760 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-08-18 03:53:12.760 INFO: Computing average Atomic Energies using least squares regression
+2025-08-18 03:53:12.775 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.2795325543974942, 8: -11.037578373588586, 40: 5.191448526830094, 57: -19.9359375070913}
+2025-08-18 03:53:12.775 INFO: Processing datasets for head 'Default'
+2025-08-18 03:53:32.850 DEBUG: Successfully loaded dataset from ASE files: ['/home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz']
+2025-08-18 03:53:32.851 INFO: Combining 1 list datasets for head 'Default'
+2025-08-18 03:53:42.139 DEBUG: Successfully loaded validation dataset from ASE files: ['/home/phanim/harshitrawat/summer/T1_T2_T3_data/val_it2.extxyz']
+2025-08-18 03:53:42.139 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-08-18 03:53:42.139 INFO: Combined validation datasets for Default
+2025-08-18 03:53:42.139 INFO: Head 'Default' training dataset size: 2812
+2025-08-18 03:53:42.139 INFO: Computing average number of neighbors
+2025-08-18 03:53:44.972 INFO: Average number of neighbors: 67.31953374096544
+2025-08-18 03:53:44.972 INFO: During training the following quantities will be reported: energy, forces
+2025-08-18 03:53:44.972 INFO: ===========MODEL DETAILS===========
+2025-08-18 03:53:47.155 INFO: Loading FOUNDATION model
+2025-08-18 03:53:47.156 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-08-18 03:53:47.156 INFO: Model configuration extracted from foundation model
+2025-08-18 03:53:47.156 INFO: Using weighted loss function for fine-tuning
+2025-08-18 03:53:47.156 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-08-18 03:53:47.156 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-08-18 03:53:47.156 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-08-18 03:53:47.156 INFO: Distance transform for radial basis functions: None
+2025-08-18 03:53:48.484 DEBUG: ScaleShiftMACE(
+  (node_embedding): LinearNodeEmbeddingBlock(
+    (linear): Linear(4x0e -> 128x0e | 512 weights)
+  )
+  (radial_embedding): RadialEmbeddingBlock(
+    (bessel_fn): BesselBasis(r_max=6.0, num_basis=10, trainable=True)
+    (cutoff_fn): PolynomialCutoff(p=5, r_max=6.0)
+  )
+  (spherical_harmonics): SphericalHarmonics()
+  (atomic_energies_fn): AtomicEnergiesBlock(energies=[[-1.2795, -11.0376, 5.1914, -19.9359]])
+  (interactions): ModuleList(
+    (0): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e -> 128x0e | 16384 weights)
+      (conv_tp): TensorProduct(128x0e x 1x0e+1x1o+1x2e+1x3o -> 128x0e+128x1o+128x2e+128x3o | 512 paths | 512 weights)
+      (conv_tp_weights): FullyConnectedNet[10, 64, 64, 64, 512]
+      (linear): Linear(128x0e+128x1o+128x2e+128x3o -> 128x0e+128x1o+128x2e+128x3o | 65536 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e x 4x0e -> 128x0e+128x1o+128x2e | 65536 paths | 65536 weights)
+      (reshape): reshape_irreps()
+    )
+    (1): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e+128x1o+128x2e -> 128x0e+128x1o+128x2e | 49152 weights)
+      (conv_tp): TensorProduct(128x0e+128x1o+128x2e x 1x0e+1x1o+1x2e+1x3o -> 384x0e+640x1o+640x2e+512x3o | 2176 paths | 2176 weights)
+      (conv_tp_weights): FullyConnectedNet[10, 64, 64, 64, 2176]
+      (linear): Linear(128x0e+128x0e+128x0e+128x1o+128x1o+128x1o+128x1o+128x1o+128x2e+128x2e+128x2e+128x2e+128x2e+128x3o+128x3o+128x3o+128x3o -> 128x0e+128x1o+128x2e+128x3o | 278528 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e+128x1o+128x2e x 4x0e -> 128x0e | 65536 paths | 65536 weights)
+      (reshape): reshape_irreps()
+    )
+  )
+  (products): ModuleList(
+    (0): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (1): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x6x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (2): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x7x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e+128x1o+128x2e -> 128x0e+128x1o+128x2e | 49152 weights)
+    )
+    (1): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e -> 128x0e | 16384 weights)
+    )
+  )
+  (readouts): ModuleList(
+    (0): LinearReadoutBlock(
+      (linear): Linear(128x0e+128x1o+128x2e -> 1x0e | 128 weights)
+    )
+    (1): NonLinearReadoutBlock(
+      (linear_1): Linear(128x0e -> 16x0e | 2048 weights)
+      (non_linearity): Activation [x] (16x0e -> 16x0e)
+      (linear_2): Linear(16x0e -> 1x0e | 16 weights)
+    )
+  )
+  (scale_shift): ScaleShiftBlock(scale=0.8042, shift=0.1641)
+)
+2025-08-18 03:53:48.485 INFO: Total number of parameters: 894362
+2025-08-18 03:53:48.485 INFO: 
+2025-08-18 03:53:48.485 INFO: ===========OPTIMIZER INFORMATION===========
+2025-08-18 03:53:48.485 INFO: Using ADAM as parameter optimizer
+2025-08-18 03:53:48.485 INFO: Batch size: 2
+2025-08-18 03:53:48.485 INFO: Number of gradient updates: 182780
+2025-08-18 03:53:48.485 INFO: Learning rate: 0.0001, weight decay: 1e-08
+2025-08-18 03:53:48.485 INFO: WeightedEnergyForcesLoss(energy_weight=100.000, forces_weight=40.000)
+2025-08-18 03:53:48.532 WARNING: No SWA checkpoint found, while SWA is enabled. Compare the swa_start parameter and the latest checkpoint.
+2025-08-18 03:53:48.532 INFO: Loading checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-45.pt
+2025-08-18 03:53:48.569 INFO: Using gradient clipping with tolerance=1.000
+2025-08-18 03:53:48.569 INFO: 
+2025-08-18 03:53:48.569 INFO: ===========TRAINING===========
+2025-08-18 03:53:48.569 INFO: Started training, reporting errors on validation set
+2025-08-18 03:53:48.569 INFO: Loss metrics on validation set
+2025-08-18 03:56:55.943 INFO: Initial: head: Default, loss=4014.21241337, RMSE_E_per_atom=  333.59 meV, RMSE_F= 2030.62 meV / A
+2025-08-18 04:08:01.639 INFO: Epoch 45: head: Default, loss=4015.83221351, RMSE_E_per_atom=  334.19 meV, RMSE_F= 2031.46 meV / A
+2025-08-18 04:08:01.641 DEBUG: Saving checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-45.pt
+2025-08-18 04:19:04.241 INFO: Epoch 46: head: Default, loss=4016.47704747, RMSE_E_per_atom=  334.78 meV, RMSE_F= 2031.66 meV / A
+2025-08-18 04:30:07.169 INFO: Epoch 47: head: Default, loss=4014.76324372, RMSE_E_per_atom=  334.47 meV, RMSE_F= 2031.57 meV / A
+2025-08-18 04:30:07.171 DEBUG: Deleting old checkpoint file: ./checkpoints/mace_iteration_2_T2_run-42_epoch-45.pt
+2025-08-18 04:30:07.190 DEBUG: Saving checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-47.pt
+2025-08-18 04:41:10.063 INFO: Epoch 48: head: Default, loss=4015.29586918, RMSE_E_per_atom=  335.14 meV, RMSE_F= 2032.14 meV / A
+2025-08-18 04:52:12.932 INFO: Epoch 49: head: Default, loss=4012.84991707, RMSE_E_per_atom=  334.75 meV, RMSE_F= 2031.55 meV / A
+2025-08-18 04:52:12.934 DEBUG: Deleting old checkpoint file: ./checkpoints/mace_iteration_2_T2_run-42_epoch-47.pt
+2025-08-18 04:52:12.959 DEBUG: Saving checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-49.pt
+2025-08-18 05:03:15.884 INFO: Epoch 50: head: Default, loss=4018.27894719, RMSE_E_per_atom=  334.72 meV, RMSE_F= 2033.60 meV / A
+2025-08-18 05:14:19.351 INFO: Epoch 51: head: Default, loss=4017.16859705, RMSE_E_per_atom=  334.70 meV, RMSE_F= 2033.29 meV / A
+2025-08-18 05:25:23.335 INFO: Epoch 52: head: Default, loss=4019.73353723, RMSE_E_per_atom=  334.80 meV, RMSE_F= 2034.36 meV / A
+2025-08-18 05:36:28.148 INFO: Epoch 53: head: Default, loss=4025.85126087, RMSE_E_per_atom=  334.63 meV, RMSE_F= 2036.79 meV / A
+2025-08-18 05:47:31.908 INFO: Epoch 54: head: Default, loss=4024.70495672, RMSE_E_per_atom=  334.82 meV, RMSE_F= 2036.21 meV / A
+2025-08-18 05:58:36.848 INFO: Epoch 55: head: Default, loss=4024.07080343, RMSE_E_per_atom=  334.50 meV, RMSE_F= 2036.18 meV / A
+2025-08-18 06:09:40.836 INFO: Epoch 56: head: Default, loss=4028.01600118, RMSE_E_per_atom=  334.52 meV, RMSE_F= 2037.84 meV / A
+2025-08-18 06:20:45.984 INFO: Epoch 57: head: Default, loss=4042.38178582, RMSE_E_per_atom=  334.72 meV, RMSE_F= 2043.55 meV / A
+2025-08-18 06:20:45.985 INFO: Stopping optimization after 8 epochs without improvement
+2025-08-18 06:20:45.985 INFO: Training complete
+2025-08-18 06:20:45.985 INFO: 
+2025-08-18 06:20:45.986 INFO: ===========RESULTS===========
+2025-08-18 06:20:46.053 INFO: Loading checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-49.pt
+2025-08-18 06:20:46.087 INFO: Loaded Stage one model from epoch 49 for evaluation
+2025-08-18 06:20:46.087 INFO: Saving model to checkpoints/mace_iteration_2_T2_run-42.model
+2025-08-18 06:20:46.345 INFO: Compiling model, saving metadata to mace_iteration_2_T2_compiled.model
+2025-08-18 06:20:47.196 INFO: Computing metrics for training, validation, and test sets
+2025-08-18 06:20:47.197 INFO: Skipping evaluation for heads: ['pt_head']
+2025-08-18 06:20:47.197 INFO: Evaluating train_Default ...
+2025-08-18 06:23:45.781 INFO: Evaluating valid_Default ...
+2025-08-18 06:26:50.904 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_Default |           97.0      |        195.9     |          8.53     |
+| valid_Default |          334.8      |       2031.6     |         49.71     |
++---------------+---------------------+------------------+-------------------+
+2025-08-18 06:26:50.905 DEBUG: Running inference on train_Default dataset
+2025-08-18 06:30:02.149 DEBUG: Running inference on valid_Default dataset
+2025-08-18 06:34:42.584 INFO: Done
+2025-08-18 08:44:30.322 INFO: ===========VERIFYING SETTINGS===========
+2025-08-18 08:44:30.322 INFO: MACE version: 0.3.14
+2025-08-18 08:44:30.322 DEBUG: Configuration: Namespace(config=None, name='mace_iteration_2_T2', seed=42, work_dir='.', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float64', distributed=False, launcher='slurm', log_level='INFO', plot=True, plot_frequency=0, error_table='PerAtomRMSE', model='MACE', r_max=5.0, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', apply_cutoff=True, interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, use_reduced_cg=True, use_so3=False, use_agnostic_product=False, num_interactions=2, MLP_irreps='16x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o', edge_irreps=None, num_channels=128, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, train_file='/home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz', valid_file='/home/phanim/harshitrawat/summer/T1_T2_T3_data/val_it2.extxyz', valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s='average', foundation_filter_elements=True, heads=None, multiheads_finetuning=True, foundation_head=None, weight_pt_head=1.0, num_samples_pt=10000, force_mh_ft_lr=False, subselect_pt='random', filter_type_pt='none', pt_train_file=None, pt_valid_file=None, foundation_model_elements=False, keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipole_key='dipole', head_key='head', charges_key='REF_charges', elec_temp_key='elec_temp', total_spin_key='total_spin', total_charge_key='total_charge', embedding_specs=None, skip_evaluate_heads='pt_head', loss='weighted', forces_weight=40.0, swa_forces_weight=100.0, energy_weight=100.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipole_weight=1.0, swa_dipole_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=2, valid_batch_size=1, lr=5e-05, swa_lr=0.001, weight_decay=1e-08, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=4, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, lbfgs=False, ema=False, ema_decay=0.999, max_num_epochs=130, patience=8, foundation_model='/home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model', foundation_model_readout=False, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=True, save_cpu=False, clip_grad=2.0, dry_run=False, enable_cueq=False, only_cueq=False, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'], key_specification=KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'}))
+2025-08-18 08:44:30.961 INFO: CUDA version: 12.6, CUDA device: 0
+2025-08-18 08:44:31.156 DEBUG: Popen(['git', 'version'], cwd=/home/phanim/harshitrawat/summer/Iteration 2, stdin=None, shell=False, universal_newlines=False)
+2025-08-18 08:44:31.161 DEBUG: Popen(['git', 'version'], cwd=/home/phanim/harshitrawat/summer/Iteration 2, stdin=None, shell=False, universal_newlines=False)
+2025-08-18 08:44:31.191 DEBUG: Popen(['git', 'cat-file', '--batch-check'], cwd=/home/phanim/harshitrawat/summer, stdin=<valid stream>, shell=False, universal_newlines=False)
+2025-08-18 08:44:31.215 DEBUG: Current Git commit: 1d90e32d2a2ab1a0f37f8f552c105b53a5efa803
+2025-08-18 08:44:31.742 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-18 08:44:31.743 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-08-18 08:44:31.743 INFO: ===========LOADING INPUT DATA===========
+2025-08-18 08:44:31.743 INFO: Using heads: ['Default']
+2025-08-18 08:44:31.743 INFO: Using the key specifications to parse data:
+2025-08-18 08:44:31.743 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-18 08:44:31.743 INFO: =============    Processing head Default     ===========
+2025-08-18 08:44:31.745 DEBUG: Loading training file: /home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz
+2025-08-18 08:44:37.389 INFO: Training set 1/1 [energy: 2812, stress: 0, virials: 0, dipole components: 0, head: 2812, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2812, charges: 0]
+2025-08-18 08:44:37.397 INFO: Total Training set [energy: 2812, stress: 0, virials: 0, dipole components: 0, head: 2812, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2812, charges: 0]
+2025-08-18 08:44:40.024 INFO: Validation set 1/1 [energy: 2505, stress: 0, virials: 0, dipole components: 0, head: 2505, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2505, charges: 0]
+2025-08-18 08:44:40.031 INFO: Total Validation set [energy: 2505, stress: 0, virials: 0, dipole components: 0, head: 2505, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 2505, charges: 0]
+2025-08-18 08:44:40.031 INFO: Total number of configurations: train=2812, valid=2505, tests=[],
+2025-08-18 08:44:40.129 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-08-18 08:44:40.129 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-08-18 08:44:40.129 INFO: Computing average Atomic Energies using least squares regression
+2025-08-18 08:44:40.145 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.2795325543974942, 8: -11.037578373588586, 40: 5.191448526830094, 57: -19.9359375070913}
+2025-08-18 08:44:40.145 INFO: Processing datasets for head 'Default'
+2025-08-18 08:45:00.139 DEBUG: Successfully loaded dataset from ASE files: ['/home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_it_2.extxyz']
+2025-08-18 08:45:00.139 INFO: Combining 1 list datasets for head 'Default'
+2025-08-18 08:45:09.388 DEBUG: Successfully loaded validation dataset from ASE files: ['/home/phanim/harshitrawat/summer/T1_T2_T3_data/val_it2.extxyz']
+2025-08-18 08:45:09.389 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-08-18 08:45:09.389 INFO: Combined validation datasets for Default
+2025-08-18 08:45:09.389 INFO: Head 'Default' training dataset size: 2812
+2025-08-18 08:45:09.389 INFO: Computing average number of neighbors
+2025-08-18 08:45:12.220 INFO: Average number of neighbors: 67.31953374096544
+2025-08-18 08:45:12.220 INFO: During training the following quantities will be reported: energy, forces
+2025-08-18 08:45:12.220 INFO: ===========MODEL DETAILS===========
+2025-08-18 08:45:14.457 INFO: Loading FOUNDATION model
+2025-08-18 08:45:14.458 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-08-18 08:45:14.458 INFO: Model configuration extracted from foundation model
+2025-08-18 08:45:14.458 INFO: Using weighted loss function for fine-tuning
+2025-08-18 08:45:14.458 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-08-18 08:45:14.458 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-08-18 08:45:14.458 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-08-18 08:45:14.458 INFO: Distance transform for radial basis functions: None
+2025-08-18 08:45:15.813 DEBUG: ScaleShiftMACE(
+  (node_embedding): LinearNodeEmbeddingBlock(
+    (linear): Linear(4x0e -> 128x0e | 512 weights)
+  )
+  (radial_embedding): RadialEmbeddingBlock(
+    (bessel_fn): BesselBasis(r_max=6.0, num_basis=10, trainable=True)
+    (cutoff_fn): PolynomialCutoff(p=5, r_max=6.0)
+  )
+  (spherical_harmonics): SphericalHarmonics()
+  (atomic_energies_fn): AtomicEnergiesBlock(energies=[[-1.2795, -11.0376, 5.1914, -19.9359]])
+  (interactions): ModuleList(
+    (0): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e -> 128x0e | 16384 weights)
+      (conv_tp): TensorProduct(128x0e x 1x0e+1x1o+1x2e+1x3o -> 128x0e+128x1o+128x2e+128x3o | 512 paths | 512 weights)
+      (conv_tp_weights): FullyConnectedNet[10, 64, 64, 64, 512]
+      (linear): Linear(128x0e+128x1o+128x2e+128x3o -> 128x0e+128x1o+128x2e+128x3o | 65536 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e x 4x0e -> 128x0e+128x1o+128x2e | 65536 paths | 65536 weights)
+      (reshape): reshape_irreps()
+    )
+    (1): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e+128x1o+128x2e -> 128x0e+128x1o+128x2e | 49152 weights)
+      (conv_tp): TensorProduct(128x0e+128x1o+128x2e x 1x0e+1x1o+1x2e+1x3o -> 384x0e+640x1o+640x2e+512x3o | 2176 paths | 2176 weights)
+      (conv_tp_weights): FullyConnectedNet[10, 64, 64, 64, 2176]
+      (linear): Linear(128x0e+128x0e+128x0e+128x1o+128x1o+128x1o+128x1o+128x1o+128x2e+128x2e+128x2e+128x2e+128x2e+128x3o+128x3o+128x3o+128x3o -> 128x0e+128x1o+128x2e+128x3o | 278528 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e+128x1o+128x2e x 4x0e -> 128x0e | 65536 paths | 65536 weights)
+      (reshape): reshape_irreps()
+    )
+  )
+  (products): ModuleList(
+    (0): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (1): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x6x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (2): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x7x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e+128x1o+128x2e -> 128x0e+128x1o+128x2e | 49152 weights)
+    )
+    (1): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e -> 128x0e | 16384 weights)
+    )
+  )
+  (readouts): ModuleList(
+    (0): LinearReadoutBlock(
+      (linear): Linear(128x0e+128x1o+128x2e -> 1x0e | 128 weights)
+    )
+    (1): NonLinearReadoutBlock(
+      (linear_1): Linear(128x0e -> 16x0e | 2048 weights)
+      (non_linearity): Activation [x] (16x0e -> 16x0e)
+      (linear_2): Linear(16x0e -> 1x0e | 16 weights)
+    )
+  )
+  (scale_shift): ScaleShiftBlock(scale=0.8042, shift=0.1641)
+)
+2025-08-18 08:45:15.814 INFO: Total number of parameters: 894362
+2025-08-18 08:45:15.814 INFO: 
+2025-08-18 08:45:15.814 INFO: ===========OPTIMIZER INFORMATION===========
+2025-08-18 08:45:15.814 INFO: Using ADAM as parameter optimizer
+2025-08-18 08:45:15.814 INFO: Batch size: 2
+2025-08-18 08:45:15.814 INFO: Number of gradient updates: 182780
+2025-08-18 08:45:15.814 INFO: Learning rate: 5e-05, weight decay: 1e-08
+2025-08-18 08:45:15.814 INFO: WeightedEnergyForcesLoss(energy_weight=100.000, forces_weight=40.000)
+2025-08-18 08:45:15.848 WARNING: No SWA checkpoint found, while SWA is enabled. Compare the swa_start parameter and the latest checkpoint.
+2025-08-18 08:45:15.849 INFO: Loading checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-49.pt
+2025-08-18 08:45:15.888 INFO: Using gradient clipping with tolerance=2.000
+2025-08-18 08:45:15.889 INFO: 
+2025-08-18 08:45:15.889 INFO: ===========TRAINING===========
+2025-08-18 08:45:15.889 INFO: Started training, reporting errors on validation set
+2025-08-18 08:45:15.889 INFO: Loss metrics on validation set
+2025-08-18 08:48:22.904 INFO: Initial: head: Default, loss=4012.84991707, RMSE_E_per_atom=  334.75 meV, RMSE_F= 2031.55 meV / A
+2025-08-18 08:59:28.932 INFO: Epoch 49: head: Default, loss=4018.09773278, RMSE_E_per_atom=  334.82 meV, RMSE_F= 2033.55 meV / A
+2025-08-18 08:59:28.934 DEBUG: Saving checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-49.pt
+2025-08-18 09:10:32.714 INFO: Epoch 50: head: Default, loss=4021.86434593, RMSE_E_per_atom=  335.11 meV, RMSE_F= 2034.93 meV / A
+2025-08-18 09:21:36.786 INFO: Epoch 51: head: Default, loss=4024.87988755, RMSE_E_per_atom=  334.62 meV, RMSE_F= 2036.59 meV / A
+2025-08-18 09:32:39.066 INFO: Epoch 52: head: Default, loss=4026.88067854, RMSE_E_per_atom=  335.36 meV, RMSE_F= 2037.54 meV / A
+2025-08-18 09:43:41.794 INFO: Epoch 53: head: Default, loss=4025.59240341, RMSE_E_per_atom=  335.06 meV, RMSE_F= 2037.17 meV / A
+2025-08-18 09:54:43.991 INFO: Epoch 54: head: Default, loss=4040.83336199, RMSE_E_per_atom=  335.06 meV, RMSE_F= 2043.16 meV / A
+2025-08-18 10:05:46.583 INFO: Epoch 55: head: Default, loss=4034.76221053, RMSE_E_per_atom=  334.97 meV, RMSE_F= 2040.80 meV / A
+2025-08-18 10:16:48.995 INFO: Epoch 56: head: Default, loss=4043.43828892, RMSE_E_per_atom=  335.13 meV, RMSE_F= 2044.27 meV / A
+2025-08-18 10:27:51.544 INFO: Epoch 57: head: Default, loss=4060.17424574, RMSE_E_per_atom=  334.86 meV, RMSE_F= 2051.05 meV / A
+2025-08-18 10:27:51.545 INFO: Stopping optimization after 8 epochs without improvement
+2025-08-18 10:27:51.545 INFO: Training complete
+2025-08-18 10:27:51.546 INFO: 
+2025-08-18 10:27:51.546 INFO: ===========RESULTS===========
+2025-08-18 10:27:51.571 INFO: Loading checkpoint: ./checkpoints/mace_iteration_2_T2_run-42_epoch-49.pt
+2025-08-18 10:27:51.602 INFO: Loaded Stage one model from epoch 49 for evaluation
+2025-08-18 10:27:51.602 INFO: Saving model to checkpoints/mace_iteration_2_T2_run-42.model
+2025-08-18 10:27:51.894 INFO: Compiling model, saving metadata to mace_iteration_2_T2_compiled.model
+2025-08-18 10:27:52.471 INFO: Computing metrics for training, validation, and test sets
+2025-08-18 10:27:52.471 INFO: Skipping evaluation for heads: ['pt_head']
+2025-08-18 10:27:52.471 INFO: Evaluating train_Default ...
+2025-08-18 10:30:50.382 INFO: Evaluating valid_Default ...
+2025-08-18 10:33:54.266 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_Default |           96.3      |        194.4     |          8.47     |
+| valid_Default |          334.8      |       2033.6     |         49.76     |
++---------------+---------------------+------------------+-------------------+
+2025-08-18 10:33:54.268 DEBUG: Running inference on train_Default dataset
+2025-08-18 10:37:04.739 DEBUG: Running inference on valid_Default dataset
+2025-08-18 10:41:43.312 INFO: Done

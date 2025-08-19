@@ -1,0 +1,8 @@
+2025-08-18 09:58:13.951 INFO: ===========VERIFYING SETTINGS===========
+2025-08-18 09:58:13.951 INFO: MACE version: 0.3.14
+2025-08-18 09:58:14.547 INFO: CUDA version: 12.6, CUDA device: 0
+2025-08-18 09:58:15.136 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-18 10:07:07.114 INFO: ===========VERIFYING SETTINGS===========
+2025-08-18 10:07:07.115 INFO: MACE version: 0.3.14
+2025-08-18 10:07:07.704 INFO: CUDA version: 12.6, CUDA device: 0
+2025-08-18 10:07:08.189 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.

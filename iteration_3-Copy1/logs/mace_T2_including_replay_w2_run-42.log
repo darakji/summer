@@ -1,0 +1,68 @@
+2025-08-20 16:06:44.417 INFO: ===========VERIFYING SETTINGS===========
+2025-08-20 16:06:44.417 INFO: MACE version: 0.3.14
+2025-08-20 16:06:44.955 INFO: CUDA version: 12.6, CUDA device: 0
+2025-08-20 16:06:45.331 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-20 16:06:45.332 INFO: Multihead finetuning mode, setting learning rate to 0.0001 and EMA to True. To use a different learning rate, set --force_mh_ft_lr=True.
+2025-08-20 16:06:45.333 INFO: Using multiheads finetuning mode, setting learning rate to 0.0001 and EMA to True
+2025-08-20 16:06:45.333 INFO: ===========LOADING INPUT DATA===========
+2025-08-20 16:06:45.333 INFO: Using heads: ['Default', 'pt_head']
+2025-08-20 16:06:45.333 INFO: Using the key specifications to parse data:
+2025-08-20 16:06:45.333 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-20 16:06:45.333 INFO: pt_head: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-20 16:06:45.333 INFO: =============    Processing head Default     ===========
+2025-08-20 16:06:50.724 INFO: Training set 1/1 [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-20 16:06:50.728 INFO: Total Training set [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-20 16:06:53.085 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-20 16:06:53.087 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-20 16:06:53.087 INFO: Total number of configurations: train=1612, valid=705, tests=[],
+2025-08-20 16:06:53.087 INFO: =============    Processing head pt_head     ===========
+2025-08-20 16:06:56.124 INFO: Training set 1/1 [energy: 10000, stress: 10000, virials: 0, dipole components: 0, head: 10000, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 10000, charges: 0]
+2025-08-20 16:06:56.151 INFO: Total Training set [energy: 10000, stress: 10000, virials: 0, dipole components: 0, head: 10000, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 10000, charges: 0]
+2025-08-20 16:06:56.151 INFO: No validation set provided, splitting training data instead.
+2025-08-20 16:06:56.155 INFO: Using random 10% of training set for validation with indices saved in: ./valid_indices_42.txt
+2025-08-20 16:06:56.185 INFO: Random Split Training set [energy: 9000, stress: 9000, virials: 0, dipole components: 0, head: 9000, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 9000, charges: 0]
+2025-08-20 16:06:56.188 INFO: Random Split Validation set [energy: 1000, stress: 1000, virials: 0, dipole components: 0, head: 1000, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 1000, charges: 0]
+2025-08-20 16:06:56.188 INFO: Total number of configurations: train=9000, valid=1000, tests=[],
+2025-08-20 16:06:56.188 INFO: ==================Using multiheads finetuning mode==================
+2025-08-20 16:06:56.188 INFO: Total number of configurations in pretraining: train=9000, valid=1000
+2025-08-20 16:06:56.188 INFO: Using atomic numbers from command line argument
+2025-08-20 16:06:56.211 INFO: Atomic Numbers used: [1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 89, 90, 91, 92, 93, 94]
+2025-08-20 16:06:56.211 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-08-20 16:06:56.216 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.2302615750354944, 8: -23.049110738413006, 40: 23.367646191010394, 57: 15.192898072498549}
+2025-08-20 16:06:56.216 INFO: Atomic Energies used (z: eV) for head pt_head: {1: -3.667168021358939, 3: -3.482100566595956, 4: -4.736697230897597, 5: -7.724935420523256, 6: -8.405573550273285, 7: -7.360100452662763, 8: -7.28459863421322, 9: -4.896490881731322, 11: -2.7593613569762425, 12: -2.814047612069227, 13: -4.846881245288104, 14: -7.694793133351899, 15: -6.9632957911820235, 16: -4.672630400190884, 17: -2.8116892814008096, 19: -2.6176454856894793, 20: -5.390461060484104, 21: -7.8857952163517675, 22: -10.268392986214433, 23: -8.665147785496703, 24: -9.233050763772013, 25: -8.304951520770791, 26: -7.0489865771593765, 27: -5.577439766222147, 28: -5.172747618813715, 29: -3.2520726958619472, 30: -1.2901611618726314, 31: -3.527082192997912, 32: -4.70845955030298, 33: -3.9765109025623238, 34: -3.886231055836541, 35: -2.5184940099633986, 36: 6.766947645687137, 37: -2.5634958965928316, 38: -4.938005211501922, 39: -10.149818838085771, 40: -11.846857579882572, 41: -12.138896361658485, 42: -8.791678800595722, 43: -8.78694939675911, 44: -7.78093221529871, 45: -6.850021409115055, 46: -4.891019073240479, 47: -2.0634296773864045, 48: -0.6395695518943755, 49: -2.7887442084286693, 50: -3.818604275441892, 51: -3.587068329278862, 52: -2.8804045971118897, 53: -1.6355986842433357, 54: 9.846723842807721, 55: -2.765284507132287, 56: -4.990956432167774, 57: -8.933684809576345, 58: -8.735591176647514, 59: -8.018966025544966, 60: -8.251491970213372, 61: -7.591719594359237, 62: -8.169659881166858, 63: -13.592664636171698, 64: -18.517523458456985, 65: -7.647396572993602, 66: -8.122981037851925, 67: -7.607787319678067, 68: -6.85029094445494, 69: -7.8268821327130365, 70: -3.584786591677161, 71: -7.455406192077973, 72: -12.796283502572146, 73: -14.108127281277586, 74: -9.354916969477486, 75: -11.387537567890853, 76: -9.621909492152557, 77: -7.324393429417677, 78: -5.3046964808341945, 79: -2.380092582080244, 80: 0.24948924158195362, 81: -2.3239789120665026, 82: -3.730042357127322, 83: -3.438792347649683, 89: -5.062878214511315, 90: -11.02462566385297, 91: -12.265613551943261, 92: -13.855648206100362, 93: -14.933092020258243, 94: -15.282826131998245}
+2025-08-20 16:06:56.216 INFO: Processing datasets for head 'Default'
+2025-08-20 16:07:16.307 INFO: Combining 1 list datasets for head 'Default'
+2025-08-20 16:07:25.282 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-08-20 16:07:25.283 INFO: Combined validation datasets for Default
+2025-08-20 16:07:25.283 INFO: Head 'Default' training dataset size: 1612
+2025-08-20 16:07:25.283 INFO: Processing datasets for head 'pt_head'
+2025-08-20 16:07:33.645 INFO: Combining 1 list datasets for head 'pt_head'
+2025-08-20 16:07:34.518 INFO: Head 'pt_head' training dataset size: 9000
+2025-08-20 16:07:34.518 INFO: Average number of neighbors: 61.964672446250916
+2025-08-20 16:07:34.518 INFO: During training the following quantities will be reported: energy, forces, stress
+2025-08-20 16:07:34.518 INFO: ===========MODEL DETAILS===========
+2025-08-20 16:07:45.363 INFO: Loading FOUNDATION model
+2025-08-20 16:07:45.365 INFO: Using filtered elements: [1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 89, 90, 91, 92, 93, 94]
+2025-08-20 16:07:45.365 INFO: Model configuration extracted from foundation model
+2025-08-20 16:07:45.365 INFO: Using universal loss function for fine-tuning
+2025-08-20 16:07:45.365 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-08-20 16:07:45.365 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-08-20 16:07:45.365 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-08-20 16:07:45.365 INFO: Distance transform for radial basis functions: None
+2025-08-20 16:07:46.816 INFO: Total number of parameters: 5556810
+2025-08-20 16:07:46.816 INFO: 
+2025-08-20 16:07:46.816 INFO: ===========OPTIMIZER INFORMATION===========
+2025-08-20 16:07:46.816 INFO: Using ADAM as parameter optimizer
+2025-08-20 16:07:46.816 INFO: Batch size: 1
+2025-08-20 16:07:46.816 INFO: Using Exponential Moving Average with decay: 0.99999
+2025-08-20 16:07:46.816 INFO: Number of gradient updates: 1379560
+2025-08-20 16:07:46.816 INFO: Learning rate: 0.0001, weight decay: 1e-08
+2025-08-20 16:07:46.816 INFO: UniversalLoss(energy_weight=10.000, forces_weight=0.000, stress_weight=0.000)
+2025-08-20 16:07:46.817 WARNING: Cannot find checkpoint with tag 'mace_T2_including_replay_w2_run-42' in './checkpoints'
+2025-08-20 16:07:46.818 INFO: Using gradient clipping with tolerance=3.000
+2025-08-20 16:07:46.818 INFO: 
+2025-08-20 16:07:46.818 INFO: ===========TRAINING===========
+2025-08-20 16:07:46.818 INFO: Started training, reporting errors on validation set
+2025-08-20 16:07:46.818 INFO: Loss metrics on validation set
+2025-08-20 16:08:34.025 INFO: Initial: head: pt_head, loss=0.03341349, RMSE_E_per_atom=  445.46 meV, RMSE_F=  104.72 meV / A, RMSE_stress=   12.98 meV / A^3
+2025-08-20 16:10:10.185 INFO: Initial: head: Default, loss=0.11800754, RMSE_E_per_atom= 1245.40 meV, RMSE_F=  959.54 meV / A, RMSE_stress=None meV / A^3

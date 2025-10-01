@@ -1,0 +1,30 @@
+data_image0
+_chemical_formula_structural       La2O3
+_chemical_formula_sum              "La2 O3"
+_cell_length_a       6.370183439566749
+_cell_length_b       6.370362198226718
+_cell_length_c       3.2898940409031545
+_cell_angle_alpha    90.0012556990206
+_cell_angle_beta     89.99846889224874
+_cell_angle_gamma    120.01047258036853
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  La  La1       1.0  0.33331560041055763  0.6666740397381377  0.5019036101817427  1.0000
+  La  La2       1.0  0.6666632401368857  0.3333042393218214  0.49811001886863315  1.0000
+  O   O1        1.0  0.4954097595799685  0.4954074095467125  0.9999936609661202  1.0000
+  O   O2        1.0  8.380400734260968e-06  0.504606810396297  1.7700649674334078e-05  1.0000
+  O   O3        1.0  0.5046030191218203  6.48950894614416e-06  0.9999750007522097  1.0000

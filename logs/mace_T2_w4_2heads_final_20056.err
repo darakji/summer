@@ -1,0 +1,87 @@
++ mkdir -p logs
++ export PYTHONUNBUFFERED=1
++ PYTHONUNBUFFERED=1
++ source /home/phanim/harshitrawat/miniconda3/etc/profile.d/conda.sh
+++ export CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+++ CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+++ '[' -z x ']'
++ conda activate mace_0.3.8
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate mace_0.3.8
++ '[' -n '' ']'
++ local ask_conda
+++ PS1=
+++ __conda_exe shell.posix activate mace_0.3.8
+++ '[' -n '' ']'
+++ /home/phanim/harshitrawat/miniconda3/bin/conda shell.posix activate mace_0.3.8
++ ask_conda='unset _CE_M
+unset _CE_CONDA
+PS1='\''(mace_0.3.8) '\''
+export PATH='\''/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/home/phanim/harshitrawat/.vscode-server/cli/servers/Stable-0f0d87fa9e96c856c5212fc86db137ac0d783365/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_PROMPT_MODIFIER='\''(mace_0.3.8) '\''
+export CONDA_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/conda'\''
+export CONDA_PYTHON_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/python'\'''
++ eval 'unset _CE_M
+unset _CE_CONDA
+PS1='\''(mace_0.3.8) '\''
+export PATH='\''/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/home/phanim/harshitrawat/.vscode-server/cli/servers/Stable-0f0d87fa9e96c856c5212fc86db137ac0d783365/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_PROMPT_MODIFIER='\''(mace_0.3.8) '\''
+export CONDA_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/conda'\''
+export CONDA_PYTHON_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/python'\'''
+++ unset _CE_M
+++ unset _CE_CONDA
+++ PS1='(mace_0.3.8) '
+++ export PATH=/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/home/phanim/harshitrawat/.vscode-server/cli/servers/Stable-0f0d87fa9e96c856c5212fc86db137ac0d783365/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ PATH=/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/home/phanim/harshitrawat/.vscode-server/cli/servers/Stable-0f0d87fa9e96c856c5212fc86db137ac0d783365/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export 'CONDA_PROMPT_MODIFIER=(mace_0.3.8) '
+++ CONDA_PROMPT_MODIFIER='(mace_0.3.8) '
+++ export CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+++ CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+++ export CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ export OMP_NUM_THREADS=16
++ OMP_NUM_THREADS=16
++ export MKL_NUM_THREADS=16
++ MKL_NUM_THREADS=16
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+++ pwd
++ E0S_JSON=/home/phanim/harshitrawat/summer/e0s_llzo.json
++ cat
+++ cat
++ HEADS_STR='{
+  "target_head": {
+    "train_file": "/home/phanim/harshitrawat/summer/T1_T2_T3_data/T3_chgnet_labeled.extxyz",
+    "E0s": "/home/phanim/harshitrawat/summer/e0s_llzo.json"
+  },
+  "pt_head": {
+    "train_file": "/home/phanim/harshitrawat/summer/replay_data/replay_labeled_by_chgnet.extxyz",
+    "E0s": "/home/phanim/harshitrawat/summer/e0s_llzo.json"
+  }
+}'
++ torchrun --standalone --nnodes=1 --nproc_per_node=4 --name mace_T2_w4_2heads_final --model MACE --num_interactions 2 --foundation_model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model --foundation_model_readout --multiheads_finetuning True --heads '{
+  "target_head": {
+    "train_file": "/home/phanim/harshitrawat/summer/T1_T2_T3_data/T3_chgnet_labeled.extxyz",
+    "E0s": "/home/phanim/harshitrawat/summer/e0s_llzo.json"
+  },
+  "pt_head": {
+    "train_file": "/home/phanim/harshitrawat/summer/replay_data/replay_labeled_by_chgnet.extxyz",
+    "E0s": "/home/phanim/harshitrawat/summer/e0s_llzo.json"
+  }
+}' --atomic_numbers '[3,8,40,57]' --valid_file /home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_chgnet_labeled.extxyz --batch_size 2 --valid_batch_size 1 --device cuda --forces_weight 10 --energy_weight 50 --stress_weight 0 --lr 0.0001 --scheduler_patience 4 --clip_grad 1 --weight_decay 1e-8 --r_max 5.0 --max_num_epochs 60 --seed 40 --patience 8 --restart_latest
+/var/spool/slurm/slurmd/job20056/slurm_script: line 49: mace_repo_dir: No such file or directory

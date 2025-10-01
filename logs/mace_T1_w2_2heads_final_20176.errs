@@ -1,0 +1,5 @@
++ mkdir -p logs
++ export PYTHONUNBUFFERED=1
++ PYTHONUNBUFFERED=1
++ echo 'SLURM JOB ID : 20176'
+/var/spool/slurm/slurmd/job20176/slurm_script: line 18: SLURM_GRES: unbound variable

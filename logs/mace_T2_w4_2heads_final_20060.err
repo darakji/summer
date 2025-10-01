@@ -1,0 +1,139 @@
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 332, in _lazy_init
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 332, in _lazy_init
+    queued_call()
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 200, in _check_capability
+    capability = get_device_capability(d)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 509, in get_device_capability
+    queued_call()
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 200, in _check_capability
+    capability = get_device_capability(d)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 509, in get_device_capability
+    prop = get_device_properties(device)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 527, in get_device_properties
+    return _get_device_properties(device)  # type: ignore[name-defined]
+    prop = get_device_properties(device)
+RuntimeError  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 527, in get_device_properties
+: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":49, please report a bug to PyTorch. device=1, num_gpus=
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 996, in <module>
+    return _get_device_properties(device)  # type: ignore[name-defined]
+RuntimeError: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":49, please report a bug to PyTorch. device=1, num_gpus=
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 996, in <module>
+    main()
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 77, in main
+    run(args)
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 119, in run
+    device = tools.init_device(args.device)
+  File "/home/phanim/harshitrawat/mace/mace/tools/torch_tools.py", line 59, in init_device
+    main()
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 77, in main
+    f"CUDA version: {torch.version.cuda}, CUDA device: {torch.cuda.current_device()}"
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 940, in current_device
+    run(args)
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 119, in run
+    device = tools.init_device(args.device)
+  File "/home/phanim/harshitrawat/mace/mace/tools/torch_tools.py", line 59, in init_device
+    _lazy_init()
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 338, in _lazy_init
+    f"CUDA version: {torch.version.cuda}, CUDA device: {torch.cuda.current_device()}"
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 940, in current_device
+    raise DeferredCudaCallError(msg) from e
+torch.cuda.DeferredCudaCallError: CUDA call failed lazily at initialization with error: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":49, please report a bug to PyTorch. device=1, num_gpus=
+
+CUDA call was originally invoked at:
+
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 19, in <module>
+    import torch.distributed
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/__init__.py", line 1954, in <module>
+    _C._initExtension(_manager_path())
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 264, in <module>
+    _lazy_call(_check_capability)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 261, in _lazy_call
+    _queued_calls.append((callable, traceback.format_stack()))
+
+    _lazy_init()
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 338, in _lazy_init
+    raise DeferredCudaCallError(msg) from e
+torch.cuda.DeferredCudaCallError: CUDA call failed lazily at initialization with error: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":49, please report a bug to PyTorch. device=1, num_gpus=
+
+CUDA call was originally invoked at:
+
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 19, in <module>
+    import torch.distributed
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/__init__.py", line 1954, in <module>
+    _C._initExtension(_manager_path())
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 264, in <module>
+    _lazy_call(_check_capability)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 261, in _lazy_call
+    _queued_calls.append((callable, traceback.format_stack()))
+
+W0923 03:14:37.676000 814202 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 814303 closing signal SIGTERM
+E0923 03:14:38.041000 814202 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 1 (pid: 814304) of binary: /home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin/python
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/phanim/harshitrawat/mace/mace/cli/run_train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-09-23_03:14:37
+  host      : cn10.cds.iisc.in
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 814304)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

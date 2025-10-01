@@ -1,0 +1,84 @@
+  + mkdir -p logs
+  + export PYTHONUNBUFFERED=1
+  + PYTHONUNBUFFERED=1
+  + source /home/phanim/harshitrawat/miniconda3/etc/profile.d/conda.sh
+  ++ export CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+  ++ CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+  ++ export _CE_M=
+  ++ _CE_M=
+  ++ export _CE_CONDA=
+  ++ _CE_CONDA=
+  ++ export CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+  ++ CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+  ++ '[' -z x ']'
+  + conda activate mace_0.3.8
+  + local cmd=activate
+  + case "$cmd" in
+  + __conda_activate activate mace_0.3.8
+  + '[' -n '' ']'
+  + local ask_conda
+  ++ PS1=
+  ++ __conda_exe shell.posix activate mace_0.3.8
+  ++ '[' -n '' ']'
+  ++ /home/phanim/harshitrawat/miniconda3/bin/conda shell.posix activate mace_0.3.8
+  + ask_conda='unset _CE_M
+  unset _CE_CONDA
+  PS1='\''(mace_0.3.8) '\''
+  export PATH='\''/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/home/phanim/harshitrawat/.vscode-server/cli/servers/Stable-0f0d87fa9e96c856c5212fc86db137ac0d783365/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'\''
+  export CONDA_SHLVL='\''2'\''
+  export CONDA_PROMPT_MODIFIER='\''(mace_0.3.8) '\''
+  export CONDA_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/conda'\''
+  export CONDA_PYTHON_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/python'\'''
+  + eval 'unset _CE_M
+  unset _CE_CONDA
+  PS1='\''(mace_0.3.8) '\''
+  export PATH='\''/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/home/phanim/harshitrawat/.vscode-server/cli/servers/Stable-0f0d87fa9e96c856c5212fc86db137ac0d783365/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'\''
+  export CONDA_SHLVL='\''2'\''
+  export CONDA_PROMPT_MODIFIER='\''(mace_0.3.8) '\''
+  export CONDA_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/conda'\''
+  export CONDA_PYTHON_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/python'\'''
+  ++ unset _CE_M
+  ++ unset _CE_CONDA
+  ++ PS1='(mace_0.3.8) '
+  ++ export PATH=/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/home/phanim/harshitrawat/.vscode-server/cli/servers/Stable-0f0d87fa9e96c856c5212fc86db137ac0d783365/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  ++ PATH=/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/home/phanim/harshitrawat/.vscode-server/cli/servers/Stable-0f0d87fa9e96c856c5212fc86db137ac0d783365/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  ++ export CONDA_SHLVL=2
+  ++ CONDA_SHLVL=2
+  ++ export 'CONDA_PROMPT_MODIFIER=(mace_0.3.8) '
+  ++ CONDA_PROMPT_MODIFIER='(mace_0.3.8) '
+  ++ export CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+  ++ CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+  ++ export CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+  ++ CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+  + __conda_hashr
+  + '[' -n '' ']'
+  + '[' -n '' ']'
+  + hash -r
+  + export OMP_NUM_THREADS=8
+  + OMP_NUM_THREADS=8
+  + export MKL_NUM_THREADS=8
+  + MKL_NUM_THREADS=8
+  + export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb=128,garbage_collection_threshold=0.9,expandable_segments=True
+  + PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb=128,garbage_collection_threshold=0.9,expandable_segments=True
+  + export MASTER_ADDR=127.0.0.1
+  + MASTER_ADDR=127.0.0.1
+  + export MASTER_PORT=29500
+  + MASTER_PORT=29500
+  + export NCCL_P2P_DISABLE=1
+  + NCCL_P2P_DISABLE=1
+  + export NCCL_IB_DISABLE=1
+  + NCCL_IB_DISABLE=1
+  + export NCCL_SHM_DISABLE=0
+  + NCCL_SHM_DISABLE=0
+  + echo SLURM_JOB_GPUS=1,2
+  + echo CUDA_VISIBLE_DEVICES=0,1
+  + python -
+  Traceback (most recent call last):
+    File "<stdin>", line 5, in <module>
+    File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 493, in get_device_name
+      return get_device_properties(device).name
+    File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 523, in get_device_properties
+      _lazy_init()  # will define _get_device_properties
+    File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 319, in _lazy_init
+      torch._C._cuda_init()
+  RuntimeError: Unrecognized CachingAllocator option: max_split_size_mb=128

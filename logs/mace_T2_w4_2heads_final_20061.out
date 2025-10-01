@@ -1,0 +1,95 @@
+=== SLURM ===
+JOB_ID                : 20061
+SLURM_GRES            : na
+SLURM_JOB_GPUS        : 1,2
+CUDA_VISIBLE_DEVICES  : 0,1
+
+=== NVIDIA-SMI (before rebind) ===
+GPU 0: NVIDIA H200 (UUID: GPU-fcacfa25-8f1f-f705-9f82-a531a2161f02)
+  MIG 3g.71gb     Device  0: (UUID: MIG-5e0ee1cf-e462-5cb3-9ee5-65a2e44fe598)
+GPU 1: NVIDIA H200 (UUID: GPU-c8eaa864-162e-73f3-420c-0bf16e187ba0)
+  MIG 3g.71gb     Device  0: (UUID: MIG-98d798d2-0f1a-500f-acdd-1a3ae2bc68d3)
+GPU 2: NVIDIA H200 (UUID: GPU-f08492b1-62ff-7cef-794f-156e09522634)
+GPU 3: NVIDIA H200 (UUID: GPU-f8049926-0d8c-0394-6dcd-9754b73f11c5)
+Tue Sep 23 03:17:34 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:1B:00.0 Off |                   On |
+| N/A   49C    P0            305W /  700W |   55323MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:43:00.0 Off |                   On |
+| N/A   30C    P0             76W /  700W |      76MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H200                    On  |   00000000:52:00.0 Off |                   On |
+| N/A   34C    P0             77W /  700W |      76MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H200                    On  |   00000000:61:00.0 Off |                   On |
+| N/A   43C    P0             79W /  700W |      76MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                     Memory-Usage |        Vol|      Shared           |
+|      ID  ID  Dev |                       BAR1-Usage | SM     Unc| CE ENC DEC OFA JPG    |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    2   0   0  |              38MiB / 71168MiB    | 60      0 |  3   0    3    0    3 |
+|                  |                 0MiB / 131071MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+|  1    1   0   0  |              38MiB / 71168MiB    | 60      0 |  3   0    3    0    3 |
+|                  |                 0MiB / 131071MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+WARNING: No MIG UUID found on GPU 0; will fall back to full GPU index 0
+WARNING: No MIG UUID found on GPU 1; will fall back to full GPU index 1
+=== After MIG rebind ===
+CUDA_VISIBLE_DEVICES (MIG UUIDs) : 0,1
+PYTORCH VIEW
+  CUDA_VISIBLE_DEVICES = 0,1
+  torch.cuda.device_count() = 2
+  CUDA probe failed: CUDA call failed lazily at initialization with error: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":49, please report a bug to PyTorch. device=1, num_gpus=
+
+CUDA call was originally invoked at:
+
+  File "<stdin>", line 1, in <module>
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/__init__.py", line 1954, in <module>
+    _C._initExtension(_manager_path())
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 264, in <module>
+    _lazy_call(_check_capability)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/cuda/__init__.py", line 261, in _lazy_call
+    _queued_calls.append((callable, traceback.format_stack()))
+
+
+Launching DDP with nproc_per_node=2
+2025-09-23 03:18:14.418 INFO: ===========VERIFYING SETTINGS===========
+2025-09-23 03:18:14.418 INFO: ===========VERIFYING SETTINGS===========
+2025-09-23 03:18:14.418 INFO: MACE version: 0.3.14
+2025-09-23 03:18:14.418 INFO: MACE version: 0.3.14

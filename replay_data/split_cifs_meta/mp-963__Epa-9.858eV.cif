@@ -1,0 +1,37 @@
+data_image0
+_chemical_formula_structural       Zr4O8
+_chemical_formula_sum              "Zr4 O8"
+_cell_length_a       3.387954
+_cell_length_b       5.632736
+_cell_length_c       6.589221
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    90.0
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Zr  Zr1       1.0  0.25  0.2515370008464803  0.3915840005973392  1.0000
+  Zr  Zr2       1.0  0.75  0.7484629991535197  0.6084159994026608  1.0000
+  Zr  Zr3       1.0  0.25  0.7515370008464802  0.1084159994026608  1.0000
+  Zr  Zr4       1.0  0.75  0.2484629991535197  0.8915840005973392  1.0000
+  O   O1        1.0  0.75  0.47802200032098074  0.1592369993357333  1.0000
+  O   O2        1.0  0.25  0.5219779996790191  0.8407630006642667  1.0000
+  O   O3        1.0  0.75  0.9780220003209806  0.3407630006642667  1.0000
+  O   O4        1.0  0.25  0.021977999679019217  0.6592369993357333  1.0000
+  O   O5        1.0  0.75  0.36073700063343994  0.5765019992499871  1.0000
+  O   O6        1.0  0.25  0.63926299936656  0.4234980007500128  1.0000
+  O   O7        1.0  0.75  0.8607370006334398  0.9234980007500128  1.0000
+  O   O8        1.0  0.25  0.13926299936656003  0.07650199924998721  1.0000

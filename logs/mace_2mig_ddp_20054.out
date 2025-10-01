@@ -1,0 +1,4 @@
+SLURM_JOB_GPUS=1,2
+CUDA_VISIBLE_DEVICES=0,1
+CUDA_VISIBLE_DEVICES = 0,1
+torch.cuda.device_count() = 2

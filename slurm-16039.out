@@ -1,0 +1,85 @@
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+2025-09-05 02:51:13.808 INFO: ===========VERIFYING SETTINGS===========
+2025-09-05 02:51:13.809 INFO: MACE version: 0.3.14
+2025-09-05 02:51:14.311 INFO: CUDA version: 12.1, CUDA device: 0
+/home/phanim/harshitrawat/mace/mace/cli/run_train.py:146: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model_foundation = torch.load(
+2025-09-05 02:51:16.441 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-09-05 02:51:16.510 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-09-05 02:51:16.510 INFO: ===========LOADING INPUT DATA===========
+2025-09-05 02:51:16.510 INFO: Using heads: ['Default']
+2025-09-05 02:51:16.510 INFO: Using the key specifications to parse data:
+2025-09-05 02:51:16.510 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-09-05 02:51:16.510 INFO: =============    Processing head Default     ===========
+2025-09-05 02:51:23.139 INFO: Training set 1/1 [energy: 1754, stress: 0, virials: 0, dipole components: 0, head: 1754, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-09-05 02:51:23.144 INFO: Total Training set [energy: 1754, stress: 0, virials: 0, dipole components: 0, head: 1754, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-09-05 02:51:25.957 INFO: Validation set 1/1 [energy: 847, stress: 0, virials: 0, dipole components: 0, head: 847, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-09-05 02:51:25.959 INFO: Total Validation set [energy: 847, stress: 0, virials: 0, dipole components: 0, head: 847, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-09-05 02:51:25.959 INFO: Total number of configurations: train=1754, valid=847, tests=[],
+2025-09-05 02:51:26.075 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-09-05 02:51:26.075 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-09-05 02:51:26.075 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.882, 8: -4.913, 40: -8.509, 57: -4.894}
+2025-09-05 02:51:26.075 INFO: Processing datasets for head 'Default'
+2025-09-05 02:52:15.510 INFO: Combining 1 list datasets for head 'Default'
+2025-09-05 02:52:36.960 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-09-05 02:52:36.960 INFO: Combined validation datasets for Default
+2025-09-05 02:52:36.960 INFO: Head 'Default' training dataset size: 1754
+2025-09-05 02:52:36.960 INFO: Computing average number of neighbors
+2025-09-05 02:52:39.450 INFO: Average number of neighbors: 67.31388041084317
+2025-09-05 02:52:39.450 INFO: During training the following quantities will be reported: energy, forces
+2025-09-05 02:52:39.451 INFO: ===========MODEL DETAILS===========
+2025-09-05 02:52:41.063 INFO: Loading FOUNDATION model
+2025-09-05 02:52:41.064 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-09-05 02:52:41.065 INFO: Model configuration extracted from foundation model
+2025-09-05 02:52:41.065 INFO: Using weighted loss function for fine-tuning
+2025-09-05 02:52:41.065 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-09-05 02:52:41.065 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-09-05 02:52:41.065 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-09-05 02:52:41.065 INFO: Distance transform for radial basis functions: None
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+Using reduced CG: False
+Using reduced CG: False
+2025-09-05 02:52:42.889 INFO: Total number of parameters: 894362
+2025-09-05 02:52:42.889 INFO: 
+2025-09-05 02:52:42.889 INFO: ===========OPTIMIZER INFORMATION===========
+2025-09-05 02:52:42.889 INFO: Using ADAM as parameter optimizer
+2025-09-05 02:52:42.889 INFO: Batch size: 2
+2025-09-05 02:52:42.889 INFO: Number of gradient updates: 35080
+2025-09-05 02:52:42.889 INFO: Learning rate: 0.06, weight decay: 1e-08
+2025-09-05 02:52:42.889 INFO: WeightedEnergyForcesLoss(energy_weight=10.000, forces_weight=0.000)
+2025-09-05 02:52:42.931 WARNING: Cannot find checkpoint with tag 'mace_T2_w1_appended_chgnetE0s_run-84' in './checkpoints'
+2025-09-05 02:52:42.932 INFO: Using gradient clipping with tolerance=1.000
+2025-09-05 02:52:42.932 INFO: 
+2025-09-05 02:52:42.932 INFO: ===========TRAINING===========
+2025-09-05 02:52:42.932 INFO: Started training, reporting errors on validation set
+2025-09-05 02:52:42.932 INFO: Loss metrics on validation set
+2025-09-05 02:54:15.289 INFO: Initial: head: Default, loss=50.98221564, RMSE_E_per_atom= 2257.92 meV, RMSE_F=  957.42 meV / A
+slurmstepd: error: *** JOB 16039 ON cn10 CANCELLED AT 2025-09-05T02:55:53 ***

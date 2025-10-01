@@ -1,0 +1,82 @@
+2025-09-05 11:57:19.392 INFO: ===========VERIFYING SETTINGS===========
+2025-09-05 11:57:19.392 INFO: MACE version: 0.3.14
+2025-09-05 11:57:19.905 INFO: CUDA version: 12.1, CUDA device: 0
+2025-09-05 11:57:20.711 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-09-05 11:57:20.712 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-09-05 11:57:20.712 INFO: ===========LOADING INPUT DATA===========
+2025-09-05 11:57:20.712 INFO: Using heads: ['Default']
+2025-09-05 11:57:20.712 INFO: Using the key specifications to parse data:
+2025-09-05 11:57:20.712 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-09-05 11:57:20.713 INFO: =============    Processing head Default     ===========
+2025-09-05 11:57:26.822 INFO: Training set 1/1 [energy: 1754, stress: 0, virials: 0, dipole components: 0, head: 1754, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-09-05 11:57:26.827 INFO: Total Training set [energy: 1754, stress: 0, virials: 0, dipole components: 0, head: 1754, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-09-05 11:57:29.440 INFO: Validation set 1/1 [energy: 847, stress: 0, virials: 0, dipole components: 0, head: 847, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-09-05 11:57:29.442 INFO: Total Validation set [energy: 847, stress: 0, virials: 0, dipole components: 0, head: 847, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-09-05 11:57:29.442 INFO: Total number of configurations: train=1754, valid=847, tests=[],
+2025-09-05 11:57:29.558 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-09-05 11:57:29.558 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-09-05 11:57:29.558 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.882, 8: -4.913, 40: -8.509, 57: -4.894}
+2025-09-05 11:57:29.558 INFO: Processing datasets for head 'Default'
+2025-09-05 11:58:18.420 INFO: Combining 1 list datasets for head 'Default'
+2025-09-05 11:58:39.925 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-09-05 11:58:39.925 INFO: Combined validation datasets for Default
+2025-09-05 11:58:39.925 INFO: Head 'Default' training dataset size: 1754
+2025-09-05 11:58:39.926 INFO: Computing average number of neighbors
+2025-09-05 11:58:42.307 INFO: Average number of neighbors: 67.31388041084317
+2025-09-05 11:58:42.308 INFO: During training the following quantities will be reported: energy, forces
+2025-09-05 11:58:42.308 INFO: ===========MODEL DETAILS===========
+2025-09-05 11:58:43.729 INFO: Loading FOUNDATION model
+2025-09-05 11:58:43.731 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-09-05 11:58:43.731 INFO: Model configuration extracted from foundation model
+2025-09-05 11:58:43.731 INFO: Using weighted loss function for fine-tuning
+2025-09-05 11:58:43.731 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-09-05 11:58:43.731 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-09-05 11:58:43.731 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-09-05 11:58:43.731 INFO: Distance transform for radial basis functions: None
+Using reduced CG: False
+Using reduced CG: False
+2025-09-05 11:58:44.997 INFO: Total number of parameters: 894362
+2025-09-05 11:58:44.998 INFO: 
+2025-09-05 11:58:44.998 INFO: ===========OPTIMIZER INFORMATION===========
+2025-09-05 11:58:44.998 INFO: Using ADAM as parameter optimizer
+2025-09-05 11:58:44.998 INFO: Batch size: 2
+2025-09-05 11:58:44.998 INFO: Number of gradient updates: 35080
+2025-09-05 11:58:44.998 INFO: Learning rate: 0.06, weight decay: 1e-08
+2025-09-05 11:58:44.998 INFO: WeightedEnergyForcesLoss(energy_weight=10.000, forces_weight=0.000)
+2025-09-05 11:58:45.044 WARNING: No SWA checkpoint found, while SWA is enabled. Compare the swa_start parameter and the latest checkpoint.
+2025-09-05 11:58:45.045 INFO: Loading checkpoint: ./checkpoints/mace_T2_w1_appended_chgnetE0s_run-84_epoch-20.pt
+2025-09-05 11:58:45.085 INFO: Using gradient clipping with tolerance=1.000
+2025-09-05 11:58:45.085 INFO: 
+2025-09-05 11:58:45.085 INFO: ===========TRAINING===========
+2025-09-05 11:58:45.085 INFO: Started training, reporting errors on validation set
+2025-09-05 11:58:45.085 INFO: Loss metrics on validation set
+2025-09-05 12:00:14.938 INFO: Initial: head: Default, loss=0.14623340, RMSE_E_per_atom=  120.93 meV, RMSE_F=  439.62 meV / A
+2025-09-05 12:10:38.378 INFO: Epoch 20: head: Default, loss=0.15783073, RMSE_E_per_atom=  125.63 meV, RMSE_F=  795.87 meV / A
+2025-09-05 12:20:55.217 INFO: Epoch 21: head: Default, loss=0.23648840, RMSE_E_per_atom=  153.78 meV, RMSE_F=  500.00 meV / A
+2025-09-05 12:31:11.706 INFO: Epoch 22: head: Default, loss=0.46529245, RMSE_E_per_atom=  215.71 meV, RMSE_F=  641.54 meV / A
+2025-09-05 12:41:28.157 INFO: Epoch 23: head: Default, loss=0.20261113, RMSE_E_per_atom=  142.34 meV, RMSE_F=  427.61 meV / A
+2025-09-05 12:51:44.311 INFO: Epoch 24: head: Default, loss=0.27386161, RMSE_E_per_atom=  165.49 meV, RMSE_F= 1811.66 meV / A
+2025-09-05 13:02:00.677 INFO: Epoch 25: head: Default, loss=0.35194841, RMSE_E_per_atom=  187.60 meV, RMSE_F=  661.63 meV / A
+2025-09-05 13:12:17.139 INFO: Epoch 26: head: Default, loss=0.18049814, RMSE_E_per_atom=  134.35 meV, RMSE_F=  638.78 meV / A
+2025-09-05 13:22:33.630 INFO: Epoch 27: head: Default, loss=0.21204210, RMSE_E_per_atom=  145.62 meV, RMSE_F=  724.94 meV / A
+2025-09-05 13:32:50.189 INFO: Epoch 28: head: Default, loss=0.16572431, RMSE_E_per_atom=  128.73 meV, RMSE_F= 1037.57 meV / A
+2025-09-05 13:32:50.191 INFO: Stopping optimization after 8 epochs without improvement
+2025-09-05 13:32:50.191 INFO: Training complete
+2025-09-05 13:32:50.191 INFO: 
+2025-09-05 13:32:50.191 INFO: ===========RESULTS===========
+2025-09-05 13:32:50.263 INFO: Loading checkpoint: ./checkpoints/mace_T2_w1_appended_chgnetE0s_run-84_epoch-20.pt
+2025-09-05 13:32:50.296 INFO: Loaded Stage one model from epoch 20 for evaluation
+2025-09-05 13:32:50.297 INFO: Saving model to checkpoints/mace_T2_w1_appended_chgnetE0s_run-84.model
+2025-09-05 13:32:50.555 INFO: Compiling model, saving metadata to mace_T2_w1_appended_chgnetE0s_compiled.model
+2025-09-05 13:32:51.553 INFO: Computing metrics for training, validation, and test sets
+2025-09-05 13:32:51.554 INFO: Skipping evaluation for heads: ['pt_head']
+2025-09-05 13:32:51.554 INFO: Evaluating train_Default ...
+2025-09-05 13:35:38.909 INFO: Evaluating valid_Default ...
+2025-09-05 13:37:03.037 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_Default |           88.7      |        806.1     |        232.49     |
+| valid_Default |          125.6      |        795.9     |        232.09     |
++---------------+---------------------+------------------+-------------------+
+2025-09-05 13:41:48.197 INFO: Done

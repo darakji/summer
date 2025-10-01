@@ -1,0 +1,152 @@
++ mkdir -p logs
++ export PYTHONUNBUFFERED=1
++ PYTHONUNBUFFERED=1
++ source /home/phanim/harshitrawat/miniconda3/etc/profile.d/conda.sh
+++ export CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+++ CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+++ '[' -z x ']'
++ conda activate mace_0.3.8
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate mace_0.3.8
++ '[' -n '' ']'
++ local ask_conda
+++ PS1=
+++ __conda_exe shell.posix activate mace_0.3.8
+++ '[' -n '' ']'
+++ /home/phanim/harshitrawat/miniconda3/bin/conda shell.posix activate mace_0.3.8
++ ask_conda='unset _CE_M
+unset _CE_CONDA
+PS1='\''(mace_0.3.8) '\''
+export PATH='\''/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'\''
+export CONDA_PREFIX='\''/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''mace_0.3.8'\''
+export CONDA_PROMPT_MODIFIER='\''(mace_0.3.8) '\''
+export CONDA_PREFIX_1='\''/home/phanim/harshitrawat/miniconda3'\''
+export CONDA_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/conda'\''
+export CONDA_PYTHON_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/python'\'''
++ eval 'unset _CE_M
+unset _CE_CONDA
+PS1='\''(mace_0.3.8) '\''
+export PATH='\''/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'\''
+export CONDA_PREFIX='\''/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''mace_0.3.8'\''
+export CONDA_PROMPT_MODIFIER='\''(mace_0.3.8) '\''
+export CONDA_PREFIX_1='\''/home/phanim/harshitrawat/miniconda3'\''
+export CONDA_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/conda'\''
+export CONDA_PYTHON_EXE='\''/home/phanim/harshitrawat/miniconda3/bin/python'\'''
+++ unset _CE_M
+++ unset _CE_CONDA
+++ PS1='(mace_0.3.8) '
+++ export PATH=/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ PATH=/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin:/home/phanim/harshitrawat/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ export CONDA_PREFIX=/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8
+++ CONDA_PREFIX=/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=mace_0.3.8
+++ CONDA_DEFAULT_ENV=mace_0.3.8
+++ export 'CONDA_PROMPT_MODIFIER=(mace_0.3.8) '
+++ CONDA_PROMPT_MODIFIER='(mace_0.3.8) '
+++ export CONDA_PREFIX_1=/home/phanim/harshitrawat/miniconda3
+++ CONDA_PREFIX_1=/home/phanim/harshitrawat/miniconda3
+++ export CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+++ CONDA_EXE=/home/phanim/harshitrawat/miniconda3/bin/conda
+++ export CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/home/phanim/harshitrawat/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ export OMP_NUM_THREADS=8
++ OMP_NUM_THREADS=8
++ export MKL_NUM_THREADS=8
++ MKL_NUM_THREADS=8
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+++ pwd
++ E0S_JSON=/home/phanim/harshitrawat/summer/e0s_llzo.json
++ cat
+++ cat
++ HEADS_STR='{
+  "target_head": {
+    "train_file": "/home/phanim/harshitrawat/summer/T1_T2_T3_data/T1_chgnet_labeled.extxyz",
+    "E0s": "/home/phanim/harshitrawat/summer/e0s_llzo.json"
+  },
+  "pt_head": {
+    "train_file": "/home/phanim/harshitrawat/summer/replay_data/replay_labeled_by_chgnet.extxyz",
+    "E0s": "/home/phanim/harshitrawat/summer/e0s_llzo.json"
+  }
+}'
++ mace_run_train --name mace_T1_w1_2heads_final --model MACE --num_interactions 2 --foundation_model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model --foundation_model_readout --multiheads_finetuning True --heads '{
+  "target_head": {
+    "train_file": "/home/phanim/harshitrawat/summer/T1_T2_T3_data/T1_chgnet_labeled.extxyz",
+    "E0s": "/home/phanim/harshitrawat/summer/e0s_llzo.json"
+  },
+  "pt_head": {
+    "train_file": "/home/phanim/harshitrawat/summer/replay_data/replay_labeled_by_chgnet.extxyz",
+    "E0s": "/home/phanim/harshitrawat/summer/e0s_llzo.json"
+  }
+}' --atomic_numbers '[3,8,40,57]' --valid_file /home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_chgnet_labeled.extxyz --batch_size 4 --valid_batch_size 1 --device cuda --forces_weight 10 --energy_weight 50 --stress_weight 0 --lr 0.0005 --scheduler_patience 4 --clip_grad 1 --weight_decay 1e-8 --r_max 5.0 --max_num_epochs 65 --seed 10 --patience 8 --restart_latest
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/home/phanim/harshitrawat/mace/mace/cli/run_train.py:146: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model_foundation = torch.load(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin/mace_run_train", line 8, in <module>
+    sys.exit(main())
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 77, in main
+    run(args)
+  File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 767, in run
+    tools.train(
+  File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 222, in train
+    train_one_epoch(
+  File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 370, in train_one_epoch
+    _, opt_metrics = take_step(
+  File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 416, in take_step
+    loss = closure()
+  File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 410, in closure
+    loss.backward()
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.46 GiB. GPU 0 has a total capacity of 139.72 GiB of which 744.81 MiB is free. Including non-PyTorch memory, this process has 138.98 GiB memory in use. Of the allocated memory 137.75 GiB is allocated by PyTorch, and 520.13 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

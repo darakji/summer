@@ -1,0 +1,5 @@
++ mkdir -p logs
++ export PYTHONUNBUFFERED=1
++ PYTHONUNBUFFERED=1
+++ /home/phanim/harshitrawat/miniconda3/bin/conda shell.bash hook
+slurmstepd: error: *** JOB 17769 ON cn10 CANCELLED AT 2025-09-14T21:48:44 ***

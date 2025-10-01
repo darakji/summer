@@ -1,0 +1,202 @@
+===== GPU INFO =====
+GPU 0: NVIDIA H200 (UUID: GPU-fcacfa25-8f1f-f705-9f82-a531a2161f02)
+GPU 1: NVIDIA H200 (UUID: GPU-c8eaa864-162e-73f3-420c-0bf16e187ba0)
+GPU 2: NVIDIA H200 (UUID: GPU-f08492b1-62ff-7cef-794f-156e09522634)
+GPU 3: NVIDIA H200 (UUID: GPU-f8049926-0d8c-0394-6dcd-9754b73f11c5)
+GPU 4: NVIDIA H200 (UUID: GPU-0d9131cc-ee50-f198-276c-fceda18295a4)
+GPU 5: NVIDIA H200 (UUID: GPU-30d42824-a0de-6e2b-212c-edfe60b3e725)
+GPU 6: NVIDIA H200 (UUID: GPU-26893cb5-fcf0-f89c-d3ad-634f8da0a542)
+GPU 7: NVIDIA H200 (UUID: GPU-35458bd5-35e7-eb55-5f5d-b01a2a0de0d3)
+Mon Aug 25 20:50:44 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:1B:00.0 Off |                   On |
+| N/A   26C    P0             78W /  700W |      89MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:43:00.0 Off |                   On |
+| N/A   28C    P0             75W /  700W |      89MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H200                    On  |   00000000:52:00.0 Off |                   On |
+| N/A   31C    P0             76W /  700W |      90MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H200                    On  |   00000000:61:00.0 Off |                   On |
+| N/A   30C    P0             75W /  700W |      89MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA H200                    On  |   00000000:9D:00.0 Off |                   On |
+| N/A   26C    P0             76W /  700W |      89MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA H200                    On  |   00000000:C3:00.0 Off |                   On |
+| N/A   26C    P0             76W /  700W |      89MiB / 143771MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA H200                    On  |   00000000:D1:00.0 Off |                    0 |
+| N/A   36C    P0             79W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA H200                    On  |   00000000:DF:00.0 Off |                    0 |
+| N/A   31C    P0             77W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                     Memory-Usage |        Vol|      Shared           |
+|      ID  ID  Dev |                       BAR1-Usage | SM     Unc| CE ENC DEC OFA JPG    |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  No MIG devices found                                                                   |
++-----------------------------------------------------------------------------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+====================
+2025-08-25 20:50:57.394 INFO: ===========VERIFYING SETTINGS===========
+2025-08-25 20:50:57.399 INFO: ===========VERIFYING SETTINGS===========
+2025-08-25 20:50:57.454 INFO: Process group initialized: True
+2025-08-25 20:50:57.454 INFO: Processes: 2
+2025-08-25 20:50:57.454 INFO: MACE version: 0.3.14
+2025-08-25 20:50:57.455 INFO: CUDA version: 12.1, CUDA device: 0
+2025-08-25 20:50:57.461 INFO: Process group initialized: True
+2025-08-25 20:50:57.462 INFO: Processes: 2
+2025-08-25 20:50:57.462 INFO: MACE version: 0.3.14
+2025-08-25 20:50:57.462 INFO: CUDA version: 12.1, CUDA device: 0
+2025-08-25 20:50:58.157 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-25 20:50:58.158 INFO: Multihead finetuning mode, setting learning rate to 0.0001 and EMA to True. To use a different learning rate, set --force_mh_ft_lr=True.
+2025-08-25 20:50:58.158 INFO: Using multiheads finetuning mode, setting learning rate to 0.0001 and EMA to True
+2025-08-25 20:50:58.158 INFO: ===========LOADING INPUT DATA===========
+2025-08-25 20:50:58.158 INFO: Using heads: ['Default', 'pt_head']
+2025-08-25 20:50:58.158 INFO: Using the key specifications to parse data:
+2025-08-25 20:50:58.158 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-25 20:50:58.158 INFO: pt_head: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-25 20:50:58.158 INFO: =============    Processing head Default     ===========
+2025-08-25 20:50:58.172 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-25 20:50:58.173 INFO: Multihead finetuning mode, setting learning rate to 0.0001 and EMA to True. To use a different learning rate, set --force_mh_ft_lr=True.
+2025-08-25 20:50:58.173 INFO: Using multiheads finetuning mode, setting learning rate to 0.0001 and EMA to True
+2025-08-25 20:50:58.174 INFO: ===========LOADING INPUT DATA===========
+2025-08-25 20:50:58.174 INFO: Using heads: ['Default', 'pt_head']
+2025-08-25 20:50:58.174 INFO: Using the key specifications to parse data:
+2025-08-25 20:50:58.174 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-25 20:50:58.174 INFO: pt_head: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-25 20:50:58.174 INFO: =============    Processing head Default     ===========
+2025-08-25 20:51:04.212 INFO: Training set 1/1 [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-25 20:51:04.218 INFO: Total Training set [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-25 20:51:04.307 INFO: Training set 1/1 [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-25 20:51:04.311 INFO: Total Training set [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-25 20:51:06.780 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-25 20:51:06.782 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-25 20:51:06.782 INFO: Total number of configurations: train=1612, valid=705, tests=[],
+2025-08-25 20:51:06.782 INFO: =============    Processing head pt_head     ===========
+2025-08-25 20:51:06.812 INFO: Training set 1/1 [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 104, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 20:51:06.813 INFO: Total Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 104, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 20:51:06.813 INFO: No validation set provided, splitting training data instead.
+2025-08-25 20:51:06.816 INFO: Using random 10% of training set for validation with indices saved in: ./valid_indices_84.txt
+2025-08-25 20:51:06.816 INFO: Random Split Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 94, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 20:51:06.816 INFO: Random Split Validation set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 10, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 20:51:06.816 INFO: Total number of configurations: train=94, valid=10, tests=[],
+2025-08-25 20:51:06.816 INFO: ==================Using multiheads finetuning mode==================
+2025-08-25 20:51:06.816 INFO: Total number of configurations in pretraining: train=94, valid=10
+2025-08-25 20:51:06.816 INFO: Using atomic numbers from command line argument
+2025-08-25 20:51:06.816 INFO: Using atomic numbers from command line argument
+2025-08-25 20:51:06.816 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-08-25 20:51:06.816 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-08-25 20:51:06.819 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.2302615750354944, 8: -23.049110738413006, 40: 23.367646191010394, 57: 15.192898072498549}
+2025-08-25 20:51:06.819 INFO: Atomic Energies used (z: eV) for head pt_head: {3: -3.482100566595956, 8: -7.28459863421322, 40: -11.846857579882572, 57: -8.933684809576345}
+2025-08-25 20:51:06.819 INFO: Processing datasets for head 'Default'
+2025-08-25 20:51:06.884 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-25 20:51:06.886 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-25 20:51:06.886 INFO: Total number of configurations: train=1612, valid=705, tests=[],
+2025-08-25 20:51:06.886 INFO: =============    Processing head pt_head     ===========
+2025-08-25 20:51:06.915 INFO: Training set 1/1 [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 104, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 20:51:06.916 INFO: Total Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 104, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 20:51:06.916 INFO: No validation set provided, splitting training data instead.
+2025-08-25 20:51:06.920 INFO: Using random 10% of training set for validation with indices saved in: ./valid_indices_84.txt
+2025-08-25 20:51:06.920 INFO: Random Split Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 94, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 20:51:06.920 INFO: Random Split Validation set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 10, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 20:51:06.920 INFO: Total number of configurations: train=94, valid=10, tests=[],
+2025-08-25 20:51:06.921 INFO: ==================Using multiheads finetuning mode==================
+2025-08-25 20:51:06.921 INFO: Total number of configurations in pretraining: train=94, valid=10
+2025-08-25 20:51:06.921 INFO: Using atomic numbers from command line argument
+2025-08-25 20:51:06.921 INFO: Using atomic numbers from command line argument
+2025-08-25 20:51:06.921 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-08-25 20:51:06.921 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-08-25 20:51:06.923 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.2302615750354944, 8: -23.049110738413006, 40: 23.367646191010394, 57: 15.192898072498549}
+2025-08-25 20:51:06.923 INFO: Atomic Energies used (z: eV) for head pt_head: {3: -3.482100566595956, 8: -7.28459863421322, 40: -11.846857579882572, 57: -8.933684809576345}
+2025-08-25 20:51:06.923 INFO: Processing datasets for head 'Default'
+2025-08-25 20:51:27.849 INFO: Combining 1 list datasets for head 'Default'
+2025-08-25 20:51:27.920 INFO: Combining 1 list datasets for head 'Default'
+2025-08-25 20:51:37.229 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-08-25 20:51:37.229 INFO: Combined validation datasets for Default
+2025-08-25 20:51:37.229 INFO: Head 'Default' training dataset size: 1612
+2025-08-25 20:51:37.230 INFO: Processing datasets for head 'pt_head'
+2025-08-25 20:51:37.310 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-08-25 20:51:37.311 INFO: Combined validation datasets for Default
+2025-08-25 20:51:37.311 INFO: Head 'Default' training dataset size: 1612
+2025-08-25 20:51:37.311 INFO: Processing datasets for head 'pt_head'
+2025-08-25 20:51:37.314 INFO: Combining 1 list datasets for head 'pt_head'
+2025-08-25 20:51:37.325 INFO: Head 'pt_head' training dataset size: 94
+2025-08-25 20:51:37.325 INFO: Average number of neighbors: 61.964672446250916
+2025-08-25 20:51:37.326 INFO: During training the following quantities will be reported: energy, forces, stress
+2025-08-25 20:51:37.326 INFO: ===========MODEL DETAILS===========
+2025-08-25 20:51:37.394 INFO: Combining 1 list datasets for head 'pt_head'
+2025-08-25 20:51:37.405 INFO: Head 'pt_head' training dataset size: 94
+2025-08-25 20:51:37.405 INFO: Average number of neighbors: 61.964672446250916
+2025-08-25 20:51:37.405 INFO: During training the following quantities will be reported: energy, forces, stress
+2025-08-25 20:51:37.405 INFO: ===========MODEL DETAILS===========
+2025-08-25 20:51:38.479 WARNING: Standard deviation of the scaling is zero, Changing to no scaling
+2025-08-25 20:51:38.481 INFO: Loading FOUNDATION model
+2025-08-25 20:51:38.481 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-08-25 20:51:38.482 INFO: Model configuration extracted from foundation model
+2025-08-25 20:51:38.482 INFO: Using universal loss function for fine-tuning
+2025-08-25 20:51:38.482 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-08-25 20:51:38.482 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-08-25 20:51:38.482 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-08-25 20:51:38.482 INFO: Distance transform for radial basis functions: None
+2025-08-25 20:51:38.621 WARNING: Standard deviation of the scaling is zero, Changing to no scaling
+2025-08-25 20:51:38.622 INFO: Loading FOUNDATION model
+2025-08-25 20:51:38.623 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-08-25 20:51:38.623 INFO: Model configuration extracted from foundation model
+2025-08-25 20:51:38.623 INFO: Using universal loss function for fine-tuning
+2025-08-25 20:51:38.623 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-08-25 20:51:38.623 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-08-25 20:51:38.623 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-08-25 20:51:38.623 INFO: Distance transform for radial basis functions: None
+Using reduced CG: False
+Using reduced CG: False
+Using reduced CG: False
+Using reduced CG: False
+2025-08-25 20:51:39.903 INFO: Total number of parameters: 896586
+2025-08-25 20:51:39.903 INFO: 
+2025-08-25 20:51:39.903 INFO: ===========OPTIMIZER INFORMATION===========
+2025-08-25 20:51:39.903 INFO: Using ADAM as parameter optimizer
+2025-08-25 20:51:39.903 INFO: Batch size: 2
+2025-08-25 20:51:39.903 INFO: Using Exponential Moving Average with decay: 0.99999
+2025-08-25 20:51:39.903 INFO: Number of gradient updates: 853
+2025-08-25 20:51:39.903 INFO: Learning rate: 0.0001, weight decay: 1e-08
+2025-08-25 20:51:39.903 INFO: UniversalLoss(energy_weight=10.000, forces_weight=0.000, stress_weight=0.000)
+2025-08-25 20:51:39.908 WARNING: Cannot find checkpoint with tag 'dummy_mace_T2_including_replay_w2_aries_ddp_run-84' in './checkpoints'
+2025-08-25 20:51:39.975 INFO: Total number of parameters: 896586
+2025-08-25 20:51:39.975 INFO: 
+2025-08-25 20:51:39.975 INFO: ===========OPTIMIZER INFORMATION===========
+2025-08-25 20:51:39.975 INFO: Using ADAM as parameter optimizer
+2025-08-25 20:51:39.975 INFO: Batch size: 2
+2025-08-25 20:51:39.975 INFO: Using Exponential Moving Average with decay: 0.99999
+2025-08-25 20:51:39.975 INFO: Number of gradient updates: 853
+2025-08-25 20:51:39.976 INFO: Learning rate: 0.0001, weight decay: 1e-08
+2025-08-25 20:51:39.976 INFO: UniversalLoss(energy_weight=10.000, forces_weight=0.000, stress_weight=0.000)
+2025-08-25 20:51:39.977 WARNING: Cannot find checkpoint with tag 'dummy_mace_T2_including_replay_w2_aries_ddp_run-84' in './checkpoints'

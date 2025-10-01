@@ -1,0 +1,92 @@
+2025-09-26 16:57:00.691 INFO: ===========VERIFYING SETTINGS===========
+2025-09-26 16:57:00.691 INFO: MACE version: 0.3.14
+2025-09-26 16:57:01.180 INFO: CUDA version: 12.1, CUDA device: 0
+2025-09-26 16:57:02.303 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-09-26 16:57:02.304 WARNING: Using multiheads finetuning with a foundation model that is not a Materials Project model, need to provied a path to a pretraining file with --pt_train_file.
+2025-09-26 16:57:02.304 INFO: ===========LOADING INPUT DATA===========
+2025-09-26 16:57:02.304 INFO: Using heads: ['target_head', 'pt_head']
+2025-09-26 16:57:02.304 INFO: Using the key specifications to parse data:
+2025-09-26 16:57:02.304 INFO: target_head: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-09-26 16:57:02.305 INFO: pt_head: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-09-26 16:57:02.305 INFO: =============    Processing head target_head     ===========
+2025-09-26 16:57:25.627 INFO: Training set 1/1 [energy: 6337, stress: 0, virials: 0, dipole components: 0, head: 6337, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 6337, charges: 0]
+2025-09-26 16:57:25.648 INFO: Total Training set [energy: 6337, stress: 0, virials: 0, dipole components: 0, head: 6337, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 6337, charges: 0]
+2025-09-26 16:57:28.504 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-09-26 16:57:28.506 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-09-26 16:57:28.506 INFO: Total number of configurations: train=6337, valid=705, tests=[],
+2025-09-26 16:57:28.507 INFO: =============    Processing head pt_head     ===========
+2025-09-26 16:57:28.588 INFO: Training set 1/1 [energy: 142, stress: 0, virials: 0, dipole components: 0, head: 142, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-09-26 16:57:28.589 INFO: Total Training set [energy: 142, stress: 0, virials: 0, dipole components: 0, head: 142, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-09-26 16:57:31.342 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-09-26 16:57:31.344 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-09-26 16:57:31.344 INFO: Total number of configurations: train=142, valid=705, tests=[],
+2025-09-26 16:57:31.345 INFO: Using atomic numbers from command line argument
+2025-09-26 16:57:31.345 INFO: Using atomic numbers from command line argument
+2025-09-26 16:57:31.345 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-09-26 16:57:31.345 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-09-26 16:57:31.345 INFO: Loading atomic energies from /home/phanim/harshitrawat/summer/e0s_llzo.json
+2025-09-26 16:57:31.346 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-09-26 16:57:31.346 INFO: Loading atomic energies from /home/phanim/harshitrawat/summer/e0s_llzo.json
+2025-09-26 16:57:31.348 INFO: Atomic Energies used (z: eV) for head target_head: {3: -1.882, 8: -4.913, 40: -8.509, 57: -4.894}
+2025-09-26 16:57:31.348 INFO: Atomic Energies used (z: eV) for head pt_head: {3: -1.882, 8: -4.913, 40: -8.509, 57: -4.894}
+2025-09-26 16:57:31.348 INFO: Processing datasets for head 'target_head'
+2025-09-26 17:00:48.633 INFO: Combining 1 list datasets for head 'target_head'
+2025-09-26 17:01:10.650 INFO: Combining 1 list datasets for head 'target_head_valid'
+2025-09-26 17:01:10.650 INFO: Combined validation datasets for target_head
+2025-09-26 17:01:10.650 INFO: Head 'target_head' training dataset size: 6337
+2025-09-26 17:01:10.650 INFO: Processing datasets for head 'pt_head'
+2025-09-26 17:01:10.782 INFO: Combining 1 list datasets for head 'pt_head'
+2025-09-26 17:01:32.810 INFO: Combining 1 list datasets for head 'pt_head_valid'
+2025-09-26 17:01:32.810 INFO: Combined validation datasets for pt_head
+2025-09-26 17:01:32.810 INFO: Head 'pt_head' training dataset size: 142
+2025-09-26 17:01:32.810 INFO: Computing average number of neighbors
+2025-09-26 17:01:41.453 INFO: Average number of neighbors: 68.51894591324691
+2025-09-26 17:01:41.455 INFO: During training the following quantities will be reported: energy, forces
+2025-09-26 17:01:41.456 INFO: ===========MODEL DETAILS===========
+2025-09-26 17:01:47.346 WARNING: Standard deviation of the scaling is zero, Changing to no scaling
+2025-09-26 17:01:47.358 INFO: Loading FOUNDATION model
+2025-09-26 17:01:47.360 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-09-26 17:01:47.360 INFO: Model configuration extracted from foundation model
+2025-09-26 17:01:47.360 INFO: Using weighted loss function for fine-tuning
+2025-09-26 17:01:47.360 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-09-26 17:01:47.360 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-09-26 17:01:47.360 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-09-26 17:01:47.360 INFO: Distance transform for radial basis functions: None
+Using reduced CG: False
+Using reduced CG: False
+2025-09-26 17:01:48.837 INFO: Total number of parameters: 896586
+2025-09-26 17:01:48.837 INFO: 
+2025-09-26 17:01:48.837 INFO: ===========OPTIMIZER INFORMATION===========
+2025-09-26 17:01:48.837 INFO: Using ADAM as parameter optimizer
+2025-09-26 17:01:48.837 INFO: Batch size: 2
+2025-09-26 17:01:48.837 INFO: Number of gradient updates: 48592
+2025-09-26 17:01:48.837 INFO: Learning rate: 0.0002, weight decay: 1e-08
+2025-09-26 17:01:48.838 INFO: WeightedEnergyForcesLoss(energy_weight=50.000, forces_weight=10.000)
+2025-09-26 17:01:48.906 WARNING: Cannot find checkpoint with tag 'mace_T1_w4_2heads_final_run-40' in './checkpoints'
+2025-09-26 17:01:48.906 INFO: Using gradient clipping with tolerance=1.000
+2025-09-26 17:01:48.906 INFO: 
+2025-09-26 17:01:48.906 INFO: ===========TRAINING===========
+2025-09-26 17:01:48.906 INFO: Started training, reporting errors on validation set
+2025-09-26 17:01:48.906 INFO: Loss metrics on validation set
+2025-09-26 17:03:14.920 INFO: Initial: head: pt_head, loss=233.51464016, RMSE_E_per_atom= 2126.43 meV, RMSE_F=  959.54 meV / A
+2025-09-26 17:04:34.968 INFO: Initial: head: target_head, loss=233.51464016, RMSE_E_per_atom= 2126.43 meV, RMSE_F=  959.54 meV / A
+2025-09-26 17:41:51.971 INFO: Epoch 0: head: pt_head, loss=0.06124198, RMSE_E_per_atom=   24.11 meV, RMSE_F=   60.43 meV / A
+2025-09-26 17:43:12.084 INFO: Epoch 0: head: target_head, loss=0.03112476, RMSE_E_per_atom=    2.98 meV, RMSE_F=   59.13 meV / A
+2025-09-26 18:20:21.295 INFO: Epoch 1: head: pt_head, loss=0.07604547, RMSE_E_per_atom=   31.79 meV, RMSE_F=   53.89 meV / A
+2025-09-26 18:21:41.679 INFO: Epoch 1: head: target_head, loss=0.02268305, RMSE_E_per_atom=    1.68 meV, RMSE_F=   50.69 meV / A
+2025-09-26 18:58:51.391 INFO: Epoch 2: head: pt_head, loss=0.05700515, RMSE_E_per_atom=   25.71 meV, RMSE_F=   52.04 meV / A
+2025-09-26 19:00:11.597 INFO: Epoch 2: head: target_head, loss=0.02049958, RMSE_E_per_atom=    1.60 meV, RMSE_F=   48.15 meV / A
+2025-09-26 19:37:20.317 INFO: Epoch 3: head: pt_head, loss=0.06192782, RMSE_E_per_atom=   26.46 meV, RMSE_F=   55.62 meV / A
+2025-09-26 19:38:40.404 INFO: Epoch 3: head: target_head, loss=0.01889702, RMSE_E_per_atom=    1.19 meV, RMSE_F=   46.33 meV / A
+2025-09-26 20:15:49.880 INFO: Epoch 4: head: pt_head, loss=0.05735153, RMSE_E_per_atom=   25.46 meV, RMSE_F=   53.49 meV / A
+2025-09-26 20:17:10.020 INFO: Epoch 4: head: target_head, loss=0.01831433, RMSE_E_per_atom=    4.03 meV, RMSE_F=   44.62 meV / A
+2025-09-26 20:54:24.081 INFO: Epoch 5: head: pt_head, loss=0.05512236, RMSE_E_per_atom=   24.96 meV, RMSE_F=   52.50 meV / A
+2025-09-26 20:55:44.207 INFO: Epoch 5: head: target_head, loss=0.01704608, RMSE_E_per_atom=    2.96 meV, RMSE_F=   43.46 meV / A
+2025-09-26 21:32:55.212 INFO: Epoch 6: head: pt_head, loss=0.06819908, RMSE_E_per_atom=   30.63 meV, RMSE_F=   49.36 meV / A
+2025-09-26 21:34:15.531 INFO: Epoch 6: head: target_head, loss=0.01660229, RMSE_E_per_atom=    2.05 meV, RMSE_F=   43.31 meV / A
+2025-09-26 22:11:25.822 INFO: Epoch 7: head: pt_head, loss=0.04875599, RMSE_E_per_atom=   22.89 meV, RMSE_F=   50.99 meV / A
+2025-09-26 22:12:45.773 INFO: Epoch 7: head: target_head, loss=0.01511378, RMSE_E_per_atom=    1.03 meV, RMSE_F=   41.46 meV / A
+2025-09-26 22:49:55.937 INFO: Epoch 8: head: pt_head, loss=0.06183849, RMSE_E_per_atom=   27.95 meV, RMSE_F=   51.19 meV / A
+2025-09-26 22:51:16.116 INFO: Epoch 8: head: target_head, loss=0.01731263, RMSE_E_per_atom=    6.64 meV, RMSE_F=   41.54 meV / A
+2025-09-26 23:28:24.916 INFO: Epoch 9: head: pt_head, loss=0.06081562, RMSE_E_per_atom=   26.18 meV, RMSE_F=   55.70 meV / A
+2025-09-26 23:29:45.072 INFO: Epoch 9: head: target_head, loss=0.01456023, RMSE_E_per_atom=    1.76 meV, RMSE_F=   40.56 meV / A

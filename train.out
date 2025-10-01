@@ -1,0 +1,291 @@
+W0825 21:25:56.421000 124503 site-packages/torch/distributed/run.py:793] 
+W0825 21:25:56.421000 124503 site-packages/torch/distributed/run.py:793] *****************************************
+W0825 21:25:56.421000 124503 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0825 21:25:56.421000 124503 site-packages/torch/distributed/run.py:793] *****************************************
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+2025-08-25 21:26:03.428 INFO: ===========VERIFYING SETTINGS===========
+2025-08-25 21:26:03.472 INFO: ===========VERIFYING SETTINGS===========
+2025-08-25 21:26:03.512 INFO: Process group initialized: True
+2025-08-25 21:26:03.512 INFO: Processes: 1
+2025-08-25 21:26:03.512 INFO: MACE version: 0.3.14
+2025-08-25 21:26:03.512 INFO: CUDA version: 12.1, CUDA device: 0
+2025-08-25 21:26:03.541 INFO: Process group initialized: True
+2025-08-25 21:26:03.541 INFO: Processes: 1
+2025-08-25 21:26:03.541 INFO: MACE version: 0.3.14
+2025-08-25 21:26:03.541 INFO: CUDA version: 12.1, CUDA device: 0
+/home/phanim/harshitrawat/mace/mace/cli/run_train.py:146: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model_foundation = torch.load(
+/home/phanim/harshitrawat/mace/mace/cli/run_train.py:146: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model_foundation = torch.load(
+2025-08-25 21:26:04.139 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-25 21:26:04.140 INFO: Multihead finetuning mode, setting learning rate to 0.0001 and EMA to True. To use a different learning rate, set --force_mh_ft_lr=True.
+2025-08-25 21:26:04.140 INFO: Using multiheads finetuning mode, setting learning rate to 0.0001 and EMA to True
+2025-08-25 21:26:04.140 INFO: ===========LOADING INPUT DATA===========
+2025-08-25 21:26:04.140 INFO: Using heads: ['Default', 'pt_head']
+2025-08-25 21:26:04.140 INFO: Using the key specifications to parse data:
+2025-08-25 21:26:04.140 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-25 21:26:04.140 INFO: pt_head: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-25 21:26:04.140 INFO: =============    Processing head Default     ===========
+2025-08-25 21:26:04.142 INFO: Using foundation model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model as initial checkpoint.
+2025-08-25 21:26:04.143 INFO: Multihead finetuning mode, setting learning rate to 0.0001 and EMA to True. To use a different learning rate, set --force_mh_ft_lr=True.
+2025-08-25 21:26:04.143 INFO: Using multiheads finetuning mode, setting learning rate to 0.0001 and EMA to True
+2025-08-25 21:26:04.143 INFO: ===========LOADING INPUT DATA===========
+2025-08-25 21:26:04.143 INFO: Using heads: ['Default', 'pt_head']
+2025-08-25 21:26:04.143 INFO: Using the key specifications to parse data:
+2025-08-25 21:26:04.143 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-25 21:26:04.143 INFO: pt_head: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2025-08-25 21:26:04.143 INFO: =============    Processing head Default     ===========
+2025-08-25 21:26:10.199 INFO: Training set 1/1 [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-25 21:26:10.204 INFO: Total Training set [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-25 21:26:10.298 INFO: Training set 1/1 [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-25 21:26:10.303 INFO: Total Training set [energy: 1612, stress: 0, virials: 0, dipole components: 0, head: 1612, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 1612, charges: 0]
+2025-08-25 21:26:12.717 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-25 21:26:12.719 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-25 21:26:12.719 INFO: Total number of configurations: train=1612, valid=705, tests=[],
+2025-08-25 21:26:12.719 INFO: =============    Processing head pt_head     ===========
+2025-08-25 21:26:12.747 INFO: Training set 1/1 [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 104, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 21:26:12.748 INFO: Total Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 104, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 21:26:12.748 INFO: No validation set provided, splitting training data instead.
+2025-08-25 21:26:12.751 INFO: Using random 10% of training set for validation with indices saved in: ./valid_indices_84.txt
+2025-08-25 21:26:12.752 INFO: Random Split Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 94, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 21:26:12.752 INFO: Random Split Validation set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 10, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 21:26:12.752 INFO: Total number of configurations: train=94, valid=10, tests=[],
+2025-08-25 21:26:12.752 INFO: ==================Using multiheads finetuning mode==================
+2025-08-25 21:26:12.752 INFO: Total number of configurations in pretraining: train=94, valid=10
+2025-08-25 21:26:12.752 INFO: Using atomic numbers from command line argument
+2025-08-25 21:26:12.752 INFO: Using atomic numbers from command line argument
+2025-08-25 21:26:12.752 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-08-25 21:26:12.752 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-08-25 21:26:12.754 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.2302615750354944, 8: -23.049110738413006, 40: 23.367646191010394, 57: 15.192898072498549}
+2025-08-25 21:26:12.754 INFO: Atomic Energies used (z: eV) for head pt_head: {3: -3.482100566595956, 8: -7.28459863421322, 40: -11.846857579882572, 57: -8.933684809576345}
+2025-08-25 21:26:12.754 INFO: Processing datasets for head 'Default'
+2025-08-25 21:26:12.842 INFO: Validation set 1/1 [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-25 21:26:12.844 INFO: Total Validation set [energy: 705, stress: 0, virials: 0, dipole components: 0, head: 705, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 705, charges: 0]
+2025-08-25 21:26:12.844 INFO: Total number of configurations: train=1612, valid=705, tests=[],
+2025-08-25 21:26:12.844 INFO: =============    Processing head pt_head     ===========
+2025-08-25 21:26:12.870 INFO: Training set 1/1 [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 104, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 21:26:12.871 INFO: Total Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 104, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 21:26:12.871 INFO: No validation set provided, splitting training data instead.
+2025-08-25 21:26:12.874 INFO: Using random 10% of training set for validation with indices saved in: ./valid_indices_84.txt
+2025-08-25 21:26:12.874 INFO: Random Split Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 94, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 21:26:12.874 INFO: Random Split Validation set [energy: 0, stress: 0, virials: 0, dipole components: 0, head: 10, elec_temp: 0, total_charge: 0, total_spin: 0, forces: 0, charges: 0]
+2025-08-25 21:26:12.874 INFO: Total number of configurations: train=94, valid=10, tests=[],
+2025-08-25 21:26:12.874 INFO: ==================Using multiheads finetuning mode==================
+2025-08-25 21:26:12.874 INFO: Total number of configurations in pretraining: train=94, valid=10
+2025-08-25 21:26:12.874 INFO: Using atomic numbers from command line argument
+2025-08-25 21:26:12.875 INFO: Using atomic numbers from command line argument
+2025-08-25 21:26:12.875 INFO: Atomic Numbers used: [3, 8, 40, 57]
+2025-08-25 21:26:12.875 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-08-25 21:26:12.877 INFO: Atomic Energies used (z: eV) for head Default: {3: -1.2302615750354944, 8: -23.049110738413006, 40: 23.367646191010394, 57: 15.192898072498549}
+2025-08-25 21:26:12.877 INFO: Atomic Energies used (z: eV) for head pt_head: {3: -3.482100566595956, 8: -7.28459863421322, 40: -11.846857579882572, 57: -8.933684809576345}
+2025-08-25 21:26:12.877 INFO: Processing datasets for head 'Default'
+2025-08-25 21:26:31.158 INFO: Combining 1 list datasets for head 'Default'
+2025-08-25 21:26:31.345 INFO: Combining 1 list datasets for head 'Default'
+2025-08-25 21:26:39.387 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-08-25 21:26:39.387 INFO: Combined validation datasets for Default
+2025-08-25 21:26:39.387 INFO: Head 'Default' training dataset size: 1612
+2025-08-25 21:26:39.387 INFO: Processing datasets for head 'pt_head'
+2025-08-25 21:26:39.469 INFO: Combining 1 list datasets for head 'pt_head'
+2025-08-25 21:26:39.479 INFO: Head 'pt_head' training dataset size: 94
+2025-08-25 21:26:39.479 INFO: Average number of neighbors: 61.964672446250916
+2025-08-25 21:26:39.479 INFO: During training the following quantities will be reported: energy, forces, stress
+2025-08-25 21:26:39.479 INFO: ===========MODEL DETAILS===========
+2025-08-25 21:26:39.623 INFO: Combining 1 list datasets for head 'Default_valid'
+2025-08-25 21:26:39.623 INFO: Combined validation datasets for Default
+2025-08-25 21:26:39.623 INFO: Head 'Default' training dataset size: 1612
+2025-08-25 21:26:39.624 INFO: Processing datasets for head 'pt_head'
+2025-08-25 21:26:39.705 INFO: Combining 1 list datasets for head 'pt_head'
+2025-08-25 21:26:39.716 INFO: Head 'pt_head' training dataset size: 94
+2025-08-25 21:26:39.716 INFO: Average number of neighbors: 61.964672446250916
+2025-08-25 21:26:39.716 INFO: During training the following quantities will be reported: energy, forces, stress
+2025-08-25 21:26:39.716 INFO: ===========MODEL DETAILS===========
+2025-08-25 21:26:42.629 WARNING: Standard deviation of the scaling is zero, Changing to no scaling
+2025-08-25 21:26:42.632 INFO: Loading FOUNDATION model
+2025-08-25 21:26:42.633 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-08-25 21:26:42.633 INFO: Model configuration extracted from foundation model
+2025-08-25 21:26:42.633 INFO: Using universal loss function for fine-tuning
+2025-08-25 21:26:42.633 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-08-25 21:26:42.633 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-08-25 21:26:42.633 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-08-25 21:26:42.633 INFO: Distance transform for radial basis functions: None
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+2025-08-25 21:26:42.661 WARNING: Standard deviation of the scaling is zero, Changing to no scaling
+2025-08-25 21:26:42.663 INFO: Loading FOUNDATION model
+2025-08-25 21:26:42.664 INFO: Using filtered elements: [3, 8, 40, 57]
+2025-08-25 21:26:42.664 INFO: Model configuration extracted from foundation model
+2025-08-25 21:26:42.664 INFO: Using universal loss function for fine-tuning
+2025-08-25 21:26:42.664 INFO: Message passing with hidden irreps 128x0e+128x1o+128x2e)
+2025-08-25 21:26:42.664 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-08-25 21:26:42.664 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-08-25 21:26:42.664 INFO: Distance transform for radial basis functions: None
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+Using reduced CG: False
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+Using reduced CG: False
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+Using reduced CG: False
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+Using reduced CG: False
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+2025-08-25 21:26:43.907 INFO: Total number of parameters: 896586
+2025-08-25 21:26:43.907 INFO: 
+2025-08-25 21:26:43.907 INFO: ===========OPTIMIZER INFORMATION===========
+2025-08-25 21:26:43.907 INFO: Using ADAM as parameter optimizer
+2025-08-25 21:26:43.907 INFO: Batch size: 2
+2025-08-25 21:26:43.907 INFO: Using Exponential Moving Average with decay: 0.99999
+2025-08-25 21:26:43.907 INFO: Number of gradient updates: 853
+2025-08-25 21:26:43.907 INFO: Learning rate: 0.0001, weight decay: 1e-08
+2025-08-25 21:26:43.907 INFO: UniversalLoss(energy_weight=10.000, forces_weight=0.000, stress_weight=0.000)
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/jit/_check.py:178: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  warnings.warn(
+2025-08-25 21:26:43.966 INFO: Total number of parameters: 896586
+2025-08-25 21:26:43.966 INFO: 
+2025-08-25 21:26:43.966 INFO: ===========OPTIMIZER INFORMATION===========
+2025-08-25 21:26:43.966 INFO: Using ADAM as parameter optimizer
+2025-08-25 21:26:43.966 INFO: Batch size: 2
+2025-08-25 21:26:43.966 INFO: Using Exponential Moving Average with decay: 0.99999
+2025-08-25 21:26:43.966 INFO: Number of gradient updates: 853
+2025-08-25 21:26:43.966 INFO: Learning rate: 0.0001, weight decay: 1e-08
+2025-08-25 21:26:43.966 INFO: UniversalLoss(energy_weight=10.000, forces_weight=0.000, stress_weight=0.000)
+2025-08-25 21:26:44.343 INFO: Using gradient clipping with tolerance=1.000
+2025-08-25 21:26:44.343 INFO: 
+2025-08-25 21:26:44.343 INFO: ===========TRAINING===========
+2025-08-25 21:26:44.343 INFO: Started training, reporting errors on validation set
+2025-08-25 21:26:44.343 INFO: Loss metrics on validation set
+2025-08-25 21:26:44.346 INFO: Using gradient clipping with tolerance=1.000
+2025-08-25 21:26:44.346 INFO: 
+2025-08-25 21:26:44.346 INFO: ===========TRAINING===========
+2025-08-25 21:26:44.346 INFO: Started training, reporting errors on validation set
+2025-08-25 21:26:44.346 INFO: Loss metrics on validation set
+2025-08-25 21:26:50.745 INFO: Initial: head: pt_head, loss=0.00000000, RMSE_E_per_atom= 6899.68 meV, RMSE_F=  405.81 meV / A, RMSE_stress=   19.16 meV / A^3
+2025-08-25 21:26:51.118 INFO: Initial: head: pt_head, loss=0.00000000, RMSE_E_per_atom= 6899.68 meV, RMSE_F=  405.81 meV / A, RMSE_stress=   19.16 meV / A^3
+2025-08-25 21:30:09.927 INFO: Initial: head: Default, loss=0.11800754, RMSE_E_per_atom= 1245.40 meV, RMSE_F=  959.54 meV / A, RMSE_stress=   23.75 meV / A^3
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 996, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 77, in main
+[rank0]:     run(args)
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 767, in run
+[rank0]:     tools.train(
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 222, in train
+[rank0]:     train_one_epoch(
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 370, in train_one_epoch
+[rank0]:     _, opt_metrics = take_step(
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 416, in take_step
+[rank0]:     loss = closure()
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 410, in closure
+[rank0]:     loss.backward()
+[rank0]:   File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.96 GiB. GPU 0 has a total capacity of 139.72 GiB of which 675.25 MiB is free. Including non-PyTorch memory, this process has 70.66 GiB memory in use. Process 124573 has 68.38 GiB memory in use. Of the allocated memory 63.74 GiB is allocated by PyTorch, and 5.54 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2025-08-25 21:30:10.735 INFO: Initial: head: Default, loss=0.11800754, RMSE_E_per_atom= 1245.40 meV, RMSE_F=  959.54 meV / A, RMSE_stress=   23.75 meV / A^3
+[rank0]:[W825 21:30:11.138522214 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 996, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 77, in main
+[rank0]:     run(args)
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/cli/run_train.py", line 767, in run
+[rank0]:     tools.train(
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 222, in train
+[rank0]:     train_one_epoch(
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 370, in train_one_epoch
+[rank0]:     _, opt_metrics = take_step(
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 416, in take_step
+[rank0]:     loss = closure()
+[rank0]:   File "/home/phanim/harshitrawat/mace/mace/tools/train.py", line 410, in closure
+[rank0]:     loss.backward()
+[rank0]:   File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.96 GiB. GPU 0 has a total capacity of 139.72 GiB of which 979.25 MiB is free. Process 124574 has 70.66 GiB memory in use. Including non-PyTorch memory, this process has 68.09 GiB memory in use. Of the allocated memory 58.77 GiB is allocated by PyTorch, and 7.94 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank0]:[W825 21:30:11.622289121 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+W0825 21:30:12.444000 124503 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 124573 closing signal SIGTERM
+E0825 21:30:13.010000 124503 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 1 (pid: 124574) of binary: /home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin/python
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/phanim/harshitrawat/mace/mace/cli/run_train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-08-25_21:30:12
+  host      : cn10.cds.iisc.in
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 124574)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

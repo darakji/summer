@@ -1,0 +1,9 @@
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+WARNING:root:'model_path' argument is deprecated, please use 'model_paths' in the future.
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/summer/infer_MACE_T1_w3_onT2.py", line 25, in <module>
+    calc = MACECalculator(model_path=MODEL_PATH, device=DEVICE, head=HEAD)
+  File "/home/phanim/harshitrawat/mace/mace/calculators/mace.py", line 154, in __init__
+    raise ValueError(f"Couldn't find MACE model files: {model_paths}")
+ValueError: Couldn't find MACE model files: /home/phanim/harshitrawat/summer/mace_T1_w3_2heads_final_compiled.model

@@ -3,8 +3,8 @@
 #SBATCH --partition=h200
 #SBATCH --gres=gpu:h200:1
 #SBATCH --cpus-per-task=16
-#SBATCH --mem=140G
-#SBATCH --time=07:00:00
+#SBATCH --mem=70G
+#SBATCH --time=03:30:00
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 
@@ -45,7 +45,7 @@ EOF
 
 # Run training, force logs to both stdout and a file
 mace_run_train \
-  --name mace_T1_w4_2heads_final \
+  --name mace_T1_w3_2heads_final \
   --model MACE \
   --num_interactions 2 \
   --foundation_model /home/phanim/harshitrawat/summer/mace_models/universal/2024-01-07-mace-128-L2_epoch-199.model \
@@ -65,7 +65,7 @@ mace_run_train \
   --clip_grad 1 \
   --weight_decay 1e-8 \
   --r_max 5.0 \
-  --max_num_epochs 15 \
+  --max_num_epochs 12 \
   --seed 30 \
   --patience 8 \
   --restart_latest

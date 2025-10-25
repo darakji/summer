@@ -1,0 +1,3 @@
+Using head target_head out of ['pt_head', 'target_head']
+No dtype selected, switching to float64 to match model dtype.
+✅ Loaded MACE model on cuda:0

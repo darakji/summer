@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:h200:1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=140G
-#SBATCH --time=07:00:00
+#SBATCH --time=02:00:00
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 set -euo pipefail
@@ -58,7 +58,7 @@ mace_run_train \
   --clip_grad 1 \
   --weight_decay 1e-8 \
   --r_max 5.0 \
-  --max_num_epochs 40 \
+  --max_num_epochs 37 \
   --seed 40 \
   --patience 8 \
   --restart_latest

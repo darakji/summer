@@ -1,0 +1,32 @@
+[
+  {
+    "Threshold":"mu+1.0\u03c3",
+    "Threshold_eV":0.0009895069,
+    "Count":1105,
+    "Fraction_%":12.7686618905
+  },
+  {
+    "Threshold":"mu+1.25\u03c3",
+    "Threshold_eV":0.0010982389,
+    "Count":833,
+    "Fraction_%":9.6256066559
+  },
+  {
+    "Threshold":"mu+1.5\u03c3",
+    "Threshold_eV":0.0012069708,
+    "Count":643,
+    "Fraction_%":7.4300901317
+  },
+  {
+    "Threshold":"mu+1.75\u03c3",
+    "Threshold_eV":0.0013157028,
+    "Count":488,
+    "Fraction_%":5.639010862
+  },
+  {
+    "Threshold":"mu+2.0\u03c3",
+    "Threshold_eV":0.0014244347,
+    "Count":323,
+    "Fraction_%":3.7323780911
+  }
+]

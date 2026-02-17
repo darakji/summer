@@ -1,0 +1,134 @@
+[
+  {
+    "case": "Case1",
+    "device": "cpu",
+    "n_atoms": 648.0,
+    "atoms_per_formula_unit": 54.0,
+    "E_total_eV": -2665.7101072780365,
+    "E_per_atom_eV": -4.113750165552525,
+    "E_form_total_eV": -742.4025952780364,
+    "E_form_per_atom_eV": -1.1456830174043773,
+    "E_form_per_formula_unit_eV": -61.86688293983637
+  },
+  {
+    "case": "Case2",
+    "device": "cpu",
+    "n_atoms": 648.0,
+    "atoms_per_formula_unit": 54.0,
+    "E_total_eV": -2674.6509977222113,
+    "E_per_atom_eV": -4.1275478359910664,
+    "E_form_total_eV": -751.3434857222112,
+    "E_form_per_atom_eV": -1.1594806878429185,
+    "E_form_per_formula_unit_eV": -62.6119571435176
+  },
+  {
+    "case": "Case3",
+    "device": "cpu",
+    "n_atoms": 600.0,
+    "atoms_per_formula_unit": 150.0,
+    "E_total_eV": -2490.768255262428,
+    "E_per_atom_eV": -4.151280425437379,
+    "E_form_total_eV": -708.7688512624277,
+    "E_form_per_atom_eV": -1.1812814187707128,
+    "E_form_per_formula_unit_eV": -177.19221281560692
+  },
+  {
+    "case": "Case4",
+    "device": "cpu",
+    "n_atoms": 800.0,
+    "atoms_per_formula_unit": 200.0,
+    "E_total_eV": -2777.6366747742954,
+    "E_per_atom_eV": -3.4720458434678694,
+    "E_form_total_eV": -652.6105027742956,
+    "E_form_per_atom_eV": -0.8157631284678695,
+    "E_form_per_formula_unit_eV": -163.1526256935739
+  },
+  {
+    "case": "Case5",
+    "device": "cpu",
+    "n_atoms": 908.0,
+    "atoms_per_formula_unit": 227.0,
+    "E_total_eV": -2804.4910668398797,
+    "E_per_atom_eV": -3.0886465493831277,
+    "E_form_total_eV": -474.90101483987974,
+    "E_form_per_atom_eV": -0.5230187388104403,
+    "E_form_per_formula_unit_eV": -118.72525370996993
+  },
+  {
+    "case": "Case6",
+    "device": "cpu",
+    "n_atoms": 536.0,
+    "atoms_per_formula_unit": 134.0,
+    "E_total_eV": -2257.8920788937235,
+    "E_per_atom_eV": -4.212485221816649,
+    "E_form_total_eV": -644.8146428937234,
+    "E_form_per_atom_eV": -1.2030123934584391,
+    "E_form_per_formula_unit_eV": -161.20366072343086
+  },
+  {
+    "case": "Case7",
+    "device": "cpu",
+    "n_atoms": 896.0,
+    "atoms_per_formula_unit": 224.0,
+    "E_total_eV": -2649.8963835564186,
+    "E_per_atom_eV": -2.9574736423620744,
+    "E_form_total_eV": -354.93934755641885,
+    "E_form_per_atom_eV": -0.3961376646835032,
+    "E_form_per_formula_unit_eV": -88.73483688910471
+  },
+  {
+    "case": "Case8",
+    "device": "cpu",
+    "n_atoms": 842.0,
+    "atoms_per_formula_unit": 421.0,
+    "E_total_eV": -2847.8112566483087,
+    "E_per_atom_eV": -3.382198642100129,
+    "E_form_total_eV": -637.2806166483088,
+    "E_form_per_atom_eV": -0.7568653404374214,
+    "E_form_per_formula_unit_eV": -318.6403083241544
+  },
+  {
+    "case": "Case9",
+    "device": "cpu",
+    "n_atoms": 756.0,
+    "atoms_per_formula_unit": 63.0,
+    "E_total_eV": -2813.286409942537,
+    "E_per_atom_eV": -3.721278320029811,
+    "E_form_total_eV": -685.4150179425369,
+    "E_form_per_atom_eV": -0.9066336216171124,
+    "E_form_per_formula_unit_eV": -57.11791816187808
+  },
+  {
+    "case": "Case10",
+    "device": "cpu",
+    "n_atoms": 756.0,
+    "atoms_per_formula_unit": 63.0,
+    "E_total_eV": -2857.364998959939,
+    "E_per_atom_eV": -3.7795833319575913,
+    "E_form_total_eV": -729.4936069599389,
+    "E_form_per_atom_eV": -0.9649386335448927,
+    "E_form_per_formula_unit_eV": -60.791133913328245
+  },
+  {
+    "case": "Case11",
+    "device": "cpu",
+    "n_atoms": 908.0,
+    "atoms_per_formula_unit": 227.0,
+    "E_total_eV": -2213.139877576995,
+    "E_per_atom_eV": -2.4373787197984527,
+    "E_form_total_eV": 116.45017442300514,
+    "E_form_per_atom_eV": 0.12824909077423474,
+    "E_form_per_formula_unit_eV": 29.112543605751288
+  },
+  {
+    "case": "Case12",
+    "device": "cpu",
+    "n_atoms": 908.0,
+    "atoms_per_formula_unit": 227.0,
+    "E_total_eV": -2213.139877576995,
+    "E_per_atom_eV": -2.4373787197984527,
+    "E_form_total_eV": 116.45017442300514,
+    "E_form_per_atom_eV": 0.12824909077423474,
+    "E_form_per_formula_unit_eV": 29.112543605751288
+  }
+]

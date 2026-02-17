@@ -1,0 +1,47 @@
+Node: cn10
+Date: Sat Dec 20 06:36:27 PM IST 2025
+--- env ---
+CUDA_VISIBLE_DEVICES=0
+--- nvidia-smi ---
+Sat Dec 20 18:36:27 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:52:00.0 Off |                    0 |
+| N/A   58C    P0            365W /  700W |  127828MiB / 143771MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A   3219974      C   python                                        722MiB |
+|    0   N/A  N/A   3221055      C   sglang::scheduler_TP0                       12708... |
++-----------------------------------------------------------------------------------------+
+--- process list ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           2  0.0  0.0      0     0 ?        S    Sep29   0:16 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Sep29   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Sep29   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   Sep29   0:00 [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I<   Sep29   0:00 [netns]
+root           8  0.0  0.0      0     0 ?        I<   Sep29   0:00 [kworker/0:0H-events_highpri]
+root          11  0.0  0.0      0     0 ?        I<   Sep29   0:00 [mm_percpu_wq]
+root          12  0.0  0.0      0     0 ?        S    Sep29   0:00 [rcu_tasks_rude_]
+root          13  0.0  0.0      0     0 ?        S    Sep29   0:00 [rcu_tasks_trace]
+root          14  0.0  0.0      0     0 ?        S    Sep29  10:02 [ksoftirqd/0]
+root          15  0.1  0.0      0     0 ?        I    Sep29 148:51 [rcu_sched]
+root          16  0.0  0.0      0     0 ?        S    Sep29   0:38 [migration/0]
+root          17  0.0  0.0      0     0 ?        S    Sep29   0:00 [idle_inject/0]
+root          19  0.0  0.0      0     0 ?        S    Sep29   0:00 [cpuhp/0]
+root          20  0.0  0.0      0     0 ?        S    Sep29   0:00 [cpuhp/1]
+root          21  0.0  0.0      0     0 ?        S    Sep29   0:00 [idle_inject/1]
+root          22  0.0  0.0      0     0 ?        S    Sep29   0:45 [migration/1]
+root          23  0.0  0.0      0     0 ?        S    Sep29   3:12 [ksoftirqd/1]
+root          25  0.0  0.0      0     0 ?        I<   Sep29   0:00 [kworker/1:0H-events_highpri]

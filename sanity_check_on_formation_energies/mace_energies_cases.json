@@ -1,0 +1,110 @@
+[
+  {
+    "case": "Case1",
+    "n_atoms": 648.0,
+    "device": "cpu",
+    "E_total_eV": -2665.7101072780347,
+    "E_per_atom_eV": -4.113750165552522,
+    "E_form_total_eV": -742.4025952780346,
+    "E_form_per_atom_eV": -1.1456830174043744
+  },
+  {
+    "case": "Case2",
+    "n_atoms": 648.0,
+    "device": "cpu",
+    "E_total_eV": -2674.650997722209,
+    "E_per_atom_eV": -4.127547835991063,
+    "E_form_total_eV": -751.3434857222089,
+    "E_form_per_atom_eV": -1.159480687842915
+  },
+  {
+    "case": "Case3",
+    "n_atoms": 600.0,
+    "device": "cpu",
+    "E_total_eV": -2490.7682552624306,
+    "E_per_atom_eV": -4.151280425437384,
+    "E_form_total_eV": -708.7688512624304,
+    "E_form_per_atom_eV": -1.1812814187707175
+  },
+  {
+    "case": "Case4",
+    "n_atoms": 800.0,
+    "device": "cpu",
+    "E_total_eV": -2777.636674774295,
+    "E_per_atom_eV": -3.472045843467869,
+    "E_form_total_eV": -652.6105027742951,
+    "E_form_per_atom_eV": -0.8157631284678689
+  },
+  {
+    "case": "Case5",
+    "n_atoms": 908.0,
+    "device": "cpu",
+    "E_total_eV": -2804.4910668398797,
+    "E_per_atom_eV": -3.0886465493831277,
+    "E_form_total_eV": -474.90101483987974,
+    "E_form_per_atom_eV": -0.5230187388104403
+  },
+  {
+    "case": "Case6",
+    "n_atoms": 536.0,
+    "device": "cpu",
+    "E_total_eV": -2257.892078893728,
+    "E_per_atom_eV": -4.212485221816657,
+    "E_form_total_eV": -644.814642893728,
+    "E_form_per_atom_eV": -1.2030123934584478
+  },
+  {
+    "case": "Case7",
+    "n_atoms": 896.0,
+    "device": "cpu",
+    "E_total_eV": -2649.8963835564186,
+    "E_per_atom_eV": -2.9574736423620744,
+    "E_form_total_eV": -354.93934755641885,
+    "E_form_per_atom_eV": -0.3961376646835032
+  },
+  {
+    "case": "Case8",
+    "n_atoms": 842.0,
+    "device": "cpu",
+    "E_total_eV": -2847.8112566483082,
+    "E_per_atom_eV": -3.3821986421001284,
+    "E_form_total_eV": -637.2806166483083,
+    "E_form_per_atom_eV": -0.7568653404374208
+  },
+  {
+    "case": "Case9",
+    "n_atoms": 756.0,
+    "device": "cpu",
+    "E_total_eV": -2813.286409942544,
+    "E_per_atom_eV": -3.7212783200298203,
+    "E_form_total_eV": -685.4150179425442,
+    "E_form_per_atom_eV": -0.9066336216171219
+  },
+  {
+    "case": "Case10",
+    "n_atoms": 756.0,
+    "device": "cpu",
+    "E_total_eV": -2857.364998959945,
+    "E_per_atom_eV": -3.779583331957599,
+    "E_form_total_eV": -729.4936069599448,
+    "E_form_per_atom_eV": -0.9649386335449006
+  },
+  {
+    "case": "Case11",
+    "n_atoms": 908.0,
+    "device": "cpu",
+    "E_total_eV": -2213.1398775769944,
+    "E_per_atom_eV": -2.437378719798452,
+    "E_form_total_eV": 116.45017442300559,
+    "E_form_per_atom_eV": 0.12824909077423524
+  },
+  {
+    "case": "Case12",
+    "n_atoms": 908.0,
+    "device": "cpu",
+    "E_total_eV": -2213.1398775769944,
+    "E_per_atom_eV": -2.437378719798452,
+    "E_form_total_eV": 116.45017442300559,
+    "E_form_per_atom_eV": 0.12824909077423524
+  }
+]

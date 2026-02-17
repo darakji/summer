@@ -1,0 +1,16 @@
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/mace/extract_embeddings.py", line 107, in <module>
+    main()
+  File "/home/phanim/harshitrawat/mace/extract_embeddings.py", line 31, in main
+    model = torch.load(args.model, map_location=device)
+  File "/home/phanim/harshitrawat/mace/extract_embeddings.py", line 27, in _safe_load
+    return _original_load(*args, **kwargs)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/serialization.py", line 1319, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/serialization.py", line 659, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/serialization.py", line 640, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/phanim/harshitrawat/summer/mace_T1_w3_2heads_final.model'

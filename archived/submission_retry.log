@@ -1,0 +1,316 @@
+nohup: ignoring input
+Submitted batch job 24298
+Submitted batch job 24299
+Submitted batch job 24300
+Submitted batch job 24302
+Submitted batch job 24307
+Submitted batch job 24308
+Submitted batch job 24310
+Submitted batch job 24311
+Submitted batch job 24312
+Submitted batch job 24313
+Submitted batch job 24317
+Submitted batch job 24319
+Submitted batch job 24324
+Submitted batch job 24325
+Submitted batch job 24328
+Submitted batch job 24333
+Submitted batch job 24348
+Submitted batch job 24350
+Submitted batch job 24353
+Submitted batch job 24354
+Submitted batch job 24357
+Submitted batch job 24365
+Submitted batch job 24378
+Submitted batch job 24381
+Found 24 jobs to submit.
+[13:27:26] Queue: 0 / 2
+Submitting embed_T1w1_on_T1.slurm (1/24)...
+[13:27:31] Queue: 1 / 2
+Submitting embed_T1w1_on_T2.slurm (2/24)...
+[13:27:36] Queue: 2 / 2
+[13:28:36] Queue: 2 / 2
+[13:29:36] Queue: 2 / 2
+[13:30:36] Queue: 2 / 2
+[13:31:36] Queue: 2 / 2
+[13:32:36] Queue: 1 / 2
+Submitting embed_T1w1_on_T3.slurm (3/24)...
+[13:32:41] Queue: 2 / 2
+[13:33:41] Queue: 2 / 2
+[13:34:41] Queue: 2 / 2
+[13:35:41] Queue: 2 / 2
+[13:36:41] Queue: 2 / 2
+[13:37:41] Queue: 2 / 2
+[13:38:41] Queue: 2 / 2
+[13:39:41] Queue: 2 / 2
+[13:40:41] Queue: 2 / 2
+[13:41:41] Queue: 2 / 2
+[13:42:41] Queue: 2 / 2
+[13:43:41] Queue: 2 / 2
+[13:44:41] Queue: 1 / 2
+Submitting embed_T1w2_on_T1.slurm (4/24)...
+[13:44:46] Queue: 2 / 2
+[13:45:46] Queue: 2 / 2
+[13:46:46] Queue: 2 / 2
+[13:47:46] Queue: 2 / 2
+[13:48:46] Queue: 2 / 2
+[13:49:46] Queue: 2 / 2
+[13:50:46] Queue: 2 / 2
+[13:51:46] Queue: 2 / 2
+[13:52:46] Queue: 2 / 2
+[13:53:46] Queue: 2 / 2
+[13:54:46] Queue: 2 / 2
+[13:55:46] Queue: 2 / 2
+[13:56:46] Queue: 2 / 2
+[13:57:46] Queue: 2 / 2
+[13:58:46] Queue: 2 / 2
+[13:59:46] Queue: 2 / 2
+[14:00:46] Queue: 2 / 2
+[14:01:46] Queue: 2 / 2
+[14:02:47] Queue: 2 / 2
+[14:03:47] Queue: 2 / 2
+[14:04:47] Queue: 2 / 2
+[14:05:47] Queue: 2 / 2
+[14:06:47] Queue: 2 / 2
+[14:07:47] Queue: 2 / 2
+[14:08:47] Queue: 2 / 2
+[14:09:47] Queue: 2 / 2
+[14:10:47] Queue: 2 / 2
+[14:11:47] Queue: 2 / 2
+[14:12:47] Queue: 2 / 2
+[14:13:47] Queue: 2 / 2
+[14:14:47] Queue: 1 / 2
+Submitting embed_T1w2_on_T2.slurm (5/24)...
+[14:14:52] Queue: 2 / 2
+[14:15:52] Queue: 2 / 2
+[14:16:52] Queue: 2 / 2
+[14:17:52] Queue: 2 / 2
+[14:18:52] Queue: 2 / 2
+[14:19:52] Queue: 1 / 2
+Submitting embed_T1w2_on_T3.slurm (6/24)...
+[14:19:57] Queue: 2 / 2
+[14:20:57] Queue: 2 / 2
+[14:21:57] Queue: 2 / 2
+[14:22:57] Queue: 2 / 2
+[14:23:57] Queue: 2 / 2
+[14:24:57] Queue: 2 / 2
+[14:25:57] Queue: 2 / 2
+[14:26:57] Queue: 2 / 2
+[14:27:57] Queue: 2 / 2
+[14:28:57] Queue: 2 / 2
+[14:29:57] Queue: 2 / 2
+[14:30:57] Queue: 1 / 2
+Submitting embed_T1w3_on_T1.slurm (7/24)...
+[14:31:02] Queue: 2 / 2
+[14:32:02] Queue: 1 / 2
+Submitting embed_T1w3_on_T2.slurm (8/24)...
+[14:32:07] Queue: 2 / 2
+[14:33:07] Queue: 2 / 2
+[14:34:07] Queue: 2 / 2
+[14:35:07] Queue: 2 / 2
+[14:36:07] Queue: 2 / 2
+[14:37:07] Queue: 1 / 2
+Submitting embed_T1w3_on_T3.slurm (9/24)...
+[14:37:12] Queue: 2 / 2
+[14:38:12] Queue: 2 / 2
+[14:39:12] Queue: 2 / 2
+[14:40:12] Queue: 2 / 2
+[14:41:12] Queue: 2 / 2
+[14:42:12] Queue: 2 / 2
+[14:43:12] Queue: 2 / 2
+[14:44:12] Queue: 2 / 2
+[14:45:12] Queue: 2 / 2
+[14:46:12] Queue: 2 / 2
+[14:47:12] Queue: 2 / 2
+[14:48:12] Queue: 2 / 2
+[14:49:12] Queue: 1 / 2
+Submitting embed_T1w4_on_T1.slurm (10/24)...
+[14:49:17] Queue: 2 / 2
+[14:50:17] Queue: 2 / 2
+[14:51:17] Queue: 2 / 2
+[14:52:17] Queue: 2 / 2
+[14:53:17] Queue: 2 / 2
+[14:54:17] Queue: 2 / 2
+[14:55:17] Queue: 2 / 2
+[14:56:17] Queue: 2 / 2
+[14:57:17] Queue: 2 / 2
+[14:58:17] Queue: 2 / 2
+[14:59:17] Queue: 2 / 2
+[15:00:17] Queue: 2 / 2
+[15:01:17] Queue: 2 / 2
+[15:02:17] Queue: 2 / 2
+[15:03:17] Queue: 2 / 2
+[15:04:17] Queue: 2 / 2
+[15:05:17] Queue: 2 / 2
+[15:06:17] Queue: 2 / 2
+[15:07:17] Queue: 2 / 2
+[15:08:18] Queue: 2 / 2
+[15:09:18] Queue: 2 / 2
+[15:10:18] Queue: 2 / 2
+[15:11:18] Queue: 2 / 2
+[15:12:18] Queue: 2 / 2
+[15:13:18] Queue: 2 / 2
+[15:14:18] Queue: 2 / 2
+[15:15:18] Queue: 2 / 2
+[15:16:18] Queue: 2 / 2
+[15:17:18] Queue: 1 / 2
+Submitting embed_T1w4_on_T2.slurm (11/24)...
+[15:17:23] Queue: 2 / 2
+[15:18:23] Queue: 2 / 2
+[15:19:23] Queue: 2 / 2
+[15:20:23] Queue: 2 / 2
+[15:21:23] Queue: 2 / 2
+[15:22:23] Queue: 1 / 2
+Submitting embed_T1w4_on_T3.slurm (12/24)...
+[15:22:28] Queue: 2 / 2
+[15:23:28] Queue: 2 / 2
+[15:24:28] Queue: 2 / 2
+[15:25:28] Queue: 2 / 2
+[15:26:28] Queue: 2 / 2
+[15:27:28] Queue: 2 / 2
+[15:28:28] Queue: 2 / 2
+[15:29:28] Queue: 2 / 2
+[15:30:28] Queue: 2 / 2
+[15:31:28] Queue: 2 / 2
+[15:32:28] Queue: 2 / 2
+[15:33:28] Queue: 2 / 2
+[15:34:28] Queue: 1 / 2
+Submitting embed_T2w1_on_T1.slurm (13/24)...
+[15:34:33] Queue: 2 / 2
+[15:35:33] Queue: 1 / 2
+Submitting embed_T2w1_on_T2.slurm (14/24)...
+[15:35:38] Queue: 2 / 2
+[15:36:38] Queue: 2 / 2
+[15:37:38] Queue: 2 / 2
+[15:38:38] Queue: 2 / 2
+[15:39:38] Queue: 2 / 2
+[15:40:38] Queue: 2 / 2
+[15:41:38] Queue: 1 / 2
+Submitting embed_T2w1_on_T3.slurm (15/24)...
+[15:41:43] Queue: 2 / 2
+[15:42:43] Queue: 2 / 2
+[15:43:43] Queue: 2 / 2
+[15:44:43] Queue: 2 / 2
+[15:45:43] Queue: 2 / 2
+[15:46:43] Queue: 2 / 2
+[15:47:43] Queue: 2 / 2
+[15:48:43] Queue: 2 / 2
+[15:49:43] Queue: 2 / 2
+[15:50:43] Queue: 2 / 2
+[15:51:43] Queue: 2 / 2
+[15:52:43] Queue: 2 / 2
+[15:53:43] Queue: 1 / 2
+Submitting embed_T2w2_on_T1.slurm (16/24)...
+[15:53:48] Queue: 2 / 2
+[15:54:48] Queue: 2 / 2
+[15:55:48] Queue: 2 / 2
+[15:56:48] Queue: 2 / 2
+[15:57:48] Queue: 2 / 2
+[15:58:48] Queue: 2 / 2
+[15:59:48] Queue: 2 / 2
+[16:00:48] Queue: 2 / 2
+[16:01:48] Queue: 2 / 2
+[16:02:48] Queue: 2 / 2
+[16:03:48] Queue: 2 / 2
+[16:04:48] Queue: 2 / 2
+[16:05:48] Queue: 2 / 2
+[16:06:48] Queue: 2 / 2
+[16:07:48] Queue: 2 / 2
+[16:08:48] Queue: 2 / 2
+[16:09:48] Queue: 2 / 2
+[16:10:48] Queue: 2 / 2
+[16:11:48] Queue: 2 / 2
+[16:12:48] Queue: 2 / 2
+[16:13:48] Queue: 2 / 2
+[16:14:49] Queue: 2 / 2
+[16:15:49] Queue: 2 / 2
+[16:16:49] Queue: 2 / 2
+[16:17:49] Queue: 2 / 2
+[16:18:49] Queue: 2 / 2
+[16:19:49] Queue: 2 / 2
+[16:20:49] Queue: 1 / 2
+Submitting embed_T2w2_on_T2.slurm (17/24)...
+[16:20:54] Queue: 2 / 2
+[16:21:54] Queue: 2 / 2
+[16:22:54] Queue: 2 / 2
+[16:23:54] Queue: 2 / 2
+[16:24:54] Queue: 2 / 2
+[16:25:54] Queue: 2 / 2
+[16:26:54] Queue: 1 / 2
+Submitting embed_T2w2_on_T3.slurm (18/24)...
+[16:26:59] Queue: 2 / 2
+[16:27:59] Queue: 2 / 2
+[16:28:59] Queue: 2 / 2
+[16:29:59] Queue: 2 / 2
+[16:30:59] Queue: 2 / 2
+[16:31:59] Queue: 2 / 2
+[16:32:59] Queue: 2 / 2
+[16:33:59] Queue: 2 / 2
+[16:34:59] Queue: 2 / 2
+[16:35:59] Queue: 2 / 2
+[16:36:59] Queue: 2 / 2
+[16:37:59] Queue: 2 / 2
+[16:38:59] Queue: 0 / 2
+Submitting embed_T2w3_on_T1.slurm (19/24)...
+[16:39:04] Queue: 1 / 2
+Submitting embed_T2w3_on_T2.slurm (20/24)...
+[16:39:09] Queue: 2 / 2
+[16:40:09] Queue: 2 / 2
+[16:41:09] Queue: 2 / 2
+[16:42:09] Queue: 2 / 2
+[16:43:09] Queue: 2 / 2
+[16:44:09] Queue: 2 / 2
+[16:45:09] Queue: 1 / 2
+Submitting embed_T2w3_on_T3.slurm (21/24)...
+[16:45:14] Queue: 2 / 2
+[16:46:14] Queue: 2 / 2
+[16:47:14] Queue: 2 / 2
+[16:48:14] Queue: 2 / 2
+[16:49:14] Queue: 2 / 2
+[16:50:14] Queue: 2 / 2
+[16:51:14] Queue: 2 / 2
+[16:52:14] Queue: 2 / 2
+[16:53:14] Queue: 2 / 2
+[16:54:14] Queue: 2 / 2
+[16:55:14] Queue: 2 / 2
+[16:56:14] Queue: 2 / 2
+[16:57:14] Queue: 1 / 2
+Submitting embed_T2w4_on_T1.slurm (22/24)...
+[16:57:19] Queue: 2 / 2
+[16:58:19] Queue: 2 / 2
+[16:59:19] Queue: 2 / 2
+[17:00:19] Queue: 2 / 2
+[17:01:19] Queue: 2 / 2
+[17:02:19] Queue: 2 / 2
+[17:03:19] Queue: 2 / 2
+[17:04:19] Queue: 2 / 2
+[17:05:19] Queue: 2 / 2
+[17:06:19] Queue: 2 / 2
+[17:07:19] Queue: 2 / 2
+[17:08:19] Queue: 2 / 2
+[17:09:19] Queue: 2 / 2
+[17:10:19] Queue: 2 / 2
+[17:11:19] Queue: 2 / 2
+[17:12:19] Queue: 2 / 2
+[17:13:19] Queue: 2 / 2
+[17:14:19] Queue: 2 / 2
+[17:15:19] Queue: 2 / 2
+[17:16:19] Queue: 2 / 2
+[17:17:19] Queue: 2 / 2
+[17:18:19] Queue: 2 / 2
+[17:19:19] Queue: 2 / 2
+[17:20:22] Queue: 2 / 2
+[17:21:22] Queue: 2 / 2
+[17:22:22] Queue: 2 / 2
+[17:23:22] Queue: 2 / 2
+[17:24:22] Queue: 2 / 2
+[17:25:22] Queue: 1 / 2
+Submitting embed_T2w4_on_T2.slurm (23/24)...
+[17:25:27] Queue: 2 / 2
+[17:26:27] Queue: 2 / 2
+[17:27:27] Queue: 2 / 2
+[17:28:27] Queue: 2 / 2
+[17:29:27] Queue: 2 / 2
+[17:30:27] Queue: 2 / 2
+[17:31:27] Queue: 1 / 2
+Submitting embed_T2w4_on_T3.slurm (24/24)...

@@ -1,0 +1,9 @@
+Loading model from /home/phanim/harshitrawat/summer/mace_T1_w1_2heads_final.model...
+Model Config: r_max=6.0, num_interactions=2
+Processing data from /home/phanim/harshitrawat/summer/T1_T2_T3_data/T2_chgnet_labeled.extxyz...
+First frame has 852 atoms.
+DEBUG: Batch info: Batch(batch=[49862], cell=[192, 3], charges=[49862], charges_weight=[64], dipole=[64, 3], dipole_weight=[64, 3], edge_index=[2, 3420184], elec_temp=[64], energy=[64], energy_weight=[64], forces=[49862, 3], forces_weight=[64], head=[64], node_attrs=[49862, 4], positions=[49862, 3], ptr=[65], shifts=[3420184, 3], stress=[64, 3, 3], stress_weight=[64], total_charge=[64], total_spin=[64], unit_shifts=[3420184, 3], virials=[64, 3, 3], virials_weight=[64], weight=[64])
+DEBUG: Batch node_attrs shape: torch.Size([49862, 4])
+DEBUG: ScaleShiftMACE input node_attrs: torch.Size([49862, 4])
+DEBUG: ScaleShiftMACE input edge_index: torch.Size([2, 3420184])
+DEBUG: Layer 0 node_feats: torch.Size([49862, 128, 16]), sc: torch.Size([49862, 1152])

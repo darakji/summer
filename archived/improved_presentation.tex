@@ -1,0 +1,439 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{beaver} % A slightly more professional color scheme (Red/Grey)
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+% Custom Colors regarding MACE/CHGNet
+\definecolor{maceblue}{RGB}{0, 80, 150}
+\definecolor{alertred}{RGB}{200, 0, 0}
+
+\title[LLZO/Li ML Reliability]{Reliable Active Learning for LLZO/Li Interfaces}
+\subtitle{Bridging the Gap: From Universal Surrogates to Specialized Fine-Tuning}
+\author{Mehul}
+\institute{IISc}
+\date{\today}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{1. The Challenge: Combinatorial Complexity}
+\begin{columns}
+\column{0.6\textwidth}
+\begin{itemize}
+    \item \textbf{Goal:} Study the Li-metal / Solid Electrolyte (LLZO) interface with MLIPs.
+    \item \textbf{The Problem:} The phase space is combinatorial:
+    \begin{itemize}
+        \item \textbf{Strain:} Lattice mismatch drives instabilities.
+        \item \textbf{Chemistry:} 6+ distinct surface terminations (La, Zr, Li-rich...).
+        \item \textbf{Geometry:} Multiple facet orientations (100, 110, 111).
+    \end{itemize}
+    \item \textbf{Bottleneck:} DFT is too expensive ($\sim$1000s of CPU-hours/cal) to explore this fully.
+\end{itemize}
+\column{0.38\textwidth}
+\begin{alertblock}{Key Constraint}
+We cannot run DFT on everything. We need a reliable filter to run DFT on.
+\end{alertblock}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{2. The Solution: A Surrogate-First Strategy}
+\textbf{Phase 1: High-Throughput Generation (The "Wide Net")}
+\begin{itemize}
+    \item Use \textbf{CHGNet} (Universal Model) as a zero-shot surrogate.
+    \item \textbf{Action:} Generated \& Relaxed \textbf{8,654} interface structures.
+    \item \textbf{Coverage:} 
+    \begin{itemize}
+        \item Strains: $0\%, \pm1\%, \pm2\%, \pm3\%$
+        \item Temperatures: MD Snapshots at 300K, 450K.
+    \end{itemize}
+\end{itemize}
+
+\vspace{1em}
+\textbf{Phase 2: Specialized Reliability (The "Filter")}
+\begin{itemize}
+    \item Fine-tuned **MACE** models on subsets of this data.
+    \item \textbf{Why?} Universal models are "Jacks of all trades." We need a Master of \emph{this} interface.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{3. Dataset Architecture}
+We curated three distinct datasets to test generalization, not just accuracy.
+
+\begin{table}[]
+\centering
+\begin{tabular}{l l l}
+\toprule
+\textbf{Dataset} & \textbf{Role} & \textbf{Count} \\
+\midrule
+\textbf{T1} & \textbf{Training Set A} (Primary Interface) & 6,337 \\
+\textbf{T2} & \textbf{Validation Set} (Held-out, Safe) & 705 \\
+\textbf{T3} & \textbf{Training Set B} (Alternate Interface/Strain) & 1,612 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5em}
+\textbf{Model Strategy:}
+\begin{itemize}
+    \item \textbf{MACE\_T1:} Trained on T1 $\to$ Tested on T3 (OOD test).
+    \item \textbf{MACE\_T2:} Trained on T3 $\to$ Tested on T1 (OOD test).
+    \item \textbf{Goal:} If models disagree, the structure is objectively unreliable.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{4. The Safety Mechanism: Dual OOD Detection}
+We assume the ML prediction is \textbf{wrong} unless proven otherwise by two independent physics checks:
+
+\begin{columns}
+\column{0.48\textwidth}
+\begin{block}{1. Epistemic Uncertainty ($u_E$)}
+\emph{"Does the model confuse itself?"}
+\begin{itemize}
+    \item Calculated via \textbf{Deep Ensemble Variance} (4 seeds).
+    \item Captures \textbf{Label Noise} and complex physics.
+\end{itemize}
+\end{block}
+
+\column{0.48\textwidth}
+\begin{block}{2. Latent Distance ($d_{latent}$)}
+\emph{"Is the geometry weird?"}
+\begin{itemize}
+    \item Euclidean distance in PCA-reduced MACE latent space.
+        \item Captures \textbf{Geometric Novelty} (e.g., bond breaking).
+\end{itemize}
+\end{block}
+\end{columns}
+
+\vspace{1em}
+\textbf{Hypothesis:} An OOD structure will trigger \emph{at least one} of these flags.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Mathematical Definition: Latent-Space Distance ($d_{latent}$)}
+
+\textbf{Latent Representation}
+\begin{itemize}
+    \item Each structure $X$ with $N$ atoms is mapped by MACE to atomic embeddings:
+    \[
+    \mathbf{z}_i \in \mathbb{R}^{128}, \quad i = 1,\dots,N
+    \]
+    \item Structure-level latent vector obtained by mean pooling:
+    \[
+    \mathbf{z}(X) = \frac{1}{N} \sum_{i=1}^{N} \mathbf{z}_i
+    \]
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Dimensionality Reduction}
+\begin{itemize}
+    \item Stack training latents $\{\mathbf{z}(X_j)\}$ into matrix $Z \in \mathbb{R}^{N_s \times 128}$
+    \item Apply PCA:
+    \[
+    \mathbf{y}(X) = W^\top (\mathbf{z}(X) - \boldsymbol{\mu}), \quad W \in \mathbb{R}^{128 \times k}
+    \]
+    \item Choose $k=2$ (captures $>99\%$ variance)
+\end{itemize}
+
+\textbf{Latent Distance}
+\[
+d_{\text{latent}}(X) = \left\| \mathbf{y}(X) - \bar{\mathbf{y}}_{\text{train}} \right\|_2
+\]
+
+\end{frame}
+%------------------------------------------------
+\begin{frame}{Mathematical Definition: Energy Uncertainty ($u_E$)}
+
+\textbf{Ensemble Predictions}
+\begin{itemize}
+    \item Consider an ensemble of $M$ independently trained MACE models:
+    \[
+    \{ f^{(1)}, f^{(2)}, \dots, f^{(M)} \}
+    \]
+    \item Each model predicts a total energy:
+    \[
+    E^{(m)}(X) = f^{(m)}(X)
+    \]
+\end{itemize}
+
+\textbf{Ensemble Statistics}
+\[
+\bar{E}(X) = \frac{1}{M} \sum_{m=1}^{M} E^{(m)}(X)
+\]
+
+\[
+\sigma_E^2(X) = \frac{1}{M} \sum_{m=1}^{M} \left( E^{(m)}(X) - \bar{E}(X) \right)^2
+\]
+
+\textbf{Size-Normalized Uncertainty}
+\[
+u_E(X) = \frac{\sigma_E(X)}{N}
+\]
+
+\textbf{Interpretation:}
+\begin{itemize}
+    \item Measures epistemic uncertainty (model disagreement)
+    \item High $u_E$ $\Rightarrow$ extrapolation or unresolved physics
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------
+\begin{frame}{Why Two Metrics? (Mathematically)}
+\begin{itemize}
+    \item $d_{latent}(X)$ measures \textbf{geometric novelty} in representation space.
+    \item $u_E(X)$ measures \textbf{functional instability} of the learned energy map.
+    \item Agreement between the two implies:
+\end{itemize}
+
+\[
+\text{Novel Geometry} \;\Rightarrow\; \text{Unstable Energy Prediction}
+\]
+
+\vspace{0.5em}
+\textbf{This links structure $\rightarrow$ representation $\rightarrow$ energy.}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Definition of OOD in This Work}
+\textbf{Out-of-Distribution (OOD)} in this project means:
+
+\vspace{0.5em}
+\begin{itemize}
+\item A structure whose latent representation lies far from the high-density core 
+of the learned manifold of the finetuned models.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Operational Definition:}
+\begin{itemize}
+\item Thresholds are defined via training-set percentiles:
+\[
+\tau_{99} = \mathrm{Quantile}_{0.99}\left( \{ u_E(X_j) \}_{X_j \in D_{\text{train}}} \right)
+\]
+(similarly for $d_{latent}$)
+
+    \item A structure is flagged OOD if it exceeds the \textbf{99\% percentile}
+    \item of the training distribution in either:
+    \begin{itemize}
+        \item Energy uncertainty ($u_E$), or
+        \item Latent-space distance ($d_{latent}$).
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Interpretation:}
+\begin{itemize}
+    \item OOD $\neq$ wrong prediction
+    \item OOD $\Rightarrow$ extrapolation risk $\Rightarrow$ candidate for DFT
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{5. Screening Results (The "Funnel")}
+\textbf{Why we chose the 99\% Threshold:}
+\begin{itemize}
+    \item \textbf{90\% Threshold:} $>1200$ flags (Captures valid thermal noise $\to$ Too Noisy).
+    \item \textbf{95\% Threshold:} $\sim 400$ flags (Many redundant trajectory snapshots).
+    \item \textbf{99\% Threshold (Strict):} \textbf{120 flags}. Isolates true physical breakdown events.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Final OOD Pools (at 99\%):}
+\begin{itemize}
+    
+    \item \textbf{Combined Union (Union of $u_E \cup d_{latent}$):}
+    \begin{itemize}
+        \item Total Unique Count: \textbf{120 structures}.
+        \item Represents the full "Screening Pool" for active learning.
+    \end{itemize}
+    
+    \item \textbf{Intersection ($u_E \cap d_{latent}$):}
+    \begin{itemize}
+        \item Count: \textbf{17 structures}. (Too conservative).
+    \end{itemize}
+\end{itemize}
+
+
+\centering
+\textbf{Which set do we send to DFT?}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{6. Verification: Dimensionality \& Disagreement}
+\begin{columns}
+\column{0.4\textwidth}
+\textbf{1. The Physics is Low-Dimensional}
+\begin{center}
+    \includegraphics[width=0.95\textwidth]{Thesis_Results/Thesis_PCA_Scree_Plot.png}
+\end{center}
+\small
+\emph{Result:} $>99\%$ of variance is captured by just 2 dimensions. The OOD landscape is structurally simple.
+
+\column{0.4\textwidth}
+\textbf{2. OOD $\implies$ Model Collapse}
+\begin{center}
+    \includegraphics[width=0.95\textwidth]{Thesis_Results/Thesis_Model_Disagreement.png}
+\end{center}
+\small
+\textbf{Metric:} \emph{Uncertainty Divergence} $\Delta u_E = |u_{E}^{T1} - u_{E}^{T3}|$.
+\emph{Result:} OOD structures cause models to disagree on their confidence levels (Consensus Break).
+\emph{Interpretation:} Some geometrically novel structures remain physically stable,
+leading to high $d_{latent}$ but low $u_E$.
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{7. The "Physics-Aware" Selection Strategy}
+\begin{alertblock}{Problem}
+The Intersection (17) is too small (risk of missing edge cases).\\
+The Union (120) contains redundant snapshots of similar trajectories.
+\end{alertblock}
+
+\textbf{Solution: Metadata Clustering}
+We group the 120 Union structures by their defining \textbf{Physical Boundary Conditions}:
+\begin{itemize}
+    \item \textbf{1. Mechanical:} Strain State ($0\%, \pm1\%, \pm2\%, \pm3\%$)
+    \item \textbf{2. Chemical:} Surface Termination (La, Zr, Li-rich, etc.)
+    \item \textbf{3. Geometric:} Facet Orientation (100, 110, 111)
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{The Logic:} Structures sharing these 3 tags represent the \emph{same physical interface}. Variations are just thermal noise.
+\begin{itemize}
+    \item \textbf{Result:} 120 Structures $\to$ \textbf{19 Unique Physical Conditions}.
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{8. Selected DFT Candidates (The 19 Conditions)}
+The 120 OOD structures collapsed into \textbf{5 Primary Interface Classes}, covering 19 specific strain states.
+
+\begin{table}[]
+\centering
+\small
+\begin{tabular}{l l l l}
+\toprule
+\textbf{Class} & \textbf{Termination} & \textbf{Facet} & \textbf{Strains Covered (Unique Conditions)} \\
+\midrule
+\textbf{I} & La & 110 & $0\%, \pm1\%, \pm2\%, \pm3\%, -1.5\%$ (8 States) \\
+\textbf{II} & La & 111 & $0\%, +1\%, +1.5\%, +2\%, +3\%$ (5 States) \\
+\textbf{III} & Zr & 111 & $+2\%, +3\%$ (High Tensile Only) \\
+\textbf{IV} & Li-Rich & 100 & $+2\%, +3\%$ (High Tensile Only) \\
+\textbf{V} & La & 100 & $+2\%, +3\%$ (High Tensile Only) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5em}
+\textbf{Physical Insight:}
+\begin{itemize}
+    \item \textbf{La-110 (Class I)} is the most unstable interface, failing across almost the entire strain range.
+    \item \textbf{Zr \& Li-Rich (Classes III-V)} are generally stable, failing only at extreme tensile strains ($>2\%$).
+\end{itemize}
+\end{frame}
+%------------------------------------------------
+\begin{frame}{9. Appendix: Full List of 19 Candidates}
+\tiny
+\begin{columns}[t]
+\column{0.48\textwidth}
+\textbf{Group I: La-Terminated (110) -- Highly Unstable}
+\begin{table}[]
+\begin{tabular}{l l l}
+\toprule
+\textbf{ID} & \textbf{Condition} & \textbf{Status} \\
+\midrule
+1 & La (110) Strain 0.0\% & OOD \\
+2 & La (110) Strain +1.0\% & OOD \\
+3 & La (110) Strain +1.5\% & OOD \\
+4 & La (110) Strain +2.0\% & OOD \\
+5 & La (110) Strain +3.0\% & OOD \\
+6 & La (110) Strain -1.0\% & OOD \\
+7 & La (110) Strain -2.0\% & OOD \\
+8 & La (110) Strain -3.0\% & OOD \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\column{0.48\textwidth}
+\textbf{Group II: La-Terminated (111)}
+\begin{table}[]
+\begin{tabular}{l l l}
+\toprule
+\textbf{ID} & \textbf{Condition} & \textbf{Status} \\
+\midrule
+9 & La (111) Strain 0.0\% & OOD \\
+10 & La (111) Strain +1.0\% & OOD \\
+11 & La (111) Strain +1.5\% & OOD \\
+12 & La (111) Strain +2.0\% & OOD \\
+13 & La (111) Strain +3.0\% & OOD \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Group III-V: Stable Interfaces (Only High Tension)}
+\begin{table}[]
+\begin{tabular}{l l l}
+\toprule
+\textbf{ID} & \textbf{Condition} & \textbf{Status} \\
+\midrule
+14-15 & Zr (111) Strain +2\%, +3\% & OOD \\
+16-17 & Li-Rich (100) Strain +2\%, +3\% & OOD \\
+18-19 & La (100) Strain +2\%, +3\% & OOD \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{10. Final Action Plan: Targeted Active Learning}
+Step 1: \textbf{Compute DFT} for the \textbf{19 Representative Candidates}.
+\begin{itemize}
+    \item Cost: Negligible (~20 DFTs vs 8600).
+    \item Coverage: Spans every failure mode discovered (Strain + Geometry).
+\end{itemize}
+
+Step 2: \textbf{Fine-Tune Universal Model}
+\begin{itemize}
+    \item Add these 19 "Hard Negatives" to the training set.
+    \item Retrain MACE Universal.
+\end{itemize}
+
+Step 3: \textbf{Verify Contraction}
+\begin{itemize}
+    \item Re-run the OOD scan. The "OOD Region" should shrink, confirming the model has learned the new physics.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Summary}
+\begin{enumerate}
+    \item **Scale:** Generated 8600+ interface structures via surrogate.
+    \item **Reliability:** Built a dual-check system (Uncertainty + Geometry).
+    \item **Validation:** Proven that OOD flags correlate with Model Disagreement.
+    \item **Efficiency:** Reduced 120 potential errors to \textbf{19 DFT calculations} without losing physical coverage.
+\end{enumerate}
+
+\centering
+\vspace{1em}
+\textbf{This creates a closed-loop, reliable pipeline for solid-state interface discovery.}
+\end{frame}
+
+\end{document}

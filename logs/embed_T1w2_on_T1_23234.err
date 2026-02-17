@@ -1,0 +1,51 @@
+/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+Traceback (most recent call last):
+  File "/home/phanim/harshitrawat/mace/extract_embeddings.py", line 103, in <module>
+    main()
+  File "/home/phanim/harshitrawat/mace/extract_embeddings.py", line 53, in main
+    process_and_write(chunk, model, z_table, device, args.output)
+  File "/home/phanim/harshitrawat/mace/extract_embeddings.py", line 79, in process_and_write
+    output = model(batch.to_dict(), compute_force=False)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/phanim/harshitrawat/mace/mace/modules/models.py", line 546, in forward
+    node_feats, sc = interaction(
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/phanim/harshitrawat/mace/mace/modules/blocks.py", line 644, in forward
+    mji = self.conv_tp(
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/e3nn/o3/_tensor_product/_tensor_product.py", line 529, in forward
+    return self._compiled_main_left_right(x, y, real_weight)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/phanim/harshitrawat/miniconda3/envs/mace_0.3.8/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+RuntimeError: The following operation failed in the TorchScript interpreter.
+Traceback of TorchScript, serialized code (most recent call last):
+  File "code/__torch__/torch/fx/graph_module/___torch_mangle_11.py", line 150, in forward
+    tensordot_3 = _0(mul_32, _w3j_1_1_2, ([2], [1]), None, )
+    einsum_23 = torch.einsum("edab,ecad->ecb", [tensordot_3, einsum_22])
+    reshape_34 = torch.reshape(einsum_23, [getitem_4, 640])
+                 ~~~~~~~~~~~~~ <--- HERE
+    _18 = torch.slice(reshape_2, 0, 0, 9223372036854775807)
+    getitem_22 = torch.slice(_18, 1, 1280, 1408)
+
+Traceback of TorchScript, original code (most recent call last):
+  File "<eval_with_key>.197", line 116, in forward
+    tensordot_3 = torch.functional.tensordot(mul_32, _w3j_1_1_2, ([2], [1]), out = None);  mul_32 = _w3j_1_1_2 = None
+    einsum_23 = torch.functional.einsum('edab,ecad->ecb', tensordot_3, einsum_22);  tensordot_3 = einsum_22 = None
+    reshape_34 = einsum_23.reshape(getitem_4, 640);  einsum_23 = None
+                 ~~~~~~~~~~~~~~~~~ <--- HERE
+    getitem_22 = reshape_2[(slice(None, None, None), slice(1280, 1408, None))]
+    reshape_35 = getitem_22.reshape((-1, 128, 1));  getitem_22 = None
+RuntimeError: CUDA out of memory. Tried to allocate 536.00 MiB. GPU 0 has a total capacity of 139.72 GiB of which 413.31 MiB is free. Process 327982 has 125.98 GiB memory in use. Including non-PyTorch memory, this process has 13.32 GiB memory in use. Of the allocated memory 12.57 GiB is allocated by PyTorch, and 98.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
